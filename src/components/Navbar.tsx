@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -122,16 +123,17 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-3 group"
+            className="flex items-center group"
             aria-label="Risaa Homes"
           >
-            <span className="relative w-9 h-9 flex items-center justify-center border border-current">
-              <span className="font-display text-lg leading-none">R</span>
-              <span className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-[var(--color-champagne)]" />
-            </span>
-            <span className="font-display text-2xl tracking-tight">
-              Risaa <span className="italic text-[var(--color-champagne)]">Homes</span>
-            </span>
+            <Image
+              src="/logo.png"
+              alt="Risaa Homes"
+              width={160}
+              height={56}
+              className="h-14 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -328,9 +330,13 @@ export default function Navbar() {
             className="fixed inset-0 z-[60] bg-[var(--color-royal-950)] text-[var(--color-ivory)] flex flex-col"
           >
             <div className="flex items-center justify-between px-6 h-20 border-b border-white/10">
-              <span className="font-display text-2xl">
-                Risaa <span className="italic text-[var(--color-champagne)]">Homes</span>
-              </span>
+              <Image
+                src="/logo.png"
+                alt="Risaa Homes"
+                width={130}
+                height={46}
+                className="h-12 w-auto object-contain brightness-0 invert"
+              />
               <button onClick={() => setMenuOpen(false)} aria-label="Close menu">
                 <X className="w-6 h-6" strokeWidth={1.5} />
               </button>

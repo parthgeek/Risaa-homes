@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import NewsletterForm from "./NewsletterForm";
 
 function Instagram({ className }: { className?: string }) {
@@ -77,14 +78,14 @@ export default function Footer() {
       {/* Main */}
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 grid grid-cols-2 md:grid-cols-5 gap-12">
         <div className="col-span-2">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="relative w-9 h-9 flex items-center justify-center border border-white/60">
-              <span className="font-display text-lg leading-none">R</span>
-              <span className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-[var(--color-champagne)]" />
-            </span>
-            <span className="font-display text-2xl">
-              Risaa <span className="italic text-[var(--color-champagne)]">Homes</span>
-            </span>
+          <div className="mb-6">
+            <Image
+              src="/logo.png"
+              alt="Risaa Homes"
+              width={150}
+              height={52}
+              className="h-13 w-auto object-contain brightness-0 invert"
+            />
           </div>
           <p className="text-sm text-white/60 leading-relaxed max-w-sm">
             Heirloom blankets, comforters, linens & cushions — woven on slow looms across India and finished by hand. Class without noise.
