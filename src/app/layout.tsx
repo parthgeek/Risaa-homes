@@ -1,30 +1,41 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Risaa Homes — Premium Real Estate in India",
+  title: "Risaa Homes — Heirloom Bedding & Home Textiles",
   description:
-    "Find your dream home with Risaa Homes. Luxury apartments, villas, and penthouses across Mumbai, Bangalore, and 10+ cities.",
+    "Royal-grade blankets, comforters, bed linens & cushions. Crafted for homes that demand class. Risaa Homes — woven in tradition, finished for forever.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${cormorant.variable} ${inter.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col  bg-[var(--color-ivory)] text-[var(--color-ink)]">
         <Navbar />
-        <div className="flex-1">{children}</div>
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>
