@@ -70,7 +70,7 @@ export default function HeroSlider() {
       <div className="absolute top-24 left-6 right-6 h-px bg-white/15 z-10 hidden md:block" />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-end pb-24 md:pb-32 px-6 md:px-12 lg:px-20 max-w-[1600px] mx-auto">
+      <div className="relative z-10 h-full flex flex-col justify-end pb-10 md:pb-32 px-5 md:px-12 lg:px-20 max-w-[1600px] mx-auto">
         <AnimatePresence mode="wait">
           <motion.div
             key={`txt-${i}`}
@@ -80,11 +80,11 @@ export default function HeroSlider() {
             transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
             className="max-w-4xl"
           >
-            <div className="flex items-center gap-3 text-[11px] tracking-[0.32em] uppercase text-[var(--color-champagne)] mb-6">
+            <div className="flex items-center gap-3 text-[11px] tracking-[0.32em] uppercase text-[var(--color-champagne)] mb-4 md:mb-6">
               <span className="block w-10 h-px bg-[var(--color-champagne)]" />
               {cur.eyebrow}
             </div>
-            <h1 className="font-display text-[clamp(3rem,9vw,9rem)] leading-[0.95] font-light">
+            <h1 className="font-display text-[clamp(2rem,9vw,9rem)] leading-[0.95] font-light">
               <span className="block overflow-hidden">
                 <span className="block animate-rise">{cur.titleA}</span>
               </span>
@@ -100,33 +100,33 @@ export default function HeroSlider() {
           </motion.div>
         </AnimatePresence>
 
-        <div className="flex items-end justify-between mt-12 gap-6">
+        <div className="flex items-center justify-between mt-6 md:mt-12 gap-4">
           <Link
             href="/products"
-            className="group inline-flex items-center gap-4 text-sm tracking-[0.28em] uppercase border border-white/30 px-7 py-4 hover:bg-white hover:text-[var(--color-royal-900)] transition-colors duration-500"
+            className="group inline-flex items-center gap-3 text-[10px] md:text-sm tracking-[0.22em] md:tracking-[0.28em] uppercase border border-white/30 px-4 py-3 md:px-7 md:py-4 whitespace-nowrap hover:bg-white hover:text-[var(--color-royal-900)] transition-colors duration-500"
           >
             <span>Explore the Collection</span>
-            <span className="block w-8 h-px bg-current transition-all duration-500 group-hover:w-14" />
+            <span className="hidden sm:block w-8 h-px bg-current transition-all duration-500 group-hover:w-14" />
           </Link>
 
           {/* Slide indicators */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3 shrink-0">
             {slides.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setI(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
-                className="group flex flex-col items-center gap-2"
+                className="group flex flex-col items-center gap-1.5 md:gap-2"
               >
                 <span
                   className={`block h-px transition-all duration-700 ${
                     idx === i
-                      ? "w-12 bg-[var(--color-champagne)]"
-                      : "w-6 bg-white/40 group-hover:bg-white/70"
+                      ? "w-8 md:w-12 bg-[var(--color-champagne)]"
+                      : "w-4 md:w-6 bg-white/40 group-hover:bg-white/70"
                   }`}
                 />
                 <span
-                  className={`text-[10px] tracking-[0.3em] transition-opacity ${
+                  className={`text-[9px] md:text-[10px] tracking-[0.25em] md:tracking-[0.3em] transition-opacity ${
                     idx === i ? "opacity-100" : "opacity-40"
                   }`}
                 >

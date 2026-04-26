@@ -101,9 +101,9 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none -mx-6 px-6 md:mx-0 md:px-0 pb-4 md:pb-0 gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6">
             {categories.map((c, i) => (
-              <Reveal key={c.name} delay={i * 0.05}>
+              <Reveal key={c.name} delay={i * 0.05} className="shrink-0 w-[75vw] max-w-xs snap-start md:w-auto md:shrink">
                 <Link
                   href={`/products?cat=${encodeURIComponent(c.name)}`}
                   className="tile group block relative aspect-[4/5] overflow-hidden bg-[var(--color-royal-950)]"
@@ -219,9 +219,9 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-14">
+          <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none -mx-6 px-6 md:mx-0 md:px-0 pb-4 md:pb-0 gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-6 md:gap-y-14">
             {featured.map((p, i) => (
-              <Reveal key={p.id} delay={i * 0.06}>
+              <Reveal key={p.id} delay={i * 0.06} className="shrink-0 w-[75vw] max-w-xs snap-start md:w-auto md:shrink">
                 <ProductCard product={p} />
               </Reveal>
             ))}

@@ -118,8 +118,8 @@ export default function Navbar() {
           : "bg-transparent text-[var(--color-ivory)]"
       }`}
     >
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-[1600px] mx-auto px-4 md:px-6 lg:px-12">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link
             href="/"
@@ -131,7 +131,7 @@ export default function Navbar() {
               alt="Risaa Homes"
               width={160}
               height={56}
-              className="h-14 w-auto object-contain"
+              className="h-9 md:h-14 w-auto max-w-[90px] md:max-w-none object-contain"
               priority
             />
           </Link>
@@ -155,7 +155,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right cluster */}
-          <div className="flex items-center gap-4 md:gap-6">
+          <div className="flex items-center gap-2 md:gap-6 shrink-0">
             {/* Search */}
             <div
               onClick={() => inputRef.current?.focus()}
