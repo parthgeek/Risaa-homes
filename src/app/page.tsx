@@ -4,6 +4,7 @@ import HeroSlider from "@/components/HeroSlider";
 import Marquee from "@/components/Marquee";
 import Reveal from "@/components/Reveal";
 import ProductCard from "@/components/ProductCard";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { categories, products } from "@/lib/products";
 
 export default function Home() {
@@ -313,6 +314,8 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      <WhatsAppFloat />
     </>
   );
 }
