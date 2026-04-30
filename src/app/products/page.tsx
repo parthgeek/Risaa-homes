@@ -14,14 +14,10 @@ function ProductsInner() {
   const router = useRouter();
   const initial = (sp.get("cat") as Category | null) ?? "All";
   const [active, setActive] = useState<"All" | Category>(initial);
-  const [sort, setSort] = useState<"featured" | "low" | "high">("featured");
 
   const filtered = useMemo(() => {
-    let list = active === "All" ? products : products.filter((p) => p.category === active);
-    if (sort === "low") list = [...list].sort((a, b) => a.price - b.price);
-    if (sort === "high") list = [...list].sort((a, b) => b.price - a.price);
-    return list;
-  }, [active, sort]);
+    return active === "All" ? products : products.filter((p) => p.category === active);
+  }, [active]);
 
   function pick(c: "All" | Category) {
     setActive(c);
@@ -66,20 +62,6 @@ function ProductsInner() {
               {c}
             </button>
           ))}
-          <div className="ml-auto flex items-center gap-3 shrink-0">
-            <span className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-ink)]/50">
-              Sort
-            </span>
-            <select
-              value={sort}
-              onChange={(e) => setSort(e.target.value as "featured" | "low" | "high")}
-              className="bg-transparent border border-[var(--color-royal-900)]/20 px-3 py-2 text-xs tracking-wider uppercase outline-none"
-            >
-              <option value="featured">Featured</option>
-              <option value="low">Price · Low to High</option>
-              <option value="high">Price · High to Low</option>
-            </select>
-          </div>
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { products, getProduct, formatPrice } from "@/lib/products";
+import { products, getProduct } from "@/lib/products";
 import Reveal from "@/components/Reveal";
 import ProductCard from "@/components/ProductCard";
 
@@ -86,19 +86,6 @@ export default async function ProductDetail({
               </p>
             </Reveal>
 
-            <Reveal delay={0.15}>
-              <div className="mt-8 flex items-baseline gap-4">
-                <span className="font-display text-3xl text-[var(--color-royal-900)]">
-                  {formatPrice(product.price)}
-                </span>
-                {product.mrp && (
-                  <span className="text-base text-[var(--color-ink)]/40 line-through">
-                    {formatPrice(product.mrp)}
-                  </span>
-                )}
-              </div>
-            </Reveal>
-
             <div className="divider-rule my-10" />
 
             <Reveal delay={0.2}>
@@ -140,10 +127,13 @@ export default async function ProductDetail({
 
             <Reveal delay={0.3}>
               <div className="mt-12 flex flex-col sm:flex-row gap-3">
-                <button className="group flex-1 inline-flex items-center justify-center gap-4 bg-[var(--color-royal-900)] text-[var(--color-ivory)] px-8 py-5 text-[11px] tracking-[0.32em] uppercase hover:bg-[var(--color-royal-800)] transition-colors">
-                  Add to Bag
+                <Link
+                  href={`/contact?product=${encodeURIComponent(product.name)}`}
+                  className="group flex-1 inline-flex items-center justify-center gap-4 bg-[var(--color-royal-900)] text-[var(--color-ivory)] px-8 py-5 text-[11px] tracking-[0.32em] uppercase hover:bg-[var(--color-royal-800)] transition-colors"
+                >
+                  Enquire
                   <span className="block w-6 h-px bg-current transition-all duration-500 group-hover:w-12" />
-                </button>
+                </Link>
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-4 border border-[var(--color-royal-900)] px-8 py-5 text-[11px] tracking-[0.32em] uppercase hover:bg-[var(--color-royal-900)] hover:text-[var(--color-ivory)] transition-colors"
