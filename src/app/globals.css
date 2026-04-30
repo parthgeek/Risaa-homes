@@ -23,6 +23,7 @@
 
   --font-display: var(--font-cormorant);
   --font-sans: var(--font-inter);
+  --font-script: var(--font-allura);
 }
 
 :root {
