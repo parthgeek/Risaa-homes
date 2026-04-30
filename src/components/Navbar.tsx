@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Search, X, Menu, ShoppingBag } from "lucide-react";
+import { Search, X, Menu } from "lucide-react";
 import { categories } from "@/lib/products";
 
 const links = [
@@ -119,7 +119,11 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-[1600px] mx-auto px-4 md:px-6 lg:px-12">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div
+          className={`flex items-center justify-between ${
+            isLanding ? "h-24 md:h-32" : "h-20 md:h-24"
+          }`}
+        >
           {/* Logo */}
           <Link
             href="/"
@@ -129,9 +133,13 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="Risaa Homes"
-              width={160}
-              height={56}
-              className="h-9 md:h-14 w-auto max-w-[90px] md:max-w-none object-contain"
+              width={240}
+              height={84}
+              className={`w-auto object-contain ${
+                isLanding
+                  ? "h-16 md:h-[6.5rem] max-w-[170px] md:max-w-none"
+                  : "h-12 md:h-20 max-w-[130px] md:max-w-none"
+              }`}
               priority
             />
           </Link>
@@ -241,16 +249,6 @@ export default function Navbar() {
                 style={{ width: "100%" }}
               />
             </div>
-
-            <button
-              aria-label="Bag"
-              className="relative p-2 hover:opacity-70 transition-opacity"
-            >
-              <ShoppingBag className="w-5 h-5" strokeWidth={1.5} />
-              <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-[var(--color-champagne)] text-[var(--color-royal-950)] text-[10px] flex items-center justify-center font-semibold">
-                0
-              </span>
-            </button>
 
             <button
               className="lg:hidden p-2"
