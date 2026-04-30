@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Product, formatPrice } from "@/lib/products";
+import { Product } from "@/lib/products";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
@@ -26,25 +26,13 @@ export default function ProductCard({ product }: { product: Product }) {
           <span className="block w-6 h-px bg-current" />
         </div>
       </div>
-      <div className="mt-5 flex items-start justify-between gap-6">
-        <div>
-          <p className="text-[10px] tracking-[0.3em] uppercase text-[var(--color-royal-700)] mb-2">
-            {product.category}
-          </p>
-          <h3 className="font-display text-2xl leading-tight text-[var(--color-ink)]">
-            {product.name}
-          </h3>
-        </div>
-        <div className="text-right shrink-0">
-          <p className="font-display text-xl text-[var(--color-royal-900)]">
-            {formatPrice(product.price)}
-          </p>
-          {product.mrp && (
-            <p className="text-xs text-[var(--color-ink)]/40 line-through">
-              {formatPrice(product.mrp)}
-            </p>
-          )}
-        </div>
+      <div className="mt-5">
+        <p className="text-[10px] tracking-[0.3em] uppercase text-[var(--color-royal-700)] mb-2">
+          {product.category}
+        </p>
+        <h3 className="font-display text-2xl leading-tight text-[var(--color-ink)]">
+          {product.name}
+        </h3>
       </div>
     </Link>
   );
