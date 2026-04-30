@@ -136,51 +136,73 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Lineage — Gursam → Risaa → Risaa Homes */}
-      <section id="lineage" className="bg-[var(--color-ivory)]">
+      {/* Team / Founders */}
+      <section id="team" className="bg-[var(--color-ivory)]">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32">
           <Reveal>
             <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mb-4">
-              03 — The Lineage
+              03 — The Founders
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="font-display text-[clamp(2.2rem,4.5vw,4.5rem)] leading-[1.05] font-light max-w-4xl">
-              From engineered components <br />
-              <span className="italic text-[var(--color-royal-900)]">to elevated living.</span>
+              The hands <span className="italic text-[var(--color-royal-900)]">behind the house.</span>
             </h2>
           </Reveal>
+          <Reveal delay={0.2}>
+            <p className="mt-8 max-w-2xl text-lg text-[var(--color-ink)]/70 leading-relaxed">
+              A small team of founders, designers and sourcing leads — guided
+              by twenty-five years of family enterprise and a shared belief
+              that the everyday deserves to be beautifully made.
+            </p>
+          </Reveal>
 
-          <div className="mt-16 grid md:grid-cols-3 gap-8">
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                k: "Gursam International",
-                v: "The parent house. Twenty-five years in global bicycle components, with partners across India, Japan, Taiwan, China and Brazil.",
-                tag: "The foundation",
+                name: "Founder Name",
+                role: "Founder & Managing Director",
+                bio: "Leads the group from Gursam International into Risaa Homes, with two decades of building precision-led, export-grade businesses.",
+                image:
+                  "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&q=85&auto=format&fit=crop",
               },
               {
-                k: "Risaa",
-                v: "A premium women’s wear label celebrated for its thoughtful design language, refined craftsmanship, and a modern yet timeless aesthetic.",
-                tag: "The lifestyle",
+                name: "Co-Founder Name",
+                role: "Co-Founder & Creative Director",
+                bio: "Shapes the design language across Risaa and Risaa Homes — quiet palettes, considered weaves, finishes that read in the hand before the eye.",
+                image:
+                  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=85&auto=format&fit=crop",
               },
               {
-                k: "Risaa Homes",
-                v: "A luxury home textile brand for those who value understated opulence — blankets, bed linens, comforters and rugs, curated for elevated living.",
-                tag: "The home",
+                name: "Director Name",
+                role: "Director, Sourcing & Operations",
+                bio: "Anchors the supply chain across Indian mills and global partners — long-staple cottons, sateen weaves, hand-knotted rugs, finished without compromise.",
+                image:
+                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=85&auto=format&fit=crop",
               },
-            ].map((m, i) => (
-              <Reveal key={m.k} delay={i * 0.08}>
-                <div className="border border-[var(--color-royal-900)]/15 p-8 hover:border-[var(--color-royal-900)] transition-colors duration-500 bg-white h-full">
-                  <p className="font-display text-4xl text-[var(--color-royal-900)]">
-                    0{i + 1}
-                  </p>
-                  <p className="font-display text-2xl mt-6">{m.k}</p>
-                  <p className="text-sm text-[var(--color-ink)]/70 mt-3 leading-relaxed">
-                    {m.v}
-                  </p>
-                  <p className="text-[10px] tracking-[0.3em] uppercase text-[var(--color-champagne)] mt-6">
-                    {m.tag}
-                  </p>
+            ].map((p, i) => (
+              <Reveal key={p.name} delay={i * 0.08}>
+                <div className="group bg-white border border-[var(--color-royal-900)]/15 hover:border-[var(--color-royal-900)] transition-colors duration-500 h-full flex flex-col">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-ivory-2)]">
+                    <Image
+                      src={p.image}
+                      alt={p.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                    />
+                  </div>
+                  <div className="p-8 flex flex-col flex-1">
+                    <p className="font-display text-2xl text-[var(--color-ink)] leading-tight">
+                      {p.name}
+                    </p>
+                    <p className="text-[10px] tracking-[0.3em] uppercase text-[var(--color-champagne)] mt-3">
+                      {p.role}
+                    </p>
+                    <p className="text-sm text-[var(--color-ink)]/70 mt-5 leading-relaxed">
+                      {p.bio}
+                    </p>
+                  </div>
                 </div>
               </Reveal>
             ))}
