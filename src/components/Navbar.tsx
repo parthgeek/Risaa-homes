@@ -11,7 +11,7 @@ import { categories } from "@/lib/products";
 const links = [
   { href: "/", label: "Home" },
   { href: "/products", label: "Products", mega: true },
-  { href: "/about", label: "Atelier" },
+  { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
 ];
 

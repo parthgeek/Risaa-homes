@@ -29,16 +29,16 @@ function Youtube({ className }: { className?: string }) {
 
 const cols = [
   {
-    title: "Atelier",
+    title: "About Us",
     links: [
       { href: "/about", label: "Our Story" },
-      { href: "/about#craft", label: "The Craft" },
-      { href: "/about#mills", label: "Mills & Looms" },
+      { href: "/about#heritage", label: "The Heritage" },
+      { href: "/about#team", label: "The Founders" },
       { href: "/contact", label: "Showrooms" },
     ],
   },
   {
-    title: "Shop",
+    title: "Catalogue",
     links: [
       { href: "/products", label: "All Pieces" },
       { href: "/products?cat=Flannel%20Blankets", label: "Flannel" },
@@ -49,9 +49,9 @@ const cols = [
   {
     title: "Care",
     links: [
+      { href: "/care", label: "Care Instructions" },
+      { href: "/care#guidelines", label: "Guidelines" },
       { href: "/contact", label: "Concierge" },
-      { href: "/contact", label: "Care Guide" },
-      { href: "/contact", label: "Returns" },
       { href: "/contact", label: "Trade Programme" },
     ],
   },
@@ -131,13 +131,27 @@ export default function Footer() {
 
       {/* Big wordmark — infinite right-to-left scroll */}
       <div className="overflow-hidden py-4">
-        <div className="flex w-max animate-marquee-slow whitespace-nowrap select-none">
+        <div className="flex w-max animate-marquee-slow whitespace-nowrap select-none items-baseline">
           {Array.from({ length: 4 }).map((_, i) => (
             <span
               key={i}
-              className="font-display text-[clamp(5rem,18vw,18rem)] leading-none text-white/5 pr-16"
+              className="leading-none text-white/10 pr-16 flex items-baseline gap-6"
             >
-              RISAA HOMES <span className="text-[var(--color-champagne)]/15">✦</span>
+              <span
+                className="font-script italic text-[clamp(6rem,22vw,22rem)] leading-none"
+                style={{ fontFamily: "var(--font-allura)" }}
+              >
+                Risaa
+              </span>
+              <span
+                className="text-[clamp(3rem,10vw,10rem)] tracking-[0.32em] uppercase font-light leading-none"
+                style={{ fontFamily: "var(--font-inter)" }}
+              >
+                Homes
+              </span>
+              <span className="text-[var(--color-champagne)]/25 font-display text-[clamp(3rem,10vw,10rem)]">
+                ✦
+              </span>
             </span>
           ))}
         </div>
