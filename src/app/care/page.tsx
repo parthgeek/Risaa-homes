@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 
 const fabrics = [
   {
-    name: "Cotton & Flannel Blankets",
+    name: "Bedsheets & Pillow Covers",
     care: [
       "Machine wash cold (≤30°C) on a gentle cycle with mild liquid detergent.",
       "Avoid bleach, fabric softeners and optical brighteners.",
@@ -12,16 +12,16 @@ const fabrics = [
     ],
   },
   {
-    name: "Sateen & Percale Bed Linen",
+    name: "Mink Blankets",
     care: [
-      "First wash before use to bloom the weave.",
-      "Machine wash cold on a gentle cycle, separately from rough fabrics and zippers.",
-      "Tumble dry low or line dry. Iron while slightly damp for the cleanest finish.",
-      "Store folded in a breathable cotton bag — never plastic.",
+      "Machine wash cold on a gentle cycle with mild liquid detergent.",
+      "Do not iron — heat will scorch the embossed pile.",
+      "Tumble dry on low; brush gently to revive the nap.",
+      "Store flat in a breathable cotton bag — never compressed.",
     ],
   },
   {
-    name: "Down & Down-Alt Comforters",
+    name: "Summer & Winter Comforters",
     care: [
       "Spot clean for minor marks. Professional dry-clean recommended for full clean.",
       "If machine washable, use a large drum, mild detergent, and rinse twice.",
@@ -30,20 +30,20 @@ const fabrics = [
     ],
   },
   {
-    name: "Hand-Knotted & Woven Rugs",
+    name: "Bedding Sets (Summer & Winter)",
     care: [
-      "Vacuum weekly on low suction without the beater bar. Rotate quarterly.",
-      "Blot spills immediately with a clean white cloth — never rub.",
-      "Professional rug cleaning every 12–18 months, depending on traffic.",
-      "Use a quality rug pad to protect the foundation and reduce slippage.",
+      "Wash sheets and covers separately on a cool, gentle cycle.",
+      "Dry-clean comforter and quilted pieces; do not machine wash heavyweight winter fills.",
+      "Fold and store the full set together in a breathable cotton bag between seasons.",
+      "Air the comforter outdoors monthly to maintain loft.",
     ],
   },
   {
-    name: "Pillows & Cushions",
+    name: "Cushion & Pillow Covers",
     care: [
-      "Remove covers and wash separately per the fabric guide above.",
-      "Plump inserts daily; air outdoors monthly to keep loft.",
-      "Spot-clean inserts. Replace inserts every 2–3 years to maintain shape.",
+      "Remove covers and wash separately on a cold, gentle cycle.",
+      "Iron on the reverse — never directly over piping or embroidery.",
+      "Spot clean velvet and embroidered covers; dry clean if heavily soiled.",
     ],
   },
 ];

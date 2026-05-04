@@ -41,9 +41,10 @@ const cols = [
     title: "Catalogue",
     links: [
       { href: "/products", label: "All Pieces" },
-      { href: "/products?cat=Flannel%20Blankets", label: "Flannel" },
-      { href: "/products?cat=Bed%20Linens", label: "Bed Linens" },
-      { href: "/products?cat=Pillows%20%26%20Cushions", label: "Cushions" },
+      { href: "/products?cat=Bedsheets", label: "Bedsheets" },
+      { href: "/products?cat=Mink%20Blankets", label: "Mink Blankets" },
+      { href: "/products?cat=Winter%20Sets", label: "Winter Sets" },
+      { href: "/products?cat=Cushion%20Covers", label: "Cushion Covers" },
     ],
   },
   {
