@@ -37,21 +37,36 @@ export default async function ProductDetail({
       <section className="bg-[var(--color-ivory)]">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 lg:gap-20 pb-24">
           <div className="space-y-4">
-            {product.images.map((src, i) => (
-              <Reveal key={i} delay={i * 0.08}>
-                <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-ivory-2)]">
-                  <Image
-                    src={src}
-                    alt={product.name}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
-                    priority={i === 0}
-                  />
-                </div>
-              </Reveal>
-            ))}
-            {product.images.length === 1 && (
+            {product.images.map((src, i) => {
+              const isLocal = src.startsWith("/");
+              const frameAspect =
+                product.imageAspect === "landscape"
+                  ? "aspect-[4/3]"
+                  : "aspect-[4/5]";
+              const fitClass =
+                product.imageFit === "contain" || isLocal
+                  ? "object-contain"
+                  : "object-cover";
+              const imageStyle = product.imagePadding
+                ? { padding: product.imagePadding }
+                : undefined;
+              return (
+                <Reveal key={i} delay={i * 0.08}>
+                  <div className={`relative ${frameAspect} overflow-hidden bg-[var(--color-ivory-2)]`}>
+                    <Image
+                      src={src}
+                      alt={product.name}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className={fitClass}
+                      style={imageStyle}
+                      priority={i === 0}
+                    />
+                  </div>
+                </Reveal>
+              );
+            })}
+            {product.images.length === 1 && !product.images[0].startsWith("/") && (
               <Reveal delay={0.1}>
                 <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-ivory-2)]">
                   <Image

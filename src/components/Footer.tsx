@@ -41,10 +41,10 @@ const cols = [
     title: "Catalogue",
     links: [
       { href: "/products", label: "All Pieces" },
-      { href: "/products?cat=Bedsheets", label: "Bedsheets" },
+      { href: "/products?cat=Summer%20Sets", label: "Summer Sets" },
       { href: "/products?cat=Mink%20Blankets", label: "Mink Blankets" },
-      { href: "/products?cat=Winter%20Sets", label: "Winter Sets" },
-      { href: "/products?cat=Cushion%20Covers", label: "Cushion Covers" },
+      { href: "/products?cat=Summer%20Comforters", label: "Summer Comforters" },
+      { href: "/products?cat=Winter%20Comforters", label: "Winter Comforters" },
     ],
   },
   {
@@ -89,7 +89,7 @@ export default function Footer() {
             />
           </div>
           <p className="text-sm text-white/60 leading-relaxed max-w-sm">
-            Heirloom blankets, comforters, linens & cushions — woven on slow looms across India and finished by hand. Class without noise.
+            Heirloom blankets, comforters, and linens — woven on slow looms across India and finished by hand. Class without noise.
           </p>
           <div className="flex items-center gap-4 mt-8">
             {[
@@ -136,21 +136,21 @@ export default function Footer() {
           {Array.from({ length: 4 }).map((_, i) => (
             <span
               key={i}
-              className="leading-none text-white/10 pr-16 flex items-baseline gap-6"
+              className="leading-none pr-16 flex items-baseline gap-6"
             >
               <span
-                className="font-script italic text-[clamp(6rem,22vw,22rem)] leading-none"
+                className="footer-wordmark-shine font-script italic text-[clamp(6rem,22vw,22rem)] leading-none"
                 style={{ fontFamily: "var(--font-allura)" }}
               >
                 Risaa
               </span>
               <span
-                className="text-[clamp(3rem,10vw,10rem)] tracking-[0.32em] uppercase font-light leading-none"
+                className="footer-wordmark-shine text-[clamp(3rem,10vw,10rem)] tracking-[0.32em] uppercase font-light leading-none"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Homes
               </span>
-              <span className="text-[var(--color-champagne)]/25 font-display text-[clamp(3rem,10vw,10rem)]">
+              <span className="text-[var(--color-champagne)] font-display text-[clamp(3rem,10vw,10rem)] opacity-70">
                 ✦
               </span>
             </span>

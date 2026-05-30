@@ -101,6 +101,31 @@ body {
   animation: marquee 60s linear infinite;
 }
 
+/* Footer wordmark — champagne gradient with traveling shine */
+.footer-wordmark-shine {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    var(--color-champagne) 30%,
+    #f0d79a 45%,
+    #ffffff 50%,
+    #f0d79a 55%,
+    var(--color-champagne) 70%,
+    rgba(255, 255, 255, 0.18) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: wordmark-shine 8s linear infinite;
+  text-shadow: 0 0 40px rgba(185, 144, 79, 0.15);
+}
+@keyframes wordmark-shine {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 /* Hero slider crossfade */
 @keyframes kenburns {
   0% { transform: scale(1.05) translate(0, 0); }

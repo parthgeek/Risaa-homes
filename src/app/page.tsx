@@ -55,7 +55,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-10 max-w-2xl text-lg leading-relaxed text-[var(--color-ink)]/75">
-                Risaa Homes weaves blankets, linens, comforters and cushions on
+                Risaa Homes weaves blankets, linens and comforters on
                 slow looms across Erode, Bhuj and Bhadohi. Every piece is
                 finished by hand — selvages stitched, piping run, edges pressed
                 — so it arrives in your home the way it left ours: quiet,
@@ -87,7 +87,7 @@ export default function Home() {
               </Reveal>
               <Reveal delay={0.1}>
                 <h2 className="font-display text-[clamp(2.4rem,5vw,5rem)] leading-[1.02] font-light">
-                  Six rooms.
+                  Four rooms.
                   <span className="italic text-[var(--color-royal-900)]"> One language.</span>
                 </h2>
               </Reveal>

@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 
 const fabrics = [
   {
-    name: "Bedsheets & Pillow Covers",
+    name: "Bedding Sets",
     care: [
       "Machine wash cold (≤30°C) on a gentle cycle with mild liquid detergent.",
       "Avoid bleach, fabric softeners and optical brighteners.",
@@ -21,29 +21,12 @@ const fabrics = [
     ],
   },
   {
-    name: "Summer & Winter Comforters",
+    name: "Comforters",
     care: [
       "Spot clean for minor marks. Professional dry-clean recommended for full clean.",
       "If machine washable, use a large drum, mild detergent, and rinse twice.",
       "Tumble dry low with two clean tennis balls to redistribute fill. Allow to fully dry.",
       "Air outdoors monthly. Store flat in a breathable cover, not vacuum-sealed.",
-    ],
-  },
-  {
-    name: "Bedding Sets (Summer & Winter)",
-    care: [
-      "Wash sheets and covers separately on a cool, gentle cycle.",
-      "Dry-clean comforter and quilted pieces; do not machine wash heavyweight winter fills.",
-      "Fold and store the full set together in a breathable cotton bag between seasons.",
-      "Air the comforter outdoors monthly to maintain loft.",
-    ],
-  },
-  {
-    name: "Cushion & Pillow Covers",
-    care: [
-      "Remove covers and wash separately on a cold, gentle cycle.",
-      "Iron on the reverse — never directly over piping or embroidery.",
-      "Spot clean velvet and embroidered covers; dry clean if heavily soiled.",
     ],
   },
 ];

@@ -3,18 +3,30 @@ import Link from "next/link";
 import { Product } from "@/lib/products";
 
 export default function ProductCard({ product }: { product: Product }) {
+  const frameAspect =
+    product.imageAspect === "landscape" ? "aspect-[4/3]" : "aspect-[4/5]";
+  const fitClass =
+    product.imageFit === "contain" || product.images[0].startsWith("/")
+      ? "object-contain"
+      : "object-cover";
+  const hoverClass = product.imageAspect === "landscape" ? "" : "tile-img";
+  const imageStyle = product.imagePadding
+    ? { padding: product.imagePadding }
+    : undefined;
+
   return (
     <Link
       href={`/products/${product.slug}`}
       className="tile group block relative"
     >
-      <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-ivory-2)]">
+      <div className={`relative ${frameAspect} overflow-hidden bg-[var(--color-ivory-2)]`}>
         <Image
           src={product.images[0]}
           alt={product.name}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover tile-img"
+          className={`${fitClass} ${hoverClass}`}
+          style={imageStyle}
         />
         {product.tag && (
           <span className="absolute top-4 left-4 bg-[var(--color-royal-900)] text-[var(--color-ivory)] text-[10px] tracking-[0.3em] uppercase px-3 py-1.5">

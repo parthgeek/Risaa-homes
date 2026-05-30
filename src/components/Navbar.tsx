@@ -19,7 +19,7 @@ const placeholders = [
   "royal flannel throw",
   "Egyptian sateen sheets",
   "king-size comforter",
-  "down-alt cushions",
+  "single ply blanket",
   "heritage wool runner",
 ];
 
