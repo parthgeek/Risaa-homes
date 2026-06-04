@@ -106,7 +106,7 @@ export default function AboutPage() {
                 Hero HMC, Avon, and Decathlon, and with exclusive dealerships
                 for premium components sourced from Japan, Taiwan, and China,
                 Gursam&rsquo;s foundation rests on precision, reliability, and
-                global standards. The company is recognized as a{" "}
+                global standards. The company is recognised as a{" "}
                 <span className="italic text-[var(--color-royal-900)]">
                   One Star Export House
                 </span>{" "}

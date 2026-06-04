@@ -65,13 +65,13 @@ export default function DiscountPopups() {
       : {
           eyebrow: "Seasonal Offer",
           title: "Winter Edit — flat 20% off.",
-          body: "Our heaviest mink blankets, winter sets and down-alt comforters are on the season's only sitewide markdown. Closes once stocks turn.",
+          body: "Our heaviest mink blankets and down-alt winter comforters are on the season's only sitewide markdown. Closes once stocks turn.",
           code: "WINTER20",
           cta: "Shop the Winter Edit",
         };
 
   const shopHref =
-    active === "seasonal" ? "/products?cat=Winter%20Sets" : "/products";
+    active === "seasonal" ? "/products?cat=Winter%20Comforters" : "/products";
 
   return (
     <div
@@ -106,7 +106,7 @@ export default function DiscountPopups() {
             <p className="font-display italic text-3xl mt-3 leading-tight">
               Woven in tradition,
               <br />
-              finished for forever.
+              finished to last forever.
             </p>
           </div>
         </div>
