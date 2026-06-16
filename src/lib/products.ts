@@ -1,7 +1,11 @@
 export type Category =
   | "Mink Blankets"
+  | "Flannel Blankets"
   | "Summer Sets"
   | "Summer Comforters"
+  | "Bed Sheets"
+  | "Pillows"
+  | "Mattress Covers"
   | "Winter Comforters";
 
 export type Product = {
@@ -34,6 +38,12 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
       "https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=1600&q=80&auto=format&fit=crop",
   },
   {
+    name: "Flannel Blankets",
+    blurb: "Soft-brushed flannel. Warm for all seasons, light enough for AC rooms.",
+    image:
+      "https://images.unsplash.com/photo-1580500348112-94f09498fbb3?w=1600&q=80&auto=format&fit=crop",
+  },
+  {
     name: "Summer Sets",
     blurb: "Lightweight bedding sets for warm, breathable nights.",
     image:
@@ -46,6 +56,24 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
       "https://images.unsplash.com/photo-1606170033648-5d55a3edf314?w=1600&q=80&auto=format&fit=crop",
   },
   {
+    name: "Bed Sheets",
+    blurb: "180 TC pure cotton. Crisp, cool, and colour-fast.",
+    image:
+      "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1600&q=80&auto=format&fit=crop",
+  },
+  {
+    name: "Pillows",
+    blurb: "Supportive fills, soft covers. Sleep right.",
+    image:
+      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=1600&q=80&auto=format&fit=crop",
+  },
+  {
+    name: "Mattress Covers",
+    blurb: "Fitted mattress protection. Washable, breathable.",
+    image:
+      "https://images.unsplash.com/photo-1631049307264-eb603700e7ef?w=1600&q=80&auto=format&fit=crop",
+  },
+  {
     name: "Winter Comforters",
     blurb: "Heavy down-alt loft. Quilted shells. Built for January.",
     image:
@@ -53,35 +81,213 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
   },
 ];
 
+// ── Image helpers ──────────────────────────────────────────────────────────────
+
 const IMG = {
-  set1: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1400&q=80&auto=format&fit=crop",
   comforter1: "https://images.unsplash.com/photo-1606170033648-5d55a3edf314?w=1400&q=80&auto=format&fit=crop",
   comforter2: "https://images.unsplash.com/photo-1531001389693-3a2630f196aa?w=1400&q=80&auto=format&fit=crop",
+  blanket1:   "https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=1400&q=80&auto=format&fit=crop",
+  flannel1:   "https://images.unsplash.com/photo-1580500348112-94f09498fbb3?w=1400&q=80&auto=format&fit=crop",
+  sheet1:     "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1400&q=80&auto=format&fit=crop",
+  pillow1:    "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=1400&q=80&auto=format&fit=crop",
+  mattress1:  "https://images.unsplash.com/photo-1631049307264-eb603700e7ef?w=1400&q=80&auto=format&fit=crop",
 };
-
-const ROYAL = { name: "Royal Indigo", hex: "#0f1a66" };
-const IVORY = { name: "Ivory Mist", hex: "#f1ead7" };
-const MIDNIGHT = { name: "Midnight", hex: "#060a2b" };
-const CHAMPAGNE = { name: "Champagne", hex: "#c8a96a" };
-const SLATE = { name: "Slate Blue", hex: "#3a4a78" };
-const BONE = { name: "Bone", hex: "#ece5d3" };
-const PEARL = { name: "Pearl", hex: "#f1ead7" };
-const GRAPHITE = { name: "Graphite", hex: "#1a1d28" };
-const ROSE = { name: "Heritage Rose", hex: "#9c4a5c" };
-const LILAC = { name: "Lilac", hex: "#b9a3c5" };
-const SKY = { name: "Sky Blue", hex: "#a9c5db" };
-const OLIVE = { name: "Olive", hex: "#a8a55c" };
 
 const SHAGUN_DIR = "/RISAA-HOME-SHAGUN-SET-1";
 const shagunImg = (n: number) =>
   `${SHAGUN_DIR}/RISAA%20HOME%20SHAGUN%20SET_page-${String(n).padStart(4, "0")}.jpg`;
+
 const ROYAL_FEATHER_IMAGES = [
   "/WhatsApp%20Image%202026-05-25%20at%2012.46.46.jpeg",
   "/WhatsApp%20Image%202026-05-25%20at%2012.46.46%20%281%29.jpeg",
 ];
 
+// ── Colour tokens ──────────────────────────────────────────────────────────────
+
+const IVORY      = { name: "Ivory",        hex: "#f1ead7" };
+const PEARL      = { name: "Pearl White",  hex: "#f5f2ec" };
+const CHAMPAGNE  = { name: "Champagne",    hex: "#c8a96a" };
+const BONE       = { name: "Bone",         hex: "#ece5d3" };
+const ROYAL      = { name: "Royal Indigo", hex: "#0f1a66" };
+const MIDNIGHT   = { name: "Midnight",     hex: "#060a2b" };
+const SLATE      = { name: "Slate Blue",   hex: "#3a4a78" };
+const GRAPHITE   = { name: "Graphite",     hex: "#1a1d28" };
+const ROSE       = { name: "Heritage Rose",hex: "#9c4a5c" };
+const LILAC      = { name: "Lilac",        hex: "#b9a3c5" };
+const SKY        = { name: "Sky Blue",     hex: "#a9c5db" };
+const OLIVE      = { name: "Olive",        hex: "#a8a55c" };
+const BURGUNDY   = { name: "Burgundy",     hex: "#6e1423" };
+const GOLD       = { name: "Gold",         hex: "#b5860d" };
+const TEAL       = { name: "Teal",         hex: "#2e7d72" };
+const PEACH      = { name: "Peach",        hex: "#e8a98c" };
+const SAGE       = { name: "Sage",         hex: "#87a884" };
+const MUSTARD    = { name: "Mustard",      hex: "#c8950a" };
+
 export const products: Product[] = [
-  // ============ SHAGUN SET (Risaa Home, double bed) ============
+
+  // ── MINK BLANKETS ─────────────────────────────────────────────────────────
+
+  {
+    id: "p53",
+    slug: "risaa-royal-feather-blanket",
+    name: "Royal Feather Blanket",
+    category: "Mink Blankets",
+    price: 2499,
+    tag: "New",
+    shortDescription:
+      "Double bed mink blanket with feather emboss — 8 colourways across 4 approved designs.",
+    description:
+      "The Royal Feather in the final 2.2 kg double bed mink. Feather-embossed surface, brushed to a velvet hand. Available in four design layouts and eight colourways: N01 Chocolate & Pink, N02 Mauve & Peach, 332 Olive & Mauve, and 959 Beige & Dried Herb.",
+    fabric: "Mink (brushed polyester)",
+    weave: "Feather Emboss",
+    origin: "India",
+    care: ["Dry clean"],
+    sizes: ["Double Bed"],
+    colors: [
+      { name: "N01 Chocolate", hex: "#6b3a2c" },
+      { name: "N01 Pink",      hex: "#7c2744" },
+      { name: "N02 Mauve",     hex: "#8f7896" },
+      { name: "N02 Peach",     hex: "#df9b89" },
+      { name: "332 Olive",     hex: "#68441f" },
+      { name: "332 Mauve",     hex: "#8e5c82" },
+      { name: "959 Beige",     hex: "#aa7c55" },
+      { name: "959 Dried Herb",hex: "#5a523b" },
+    ],
+    images: ROYAL_FEATHER_IMAGES,
+  },
+  {
+    id: "p54",
+    slug: "risaa-romance-blanket",
+    name: "Romance Blanket",
+    category: "Mink Blankets",
+    price: 1799,
+    mrp: 2299,
+    shortDescription: "Soft mink blanket in romantic floral colourways. Dry clean.",
+    description:
+      "The Romance — a plush mink blanket in soft floral colourways built for gifting and everyday use. Brushed to a velvet finish.",
+    fabric: "Mink (brushed polyester)",
+    weave: "Plain mink",
+    origin: "India",
+    care: ["Dry clean"],
+    sizes: ["Double Bed"],
+    colors: [ROSE, LILAC, PEACH, IVORY],
+    images: [IMG.blanket1],
+  },
+  {
+    id: "p55",
+    slug: "risaa-royal-comfort-blanket",
+    name: "Royal Comfort Blanket",
+    category: "Mink Blankets",
+    price: 2199,
+    mrp: 2799,
+    shortDescription: "Premium mink blanket. Deep, rich colours. Dry clean.",
+    description:
+      "The Royal Comfort — dense mink pile in deep, rich colourways. A step up in weight and coverage.",
+    fabric: "Mink (brushed polyester)",
+    weave: "Plain mink",
+    origin: "India",
+    care: ["Dry clean"],
+    sizes: ["Double Bed"],
+    colors: [ROYAL, MIDNIGHT, BURGUNDY, CHAMPAGNE],
+    images: [IMG.blanket1],
+  },
+  {
+    id: "p56",
+    slug: "risaa-casino-royal-blanket",
+    name: "Casino Royal Blanket",
+    category: "Mink Blankets",
+    price: 2799,
+    mrp: 3499,
+    tag: "Bestseller",
+    shortDescription: "Heavyweight mink blanket. Bold patterns, gold-tone borders.",
+    description:
+      "Casino Royal — the boldest in the mink range. Heavy pile, contrast border and statement colour pairings.",
+    fabric: "Mink (brushed polyester)",
+    weave: "Jacquard mink",
+    origin: "India",
+    care: ["Dry clean"],
+    sizes: ["Double Bed"],
+    colors: [GOLD, BURGUNDY, MIDNIGHT, ROYAL],
+    images: [IMG.blanket1],
+  },
+
+  // ── FLANNEL BLANKETS ───────────────────────────────────────────────────────
+
+  {
+    id: "p57",
+    slug: "risaa-flannel-baby-blanket",
+    name: "Flannel Blanket – Baby",
+    category: "Flannel Blankets",
+    price: 799,
+    mrp: 999,
+    shortDescription: "Soft flannel baby blanket. Machine washable. India.",
+    description:
+      "Gentle, soft-touch flannel for newborns and infants. Machine washable, lightweight, and easy to care for.",
+    fabric: "Flannel (polyester)",
+    weave: "Brushed flannel",
+    origin: "India",
+    care: ["Machine wash cold", "Tumble dry low"],
+    sizes: ["Baby"],
+    colors: [PEARL, SKY, PEACH, LILAC],
+    images: [IMG.flannel1],
+  },
+  {
+    id: "p58",
+    slug: "risaa-flannel-single-bed-blanket",
+    name: "Flannel Blanket – Single Bed",
+    category: "Flannel Blankets",
+    price: 1299,
+    mrp: 1599,
+    shortDescription: "Single bed flannel blanket. Machine washable. India.",
+    description:
+      "Single bed flannel blanket. Warm, breathable and easy to maintain — a year-round layering piece.",
+    fabric: "Flannel (polyester)",
+    weave: "Brushed flannel",
+    origin: "India",
+    care: ["Machine wash cold", "Tumble dry low"],
+    sizes: ["Single Bed"],
+    colors: [SLATE, TEAL, ROSE, BONE],
+    images: [IMG.flannel1],
+  },
+  {
+    id: "p59",
+    slug: "risaa-flannel-double-bed-blanket",
+    name: "Flannel Blanket – Double Bed",
+    category: "Flannel Blankets",
+    price: 1799,
+    mrp: 2199,
+    shortDescription: "Double bed flannel blanket. Machine washable. India.",
+    description:
+      "Double bed flannel blanket. Soft brushed finish on both sides. Drapes well and washes clean every time.",
+    fabric: "Flannel (polyester)",
+    weave: "Brushed flannel",
+    origin: "India",
+    care: ["Machine wash cold", "Tumble dry low"],
+    sizes: ["Double Bed"],
+    colors: [SLATE, MIDNIGHT, BURGUNDY, OLIVE],
+    images: [IMG.flannel1],
+  },
+  {
+    id: "p60",
+    slug: "risaa-flannel-6-seater-blanket",
+    name: "Flannel Blanket – 6 Seater (S/6)",
+    category: "Flannel Blankets",
+    price: 2499,
+    mrp: 2999,
+    shortDescription: "Large 6-seater sofa flannel throw. Machine washable. India.",
+    description:
+      "Oversized flannel throw sized for a 6-seater sofa. Large coverage, the same soft brushed flannel finish.",
+    fabric: "Flannel (polyester)",
+    weave: "Brushed flannel",
+    origin: "India",
+    care: ["Machine wash cold", "Tumble dry low"],
+    sizes: ["S/6 (Sofa)"],
+    colors: [IVORY, SLATE, GRAPHITE, TEAL],
+    images: [IMG.flannel1],
+  },
+
+  // ── SUMMER SETS ───────────────────────────────────────────────────────────
+
   {
     id: "p100",
     slug: "risaa-shagun-double-bed-set",
@@ -96,7 +302,7 @@ export const products: Product[] = [
       "The Shagun Set — built for gifting and for everyday. A 5-piece double bed ensemble in soft-touch printed cotton-blend: one double bedsheet, two pillow covers and two cushion covers. Eleven heritage prints across damask, scroll and botanical motifs.",
     fabric: "Soft-touch Cotton Blend",
     weave: "Plain weave, reactive print",
-    origin: "Panipat, India",
+    origin: "India",
     care: ["Cold machine wash", "Wash darks separately the first time", "Iron warm"],
     sizes: ["Double (90 × 100 in)"],
     colors: [LILAC, SKY, OLIVE, ROSE, ROYAL, CHAMPAGNE],
@@ -115,146 +321,8 @@ export const products: Product[] = [
     ],
   },
 
-  // ============ MINK BLANKETS (1) ============
-  {
-    id: "p53",
-    slug: "risaa-royal-feather-single-ply-blanket",
-    name: "Risaa Home Double Bed Single-Ply Blanket",
-    category: "Mink Blankets",
-    price: 2499,
-    tag: "New",
-    shortDescription:
-      "Double bed single-ply blanket in the final N01, N02, 332 and 959 design colourways.",
-    description:
-      "The final 2.2 kg double bed single-ply blanket range, finished in four approved layouts and eight colourways: N01 Chocolate and Pink, N02 Mauve and Peach, 332 Olive and Mauve, and 959 Beige and Dried Herb.",
-    fabric: "Single-ply brushed flannel",
-    weave: "Printed single-ply blanket",
-    origin: "Panipat, India",
-    care: ["Cold machine wash", "Wash darks separately the first time", "Do not iron"],
-    sizes: ["Double Bed"],
-    colors: [
-      { name: "N01 Chocolate", hex: "#6b3a2c" },
-      { name: "N01 Pink", hex: "#7c2744" },
-      { name: "N02 Mauve", hex: "#8f7896" },
-      { name: "N02 Peach", hex: "#df9b89" },
-      { name: "332 Olive", hex: "#68441f" },
-      { name: "332 Mauve", hex: "#8e5c82" },
-      { name: "959 Beige", hex: "#aa7c55" },
-      { name: "959 Dried Herb", hex: "#5a523b" },
-    ],
-    images: ROYAL_FEATHER_IMAGES,
-  },
+  // ── SUMMER COMFORTERS ─────────────────────────────────────────────────────
 
-  // ============ SUMMER SETS (3) ============
-  {
-    id: "p27",
-    slug: "atelier-summer-set-4pc",
-    name: "Atelier Summer Set (4-Piece)",
-    category: "Summer Sets",
-    price: 6990,
-    tag: "Bestseller",
-    shortDescription: "Fitted + flat sheet + 2 pillow covers, 280 TC percale.",
-    description:
-      "Four-piece summer set in 280 TC cotton percale — fitted sheet, flat sheet, two pillow covers. Cool, matte and crisp.",
-    fabric: "280 TC Cotton Percale",
-    weave: "Percale",
-    origin: "Karur, India",
-    care: ["Cool wash", "Tumble dry low"],
-    sizes: ["Queen", "King"],
-    colors: [PEARL, ROYAL, IVORY],
-    images: [IMG.set1],
-  },
-  {
-    id: "p28",
-    slug: "noble-block-print-summer-set",
-    name: "Noble Block-Print Summer Set",
-    category: "Summer Sets",
-    price: 5990,
-    shortDescription: "Hand-block printed 3-piece set, vegetable indigo.",
-    description:
-      "Hand-block printed in Bagru on 200 TC cotton. Soft, breathable, and the colour deepens with each wash.",
-    fabric: "200 TC Pure Cotton",
-    weave: "Plain weave",
-    origin: "Bagru, Rajasthan",
-    care: ["Cold wash separately first time"],
-    sizes: ["Double", "Queen"],
-    colors: [ROYAL, ROSE, BONE],
-    images: [IMG.set1],
-  },
-  {
-    id: "p30",
-    slug: "dynasty-linen-summer-set",
-    name: "Dynasty Linen Summer Set",
-    category: "Summer Sets",
-    price: 8990,
-    tag: "Limited",
-    shortDescription: "Pure linen 3-piece set. Lived-in feel from day one.",
-    description:
-      "Stone-washed pure linen. Wrinkles by design. Three pieces — one flat sheet and two pillow covers.",
-    fabric: "100% Pure Linen, Stone-washed",
-    weave: "Plain weave",
-    origin: "Coimbatore, India",
-    care: ["Cool machine wash", "Air dry"],
-    sizes: ["Queen", "King"],
-    colors: [BONE, SLATE, IVORY],
-    images: [IMG.set1],
-  },
-
-  // ============ SUMMER COMFORTERS (3) ============
-  {
-    id: "p39",
-    slug: "monsoon-summer-comforter",
-    name: "Monsoon Summer Comforter",
-    category: "Summer Comforters",
-    price: 6490,
-    tag: "Bestseller",
-    shortDescription: "150 GSM cotton fill. Light cover for warm rooms.",
-    description:
-      "A summer-weight comforter with a 150 GSM cotton fill and a 200 TC voile shell. Drapes light, breathes through warm nights.",
-    fabric: "200 TC Cotton Shell, Cotton Fill",
-    weave: "Box-stitch quilted",
-    origin: "Panipat, India",
-    care: ["Cold machine wash", "Tumble dry low"],
-    sizes: ["Single", "Double", "Queen", "King"],
-    colors: [BONE, SLATE, IVORY],
-    images: [IMG.comforter1],
-  },
-  {
-    id: "p40",
-    slug: "atelier-muslin-summer-comforter",
-    name: "Atelier Muslin Summer Comforter",
-    category: "Summer Comforters",
-    price: 7990,
-    tag: "New",
-    shortDescription: "5-layer muslin comforter. Soft, airy, washable.",
-    description:
-      "Five layers of cotton muslin gauze stitched into a single airy comforter. Softens with each wash. Fully machine washable.",
-    fabric: "100% Cotton Muslin",
-    weave: "Muslin gauze",
-    origin: "Karur, India",
-    care: ["Machine wash cold", "Tumble dry low"],
-    sizes: ["Double", "Queen"],
-    colors: [PEARL, BONE, ROSE],
-    images: [IMG.comforter1, IMG.comforter2],
-  },
-  {
-    id: "p44",
-    slug: "heritage-linen-summer-comforter",
-    name: "Heritage Linen Summer Comforter",
-    category: "Summer Comforters",
-    price: 9490,
-    tag: "Heirloom",
-    shortDescription: "Pure linen shell, cotton fill. Heirloom drape.",
-    description:
-      "Pure linen shell with a fine cotton fill. Drapes heavy without heat — built for monsoon and shoulder seasons.",
-    fabric: "100% Linen Shell, Cotton Fill",
-    weave: "Box-stitch quilted",
-    origin: "Coimbatore, India",
-    care: ["Cool machine wash", "Air dry"],
-    sizes: ["Queen", "King"],
-    colors: [BONE, SLATE, IVORY],
-    images: [IMG.comforter1],
-  },
   {
     id: "p52",
     slug: "risaa-flannel-ac-blanket",
@@ -267,13 +335,13 @@ export const products: Product[] = [
       "Soft flannel quilt engineered for air-conditioned rooms. Medium weight, warm without being heavy. Rich printed designs on both sides — made for the AC chill without the winter bulk.",
     fabric: "100% Flannel (Polyester)",
     weave: "Printed Quilt",
-    origin: "Panipat, India",
+    origin: "India",
     care: ["Cold machine wash", "Tumble dry low", "Do not iron"],
     sizes: ["230 × 250 cm"],
     colors: [
       { name: "Navy Floral", hex: "#1a2a5e" },
-      { name: "Slate Blue", hex: "#3a4a78" },
-      { name: "Midnight", hex: "#060a2b" },
+      { name: "Slate Blue",  hex: "#3a4a78" },
+      { name: "Midnight",    hex: "#060a2b" },
     ],
     imageAspect: "landscape",
     imageFit: "contain",
@@ -296,61 +364,276 @@ export const products: Product[] = [
       "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0017.jpg",
     ],
   },
+  {
+    id: "p61",
+    slug: "risaa-summer-comforter-embroidery",
+    name: "Summer Comforter – Embroidery",
+    category: "Summer Comforters",
+    price: 3499,
+    mrp: 4499,
+    tag: "New",
+    shortDescription: "Embroidered cotton-shell summer comforter. Dry clean. India.",
+    description:
+      "Light summer comforter with an embroidered cotton shell and poly-fill. Delicate embroidery work, dry-clean care.",
+    fabric: "Cotton Shell, Poly-Fill",
+    weave: "Embroidered, box-stitch quilted",
+    origin: "India",
+    care: ["Dry clean"],
+    sizes: ["Single", "Double"],
+    colors: [IVORY, CHAMPAGNE, ROSE, PEARL],
+    images: [IMG.comforter1],
+  },
+  {
+    id: "p62",
+    slug: "risaa-summer-comforter-printed",
+    name: "Summer Comforter – Printed",
+    category: "Summer Comforters",
+    price: 2999,
+    mrp: 3799,
+    tag: "New",
+    shortDescription: "Printed cotton-shell summer comforter. Dry clean. India.",
+    description:
+      "Summer comforter with a bold printed cotton shell and poly-fill. Lightweight, drapes clean.",
+    fabric: "Cotton Shell, Poly-Fill",
+    weave: "Reactive printed, box-stitch quilted",
+    origin: "India",
+    care: ["Dry clean"],
+    sizes: ["Single", "Double"],
+    colors: [TEAL, SLATE, OLIVE, MUSTARD],
+    images: [IMG.comforter1, IMG.comforter2],
+  },
 
-  // ============ WINTER COMFORTERS (3) ============
+  // ── BED SHEETS ────────────────────────────────────────────────────────────
+
+  {
+    id: "p63",
+    slug: "risaa-bed-sheet-set-1-2",
+    name: "Bed Sheet Set – 1+2",
+    category: "Bed Sheets",
+    price: 1299,
+    mrp: 1699,
+    shortDescription: "180 TC pure cotton — 1 bedsheet + 2 pillow covers. Machine wash. India.",
+    description:
+      "Crisp 180 TC pure cotton bedsheet set — one double bedsheet and two matching pillow covers. Colour-fast reactive print.",
+    fabric: "180 TC Pure Cotton",
+    weave: "Plain weave, reactive print",
+    origin: "India",
+    care: ["Machine wash cold", "Wash darks separately first time", "Iron warm"],
+    sizes: ["Double"],
+    colors: [IVORY, SKY, LILAC, ROSE, TEAL, SAGE],
+    images: [IMG.sheet1],
+  },
+  {
+    id: "p64",
+    slug: "risaa-bed-sheet-set-1-2-1",
+    name: "Bed Sheet Set – 1+2+1",
+    category: "Bed Sheets",
+    price: 1799,
+    mrp: 2299,
+    shortDescription: "180 TC pure cotton — 1 bedsheet + 2 pillow covers + 1 slipcover. Machine wash. India.",
+    description:
+      "Bedsheet set with one double bedsheet, two pillow covers and one slipcover — all in matching 180 TC cotton print.",
+    fabric: "180 TC Pure Cotton",
+    weave: "Plain weave, reactive print",
+    origin: "India",
+    care: ["Machine wash cold", "Wash darks separately first time", "Iron warm"],
+    sizes: ["Double"],
+    colors: [IVORY, SKY, MUSTARD, ROSE, OLIVE, CHAMPAGNE],
+    images: [IMG.sheet1],
+  },
+  {
+    id: "p65",
+    slug: "risaa-bed-sheet-set-1-2-2",
+    name: "Bed Sheet Set – 1+2+2",
+    category: "Bed Sheets",
+    price: 2199,
+    mrp: 2799,
+    shortDescription: "180 TC pure cotton — 1 bedsheet + 2 pillow covers + 2 slipcovers. Machine wash. India.",
+    description:
+      "Complete bedsheet set in 180 TC cotton — one bedsheet, two pillow covers and two slipcovers for full bed coverage.",
+    fabric: "180 TC Pure Cotton",
+    weave: "Plain weave, reactive print",
+    origin: "India",
+    care: ["Machine wash cold", "Wash darks separately first time", "Iron warm"],
+    sizes: ["Double"],
+    colors: [TEAL, BURGUNDY, LILAC, BONE, SAGE, SLATE],
+    images: [IMG.sheet1],
+  },
+  {
+    id: "p66",
+    slug: "risaa-bed-sheet-set-1-2-3",
+    name: "Bed Sheet Set – 1+2+3",
+    category: "Bed Sheets",
+    price: 2699,
+    mrp: 3499,
+    tag: "Bestseller",
+    shortDescription: "180 TC pure cotton — 1 bedsheet + 2 pillow covers + 3 slipcovers. Machine wash. India.",
+    description:
+      "The most complete bed linen set — one bedsheet, two pillow covers and three slipcovers in matching 180 TC pure cotton.",
+    fabric: "180 TC Pure Cotton",
+    weave: "Plain weave, reactive print",
+    origin: "India",
+    care: ["Machine wash cold", "Wash darks separately first time", "Iron warm"],
+    sizes: ["Double"],
+    colors: [IVORY, ROYAL, MUSTARD, TEAL, ROSE, CHAMPAGNE],
+    images: [IMG.sheet1],
+  },
+
+  // ── PILLOWS ───────────────────────────────────────────────────────────────
+
+  {
+    id: "p67",
+    slug: "risaa-pillow-standard",
+    name: "Pillow – Standard",
+    category: "Pillows",
+    price: 499,
+    shortDescription: "Standard sleeping pillow. India.",
+    description:
+      "Everyday sleeping pillow with a soft cotton shell and supportive poly-fill.",
+    fabric: "Cotton Shell, Poly-Fill",
+    weave: "Plain weave shell",
+    origin: "India",
+    care: ["Machine wash cold", "Tumble dry low"],
+    sizes: ["Standard (43 × 69 cm)"],
+    colors: [PEARL, IVORY],
+    images: [IMG.pillow1],
+  },
+  {
+    id: "p68",
+    slug: "risaa-pillow-premium",
+    name: "Pillow – Premium",
+    category: "Pillows",
+    price: 699,
+    mrp: 899,
+    tag: "Bestseller",
+    shortDescription: "Premium sleeping pillow, higher loft. India.",
+    description:
+      "Higher-loft premium pillow for back and side sleepers. Firm support, soft cotton shell.",
+    fabric: "Cotton Shell, High-Loft Poly-Fill",
+    weave: "Plain weave shell",
+    origin: "India",
+    care: ["Machine wash cold", "Tumble dry low"],
+    sizes: ["Standard (43 × 69 cm)"],
+    colors: [PEARL, IVORY],
+    images: [IMG.pillow1],
+  },
+  {
+    id: "p69",
+    slug: "risaa-pillow-microfibre",
+    name: "Pillow – Microfibre",
+    category: "Pillows",
+    price: 899,
+    mrp: 1199,
+    tag: "New",
+    shortDescription: "Microfibre fill pillow. Hypoallergenic. India.",
+    description:
+      "Hypoallergenic microfibre fill in a breathable cotton shell — ideal for sensitive sleepers.",
+    fabric: "Cotton Shell, Microfibre Fill",
+    weave: "Plain weave shell",
+    origin: "India",
+    care: ["Machine wash cold", "Tumble dry low"],
+    sizes: ["Standard (43 × 69 cm)"],
+    colors: [PEARL, IVORY],
+    images: [IMG.pillow1],
+  },
+
+  // ── MATTRESS COVERS ───────────────────────────────────────────────────────
+
+  {
+    id: "p70",
+    slug: "risaa-mattress-cover-standard",
+    name: "Mattress Cover – Standard",
+    category: "Mattress Covers",
+    price: 1499,
+    mrp: 1999,
+    shortDescription: "Fitted mattress cover. Machine washable. India.",
+    description:
+      "Breathable fitted mattress cover with elastic all around. Protects against dust and spills.",
+    fabric: "Cotton-Polyester Blend",
+    weave: "Fitted, elasticated",
+    origin: "India",
+    care: ["Machine wash cold", "Tumble dry low"],
+    sizes: ["Single", "Double", "Queen", "King"],
+    colors: [PEARL, BONE],
+    images: [IMG.mattress1],
+  },
+  {
+    id: "p71",
+    slug: "risaa-mattress-cover-waterproof",
+    name: "Mattress Cover – Waterproof",
+    category: "Mattress Covers",
+    price: 1999,
+    mrp: 2699,
+    tag: "New",
+    shortDescription: "Waterproof fitted mattress cover. Machine washable. India.",
+    description:
+      "Waterproof mattress cover with a quiet, non-crinkle backing. Protects fully while remaining breathable on top.",
+    fabric: "Cotton Top, Waterproof Backing",
+    weave: "Fitted, elasticated",
+    origin: "India",
+    care: ["Machine wash cold", "Tumble dry low"],
+    sizes: ["Single", "Double", "Queen", "King"],
+    colors: [PEARL, BONE],
+    images: [IMG.mattress1],
+  },
+
+  // ── WINTER COMFORTERS ─────────────────────────────────────────────────────
+
   {
     id: "p45",
-    slug: "imperial-winter-comforter",
-    name: "Imperial Winter Comforter",
+    slug: "risaa-heavy-winter-comforter-1",
+    name: "Heavy Winter Comforter – Solid",
     category: "Winter Comforters",
-    price: 14990,
-    mrp: 18500,
+    price: 3999,
+    mrp: 4999,
     tag: "Bestseller",
-    shortDescription: "Heavy down-alt fill, 350 GSM. Baffle-box build.",
+    shortDescription: "Heavy poly-fill winter comforter. Solid colours. Dry clean. India.",
     description:
-      "A heavyweight winter comforter with a 350 GSM down-alternative fill in a baffle-box construction so loft stays where you put it.",
-    fabric: "300 TC Cotton Shell, Down-Alt Fill",
-    weave: "Baffle-box",
-    origin: "Panipat, India",
-    care: ["Cold machine wash on bulk cycle", "Tumble dry low with tennis balls"],
-    sizes: ["Single", "Double", "Queen", "King"],
-    colors: [IVORY, ROYAL, MIDNIGHT],
+      "Heavyweight winter comforter with a cotton shell and heavy poly-fill. Solid colourways for a clean, classic look.",
+    fabric: "Cotton Shell, Heavy Poly-Fill",
+    weave: "Box-stitch quilted",
+    origin: "India",
+    care: ["Dry clean"],
+    sizes: ["Single", "Double"],
+    colors: [IVORY, SLATE, MIDNIGHT],
     images: [IMG.comforter2, IMG.comforter1],
   },
   {
     id: "p46",
-    slug: "regalia-microfiber-winter-comforter",
-    name: "Regalia Microfiber Winter Comforter",
+    slug: "risaa-heavy-winter-comforter-2",
+    name: "Heavy Winter Comforter – Printed",
     category: "Winter Comforters",
-    price: 8990,
+    price: 4499,
+    mrp: 5499,
     tag: "New",
-    shortDescription: "300 GSM microfiber fill. Quiet, lofty, washable.",
+    shortDescription: "Heavy poly-fill winter comforter. Printed shell. Dry clean. India.",
     description:
-      "Microfiber fill in a quilted cotton-blend shell. Lofty, quiet, fully machine washable.",
-    fabric: "Cotton-Polyester Shell, Microfiber Fill",
-    weave: "Box-stitch quilted",
-    origin: "Panipat, India",
-    care: ["Cold machine wash", "Tumble dry low"],
-    sizes: ["Single", "Double", "Queen"],
-    colors: [SLATE, GRAPHITE, BONE],
+      "Heavyweight winter comforter with a bold printed cotton shell and heavy poly-fill. Stays warm, looks sharp.",
+    fabric: "Cotton Shell, Heavy Poly-Fill",
+    weave: "Printed, box-stitch quilted",
+    origin: "India",
+    care: ["Dry clean"],
+    sizes: ["Single", "Double"],
+    colors: [TEAL, BURGUNDY, MUSTARD],
     images: [IMG.comforter1],
   },
   {
     id: "p47",
-    slug: "noble-velvet-winter-comforter",
-    name: "Noble Velvet Winter Comforter",
+    slug: "risaa-heavy-winter-comforter-3",
+    name: "Heavy Winter Comforter – Embroidery",
     category: "Winter Comforters",
-    price: 21990,
+    price: 5499,
+    mrp: 6999,
     tag: "Heirloom",
-    shortDescription: "Velvet-faced winter comforter. Show piece for the bed.",
+    shortDescription: "Heavy poly-fill winter comforter. Embroidered shell. Dry clean. India.",
     description:
-      "Cotton-velvet face panel with a heavy down-alt fill. Built as much for the look as the warmth.",
-    fabric: "Cotton Velvet / Cotton Reverse, Down-Alt Fill",
-    weave: "Quilted",
-    origin: "Karur, India",
-    care: ["Dry clean only"],
-    sizes: ["Queen", "King"],
-    colors: [ROYAL, MIDNIGHT, ROSE],
+      "The premium winter comforter — heavy poly-fill with a hand-embroidered cotton shell. Decorative and deeply warm.",
+    fabric: "Cotton Shell, Heavy Poly-Fill",
+    weave: "Embroidered, quilted",
+    origin: "India",
+    care: ["Dry clean"],
+    sizes: ["Double", "Queen"],
+    colors: [CHAMPAGNE, IVORY, ROSE],
     images: [IMG.comforter2],
   },
 ];

@@ -64,12 +64,12 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="text-lg leading-relaxed text-[var(--color-ink)]/75 max-w-2xl">
-                In 2026, our vision evolved into Risaa Homes — a luxury home
-                textile brand crafted for those who value understated opulence
-                and elevated living. Our collections include exquisitely
-                designed blankets, bed linens, comforters, and rugs, curated to
-                transform everyday spaces into experiences of comfort and
-                sophistication.
+                In 2026, this vision evolved further with the launch of Risaa
+                Homes — a luxury home textile brand crafted for those who value
+                understated opulence and elevated living. Our collections
+                include exquisitely designed blankets, bed linens, comforters,
+                and rugs, curated to transform everyday spaces into experiences
+                of comfort and sophistication.
               </p>
             </Reveal>
           </div>
@@ -106,11 +106,7 @@ export default function AboutPage() {
                 Hero HMC, Avon, and Decathlon, and with exclusive dealerships
                 for premium components sourced from Japan, Taiwan, and China,
                 Gursam&rsquo;s foundation rests on precision, reliability, and
-                global standards. The company is recognised as a{" "}
-                <span className="italic text-[var(--color-royal-900)]">
-                  One Star Export House
-                </span>{" "}
-                by the Ministry of Commerce and Industry, Government of India.
+                global standards.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
@@ -119,6 +115,17 @@ export default function AboutPage() {
                 its in-house brand Buzzer, known for its quality engineering
                 and export-grade performance, with a strong footprint in
                 markets such as Brazil.
+              </p>
+            </Reveal>
+            <Reveal delay={0.4}>
+              <p className="text-lg leading-relaxed text-[var(--color-ink)]/75 max-w-2xl">
+                Building on this legacy of excellence, the group expanded into
+                the world of luxury lifestyle with Risaa — a premium
+                women&rsquo;s wear label celebrated for its thoughtful design
+                language, refined craftsmanship, and a modern yet timeless
+                aesthetic. With a growing clientele across India and
+                international markets, Risaa reflects a seamless blend of
+                elegance, comfort, and artisanal detail.
               </p>
             </Reveal>
           </div>
@@ -216,7 +223,7 @@ export default function AboutPage() {
           {[
             { k: "25+ yrs", v: "Group legacy" },
             { k: "₹150 Cr", v: "Annual turnover" },
-            { k: "One Star", v: "Export House, Govt. of India" },
+            { k: "Hong Kong", v: "International office" },
             { k: "2026", v: "Risaa Homes launch" },
           ].map((s, i) => (
             <Reveal key={s.k} delay={i * 0.06}>
@@ -247,7 +254,7 @@ export default function AboutPage() {
               <span className="italic text-[var(--color-royal-900)]">
                 Made in India
               </span>{" "}
-              while sourcing premium-quality imports from global markets, Risaa
+              while also sourcing premium-quality imports from global markets, Risaa
               Homes brings together the finest materials, superior
               craftsmanship, and contemporary design to redefine modern living.
             </p>
