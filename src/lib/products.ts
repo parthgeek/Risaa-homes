@@ -25,7 +25,7 @@ export type Product = {
   sizes: string[];
   colors: { name: string; hex: string }[];
   images: string[];
-  imageAspect?: "portrait" | "landscape";
+  imageAspect?: "portrait" | "landscape" | "square";
   imageFit?: "cover" | "contain";
   imagePadding?: string;
 };
@@ -93,7 +93,7 @@ const IMG = {
   mattress1:  "https://images.unsplash.com/photo-1631049307264-eb603700e7ef?w=1400&q=80&auto=format&fit=crop",
 };
 
-const SHAGUN_DIR = "/RISAA-HOME-SHAGUN-SET-1";
+const SHAGUN_DIR = "/SHAGUN-SET";
 const shagunImg = (n: number) =>
   `${SHAGUN_DIR}/RISAA%20HOME%20SHAGUN%20SET_page-${String(n).padStart(4, "0")}.jpg`;
 
@@ -162,16 +162,41 @@ export const products: Product[] = [
     category: "Mink Blankets",
     price: 1799,
     mrp: 2299,
-    shortDescription: "Soft mink blanket in romantic floral colourways. Dry clean.",
+    shortDescription: "Premium mink blanket in floral colourways. Best for gifting & weddings. Dry clean.",
     description:
-      "The Romance — a plush mink blanket in soft floral colourways built for gifting and everyday use. Brushed to a velvet finish.",
+      "The Romance — a plush premium mink blanket in rich floral colourways, built for gifting and weddings. Super soft, extra warm and brushed to a velvet finish.",
     fabric: "Mink (brushed polyester)",
     weave: "Plain mink",
     origin: "India",
     care: ["Dry clean"],
     sizes: ["Double Bed"],
-    colors: [ROSE, LILAC, PEACH, IVORY],
-    images: [IMG.blanket1],
+    colors: [
+      { name: "Black Floral", hex: "#1f1d22" },
+      { name: "Red Floral",   hex: "#7e1f2c" },
+    ],
+    imageAspect: "landscape",
+    imageFit: "contain",
+    images: ["/romance-set.png"],
+  },
+  {
+    id: "p72",
+    slug: "risaa-romance-single-bed-blanket",
+    name: "Romance Blanket – Single Bed",
+    category: "Mink Blankets",
+    price: 1499,
+    mrp: 1899,
+    tag: "New",
+    shortDescription: "Single bed premium mink blanket in bold geometric prints. Dry clean.",
+    description:
+      "The Romance in a single bed size — a plush premium mink blanket with a bold geometric print. Super soft, extra warm and brushed to a velvet finish. Available in five designs.",
+    fabric: "Mink (brushed polyester)",
+    weave: "Plain mink",
+    origin: "India",
+    care: ["Dry clean"],
+    sizes: ["Single Bed"],
+    colors: [{ name: "Geometric Teal & Red", hex: "#2f6f73" }],
+    imageFit: "contain",
+    images: ["/ROMANCE%20SINGLE%20BED-1.jpg"],
   },
   {
     id: "p55",
@@ -209,6 +234,46 @@ export const products: Product[] = [
     sizes: ["Double Bed"],
     colors: [GOLD, BURGUNDY, MIDNIGHT, ROYAL],
     images: [IMG.blanket1],
+  },
+
+  {
+    id: "p73",
+    slug: "risaa-royal-feather-classic-blanket",
+    name: "Royal Feather Blanket – Classic",
+    category: "Mink Blankets",
+    price: 1999,
+    mrp: 2499,
+    tag: "New",
+    shortDescription:
+      "Feather-emboss mink blanket in 8 classic designs — floral, bouquet & lattice. Currently in production.",
+    description:
+      "The Royal Feather Classic — a feather-embossed mink blanket in eight heritage designs spanning floral line-art, striped bouquets and geometric lattice. Brushed to a velvet hand. This range is currently in production; actual stock arrives soon.",
+    fabric: "Mink (brushed polyester)",
+    weave: "Feather Emboss",
+    origin: "India",
+    care: ["Dry clean"],
+    sizes: ["Double Bed"],
+    colors: [
+      { name: "Mocha Floral",     hex: "#5a2d1f" },
+      { name: "Wine Floral",      hex: "#6e203a" },
+      { name: "Plum Bouquet",     hex: "#6f5570" },
+      { name: "Rosewood Bouquet", hex: "#9c5a4f" },
+      { name: "Mauve Blossom",    hex: "#8d6f86" },
+      { name: "Sepia Blossom",    hex: "#6b4a2e" },
+      { name: "Espresso Lattice", hex: "#4b3a28" },
+      { name: "Caramel Lattice",  hex: "#a9794f" },
+    ],
+    imageFit: "contain",
+    images: [
+      "/royal-feather-classic/01.JPG",
+      "/royal-feather-classic/02.JPG",
+      "/royal-feather-classic/03.JPG",
+      "/royal-feather-classic/04.JPG",
+      "/royal-feather-classic/05.JPG",
+      "/royal-feather-classic/06.JPG",
+      "/royal-feather-classic/07.JPG",
+      "/royal-feather-classic/08.JPG",
+    ],
   },
 
   // ── FLANNEL BLANKETS ───────────────────────────────────────────────────────
@@ -293,8 +358,7 @@ export const products: Product[] = [
     slug: "risaa-shagun-double-bed-set",
     name: "Risaa Home Shagun Set (Double Bed)",
     category: "Summer Sets",
-    price: 2499,
-    mrp: 3499,
+    price: 1999,
     tag: "New",
     shortDescription:
       "5-piece printed double bed set — 1 bedsheet, 2 pillow covers, 2 cushion covers. 11 prints.",
@@ -306,6 +370,8 @@ export const products: Product[] = [
     care: ["Cold machine wash", "Wash darks separately the first time", "Iron warm"],
     sizes: ["Double (90 × 100 in)"],
     colors: [LILAC, SKY, OLIVE, ROSE, ROYAL, CHAMPAGNE],
+    imageAspect: "square",
+    imageFit: "contain",
     images: [
       shagunImg(1),
       shagunImg(2),
@@ -327,7 +393,7 @@ export const products: Product[] = [
     id: "p52",
     slug: "risaa-flannel-ac-blanket",
     name: "Risaa Flannel AC Blanket",
-    category: "Summer Comforters",
+    category: "Flannel Blankets",
     price: 2499,
     tag: "New",
     shortDescription: "Printed flannel quilt for AC rooms. 190–240 GSM, 230×250 cm. Available in 15 designs.",

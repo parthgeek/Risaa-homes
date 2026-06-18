@@ -1,15 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Product } from "@/lib/products";
+import { Product, formatPrice } from "@/lib/products";
 
 export default function ProductCard({ product }: { product: Product }) {
   const frameAspect =
-    product.imageAspect === "landscape" ? "aspect-[4/3]" : "aspect-[4/5]";
-  const fitClass =
-    product.imageFit === "contain" || product.images[0].startsWith("/")
+    product.imageAspect === "landscape"
+      ? "aspect-[4/3]"
+      : product.imageAspect === "square"
+        ? "aspect-square"
+        : "aspect-[4/5]";
+  const fitClass = product.imageFit
+    ? product.imageFit === "contain"
+      ? "object-contain"
+      : "object-cover"
+    : product.images[0].startsWith("/")
       ? "object-contain"
       : "object-cover";
-  const hoverClass = product.imageAspect === "landscape" ? "" : "tile-img";
+  const hoverClass =
+    product.imageAspect === "landscape" || product.imageAspect === "square"
+      ? ""
+      : "tile-img";
   const imageStyle = product.imagePadding
     ? { padding: product.imagePadding }
     : undefined;
@@ -45,6 +55,14 @@ export default function ProductCard({ product }: { product: Product }) {
         <h3 className="font-display text-2xl leading-tight text-[var(--color-ink)]">
           {product.name}
         </h3>
+        <p className="mt-2 text-sm tracking-wider text-[var(--color-ink)]/75">
+          {formatPrice(product.price)}
+          {product.mrp && (
+            <span className="ml-2 line-through text-[var(--color-ink)]/40">
+              {formatPrice(product.mrp)}
+            </span>
+          )}
+        </p>
       </div>
     </Link>
   );
