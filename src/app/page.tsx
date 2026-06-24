@@ -27,7 +27,7 @@ export default function Home() {
 
       {/* Manifesto */}
       <section className="bg-[var(--color-ivory)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32 md:py-40 grid md:grid-cols-12 gap-12 items-center">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12 md:py-16 grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-ivory-2)]">
               <Image
@@ -77,8 +77,8 @@ export default function Home() {
 
       {/* Categories grid */}
       <section className="bg-[var(--color-ivory)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32">
-          <div className="flex items-end justify-between mb-16 gap-8 flex-wrap">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12">
+          <div className="flex items-end justify-between mb-8 gap-8 flex-wrap">
             <div>
               <Reveal>
                 <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mb-3">
@@ -151,7 +151,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(6,10,43,0.95)] via-[rgba(6,10,43,0.55)] to-[rgba(6,10,43,0.15)]" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(6,10,43,0.4)]" />
 
-        <div className="relative max-w-[1600px] mx-auto px-6 lg:px-12 py-32 md:py-44 grid md:grid-cols-12 gap-10">
+        <div className="relative max-w-[1600px] mx-auto px-6 lg:px-12 py-14 md:py-20 grid md:grid-cols-12 gap-10">
           <div className="md:col-span-7">
             <Reveal>
               <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-champagne)] mb-6">
@@ -196,8 +196,8 @@ export default function Home() {
 
       {/* Featured pieces */}
       <section className="bg-[var(--color-ivory)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32">
-          <div className="flex items-end justify-between mb-16 gap-8 flex-wrap">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12">
+          <div className="flex items-end justify-between mb-8 gap-8 flex-wrap">
             <div>
               <Reveal>
                 <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mb-3">
@@ -232,7 +232,7 @@ export default function Home() {
 
       {/* Editorial split */}
       <section className="bg-[var(--color-ivory-2)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32 grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12 grid md:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-royal-950)]">
             <Image
               src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1600&q=85&auto=format&fit=crop"
@@ -287,7 +287,7 @@ export default function Home() {
 
       {/* CTA */}
       <section className="bg-[var(--color-ivory)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32 text-center">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12 text-center">
           <Reveal>
             <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mb-6">
               06 — Visit
@@ -306,7 +306,7 @@ export default function Home() {
           <Reveal delay={0.3}>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-4 mt-12 text-[11px] tracking-[0.32em] uppercase border border-[var(--color-royal-900)] px-8 py-4 hover:bg-[var(--color-royal-900)] hover:text-[var(--color-ivory)] transition-colors duration-500"
+              className="group inline-flex items-center gap-4 mt-6text-[11px] tracking-[0.32em] uppercase border border-[var(--color-royal-900)] px-8 py-4 hover:bg-[var(--color-royal-900)] hover:text-[var(--color-ivory)] transition-colors duration-500"
             >
               Book a visit
               <span className="block w-8 h-px bg-current transition-all duration-500 group-hover:w-14" />

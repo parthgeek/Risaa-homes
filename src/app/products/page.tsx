@@ -27,7 +27,7 @@ function ProductsInner() {
 
   return (
     <>
-      <section className="pt-40 pb-16 bg-[var(--color-ivory)]">
+      <section className="pt-28 pb-8 bg-[var(--color-ivory)]">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
           <Reveal>
             <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mb-6">
@@ -40,7 +40,7 @@ function ProductsInner() {
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="mt-8 max-w-xl text-lg text-[var(--color-ink)]/70 leading-relaxed">
+            <p className="mt-4 max-w-xl text-lg text-[var(--color-ink)]/70 leading-relaxed">
               Filter by room. Sort by weight. Each piece is finished by hand and shipped in linen paper.
             </p>
           </Reveal>
@@ -66,13 +66,13 @@ function ProductsInner() {
       </section>
 
       <section className="bg-[var(--color-ivory)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-20">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-10">
           {filtered.length === 0 ? (
             <p className="text-center py-32 text-[var(--color-ink)]/60">
               No pieces in this room yet.
             </p>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
               {filtered.map((p, i) => (
                 <Reveal key={p.id} delay={i * 0.04}>
                   <ProductCard product={p} />
@@ -84,7 +84,7 @@ function ProductsInner() {
       </section>
 
       <section className="bg-[var(--color-ivory-2)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 text-center">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-10 text-center">
           <p className="font-display text-3xl md:text-4xl leading-snug max-w-2xl mx-auto text-[var(--color-ink)]/80">
             Looking for something not on the floor?{" "}
             <Link href="/contact" className="luxe-link italic text-[var(--color-royal-900)]">

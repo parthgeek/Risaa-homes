@@ -115,7 +115,7 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-[var(--color-ivory-2)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-24">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-10">
           <Reveal>
             <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mb-3">
               Showrooms

@@ -43,7 +43,7 @@ export default function ProductDetail({
 
   return (
     <>
-      <section className="pt-32 pb-12 bg-[var(--color-ivory)]">
+      <section className="pt-24 pb-6 bg-[var(--color-ivory)]">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
           <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-ink)]/50">
             <Link href="/" className="luxe-link">Home</Link>
@@ -56,7 +56,7 @@ export default function ProductDetail({
       </section>
 
       <section className="bg-[var(--color-ivory)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 lg:gap-20 pb-24">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 lg:gap-16 pb-12">
           {/* ── Media column ── */}
           <div className="lg:sticky lg:top-32 self-start space-y-4">
             <div
@@ -173,7 +173,7 @@ export default function ProductDetail({
             </Reveal>
 
             <Reveal delay={0.25}>
-              <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mt-10 mb-4">
+              <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mt-6 mb-4">
                 Size
               </p>
               <div className="flex items-center gap-3 flex-wrap">
@@ -189,7 +189,7 @@ export default function ProductDetail({
             </Reveal>
 
             <Reveal delay={0.3}>
-              <div className="mt-12 flex flex-col sm:flex-row gap-3">
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <Link
                   href={`/contact?product=${encodeURIComponent(product.name)}`}
                   className="group flex-1 inline-flex items-center justify-center gap-4 bg-[var(--color-royal-900)] text-[var(--color-ivory)] px-8 py-5 text-[11px] tracking-[0.32em] uppercase hover:bg-[var(--color-royal-800)] transition-colors"
@@ -250,14 +250,14 @@ export default function ProductDetail({
 
       {related.length > 0 && (
         <section className="bg-[var(--color-ivory-2)]">
-          <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-24">
+          <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-10">
             <Reveal>
               <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mb-3">
                 More from the room
               </p>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="font-display text-[clamp(2rem,4vw,4rem)] leading-tight font-light mb-12">
+              <h2 className="font-display text-[clamp(2rem,4vw,4rem)] leading-tight font-light mb-6">
                 You may also like
               </h2>
             </Reveal>

@@ -31,7 +31,7 @@ export default function AboutPage() {
 
       {/* Story */}
       <section id="story" className="bg-[var(--color-ivory)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32 grid md:grid-cols-12 gap-12 items-start">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12 grid md:grid-cols-12 gap-12 items-start">
           <div className="md:col-span-5 space-y-6 md:sticky md:top-32">
             <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)]">
               01 — The House
@@ -78,7 +78,7 @@ export default function AboutPage() {
 
       {/* Heritage — Gursam International */}
       <section id="heritage" className="bg-[var(--color-ivory-2)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32 grid md:grid-cols-12 gap-12 items-start">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12 grid md:grid-cols-12 gap-12 items-start">
           <div className="md:col-span-7 space-y-8 order-2 md:order-1">
             <Reveal>
               <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)]">
@@ -145,7 +145,7 @@ export default function AboutPage() {
 
       {/* Team / Founders */}
       <section id="team" className="bg-[var(--color-ivory)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12">
           <Reveal>
             <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mb-4">
               03 — The Founders
@@ -219,7 +219,7 @@ export default function AboutPage() {
 
       {/* Numbers */}
       <section className="bg-[var(--color-royal-950)] text-[var(--color-ivory)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32 grid md:grid-cols-4 gap-12">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12 grid md:grid-cols-4 gap-12">
           {[
             { k: "25+ yrs", v: "Group legacy" },
             { k: "₹150 Cr", v: "Annual turnover" },
@@ -242,7 +242,7 @@ export default function AboutPage() {
 
       {/* Ethos / Manifesto */}
       <section className="bg-[var(--color-ivory)]">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 py-32 text-center space-y-12">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 py-12 text-center space-y-12">
           <Reveal>
             <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)]">
               04 — The Ethos
@@ -274,7 +274,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="bg-[var(--color-ivory-2)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32 text-center">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12 text-center">
           <Reveal>
             <h2 className="font-display text-[clamp(2.4rem,5vw,5.5rem)] leading-tight font-light">
               The atelier <span className="italic text-[var(--color-royal-900)]">is open.</span>

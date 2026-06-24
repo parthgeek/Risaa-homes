@@ -77,7 +77,7 @@ export default function CarePage() {
 
       {/* Fabric-wise care */}
       <section id="instructions" className="bg-[var(--color-ivory)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12">
           <Reveal>
             <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mb-4">
               01 — By Fabric
@@ -113,7 +113,7 @@ export default function CarePage() {
 
       {/* Guidelines */}
       <section id="guidelines" className="bg-[var(--color-ivory-2)] scroll-mt-32">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12">
           <Reveal>
             <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mb-4">
               02 — Guidelines
@@ -166,7 +166,7 @@ export default function CarePage() {
 
       {/* Storage / Seasonal note */}
       <section className="bg-[var(--color-ivory)]">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 py-32 text-center space-y-10">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12 py-12 text-center space-y-10">
           <Reveal>
             <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)]">
               03 — Seasonal Storage
@@ -184,7 +184,7 @@ export default function CarePage() {
 
       {/* CTA */}
       <section className="bg-[var(--color-ivory-2)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-24 text-center">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-10 text-center">
           <Reveal>
             <p className="font-display text-3xl md:text-4xl leading-snug max-w-2xl mx-auto text-[var(--color-ink)]/80">
               A spill, a snag, a question?{" "}
