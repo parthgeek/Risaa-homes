@@ -40,8 +40,7 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
   {
     name: "Flannel Blankets",
     blurb: "Soft-brushed flannel. Warm for all seasons, light enough for AC rooms.",
-    image:
-      "https://images.unsplash.com/photo-1580500348112-94f09498fbb3?w=1600&q=80&auto=format&fit=crop",
+    image: "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0001.jpg",
   },
   {
     name: "Summer Sets",
@@ -52,8 +51,7 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
   {
     name: "Summer Comforters",
     blurb: "All-cotton fills. Featherweight loft for warmer rooms.",
-    image:
-      "https://images.unsplash.com/photo-1606170033648-5d55a3edf314?w=1600&q=80&auto=format&fit=crop",
+    image: "/desire%20comforter%20set/Desire%20Comforter%20Risaa%20Home%20%20(1)_page-0001.jpg",
   },
   {
     name: "Bed Sheets",
@@ -71,7 +69,7 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
     name: "Mattress Covers",
     blurb: "Fitted mattress protection. Washable, breathable.",
     image:
-      "https://images.unsplash.com/photo-1631049307264-eb603700e7ef?w=1600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1631049307290-bb947b114627?w=1600&q=80&auto=format&fit=crop",
   },
   {
     name: "Winter Comforters",
@@ -87,15 +85,30 @@ const IMG = {
   comforter1: "https://images.unsplash.com/photo-1606170033648-5d55a3edf314?w=1400&q=80&auto=format&fit=crop",
   comforter2: "https://images.unsplash.com/photo-1531001389693-3a2630f196aa?w=1400&q=80&auto=format&fit=crop",
   blanket1:   "https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=1400&q=80&auto=format&fit=crop",
-  flannel1:   "https://images.unsplash.com/photo-1580500348112-94f09498fbb3?w=1400&q=80&auto=format&fit=crop",
+  flannel1:   "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0001.jpg",
   sheet1:     "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1400&q=80&auto=format&fit=crop",
   pillow1:    "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=1400&q=80&auto=format&fit=crop",
-  mattress1:  "https://images.unsplash.com/photo-1631049307264-eb603700e7ef?w=1400&q=80&auto=format&fit=crop",
+  mattress1:  "https://images.unsplash.com/photo-1631049307290-bb947b114627?w=1400&q=80&auto=format&fit=crop",
 };
 
 const SHAGUN_DIR = "/SHAGUN-SET";
 const shagunImg = (n: number) =>
   `${SHAGUN_DIR}/RISAA%20HOME%20SHAGUN%20SET_page-${String(n).padStart(4, "0")}.jpg`;
+
+const publicImage = (...segments: string[]) =>
+  `/${segments.map((segment) => encodeURIComponent(segment)).join("/")}`;
+
+const celebrationImg = (n: number) =>
+  publicImage("celebration set", `Celebration 6 Pcs Risaa Home 1_page-${String(n).padStart(4, "0")}.jpg`);
+
+const goldmineImg = (n: number) =>
+  publicImage("GOLDMINE SET", `Goldmine 6 Pcs Risaa Home 2_page-${String(n).padStart(4, "0")}.jpg`);
+
+const desireComforterImg = (n: number) =>
+  publicImage("desire comforter set", `Desire Comforter Risaa Home  (1)_page-${String(n).padStart(4, "0")}.jpg`);
+
+const temptationComforterImg = (n: number) =>
+  publicImage("temptation set", `Temptation Comforter Risaa Home -1_page-${String(n).padStart(4, "0")}.jpg`);
 
 const ROYAL_FEATHER_IMAGES = [
   "/WhatsApp%20Image%202026-05-25%20at%2012.46.46.jpeg",
@@ -358,7 +371,7 @@ export const products: Product[] = [
     slug: "risaa-shagun-double-bed-set",
     name: "Risaa Home Shagun Set (Double Bed)",
     category: "Summer Sets",
-    price: 1999,
+    price: 3499,
     tag: "New",
     shortDescription:
       "5-piece printed double bed set — 1 bedsheet, 2 pillow covers, 2 cushion covers. 11 prints.",
@@ -384,6 +397,90 @@ export const products: Product[] = [
       shagunImg(9),
       shagunImg(10),
       shagunImg(11),
+    ],
+  },
+  {
+    id: "p101",
+    slug: "risaa-celebration-6-pcs-set",
+    name: "Celebration 6 Pcs Set",
+    category: "Summer Sets",
+    price: 7900,
+    tag: "New",
+    shortDescription:
+      "Premium 6-piece summer set with double bedsheet, comforter, 2 pillow covers and 2 lace cushions.",
+    description:
+      "Celebration is a premium 6-piece cushion set for a finished summer bedroom: one double bed sheet, two pillow covers with lace, one lightweight comforter and two coordinated lace cushions. Soft, cozy and cotton-feel, with six floral colourways.",
+    fabric: "Cotton-feel printed blend",
+    weave: "Printed summer set with lace detailing",
+    origin: "India",
+    care: ["Hand or machine wash at 30°C", "Do not bleach", "Medium steam iron", "Do not dry clean", "Tumble dry low heat"],
+    sizes: [
+      "Bed Sheet: 230 × 250 cm",
+      "Pillow Covers: 45 × 71 ± 5 cm",
+      "Comforter: 220 × 240 cm",
+      "Cushions: 40 × 40 ± 5 cm",
+    ],
+    colors: [
+      { name: "Vintage Beige", hex: "#d8c3a2" },
+      { name: "Aqua Floral", hex: "#8fb8bc" },
+      { name: "Powder Blue", hex: "#97d3d9" },
+      { name: "Blush Pink", hex: "#d9a1a6" },
+      { name: "Taupe Bloom", hex: "#a28b7b" },
+      { name: "Sage Floral", hex: "#b9bea0" },
+    ],
+    imageAspect: "landscape",
+    imageFit: "contain",
+    imagePadding: "4%",
+    images: [
+      celebrationImg(1),
+      celebrationImg(2),
+      celebrationImg(3),
+      celebrationImg(4),
+      celebrationImg(5),
+      celebrationImg(6),
+    ],
+  },
+  {
+    id: "p102",
+    slug: "risaa-goldmine-6-pcs-set",
+    name: "Goldmine 6 Pcs Set",
+    category: "Summer Sets",
+    price: 7900,
+    tag: "New",
+    shortDescription:
+      "Premium 6-piece summer set with double bedsheet, comforter, 2 pillow covers and 2 cushions.",
+    description:
+      "Goldmine is a premium 6-piece set with one double bed sheet, two pillow covers, one comforter and two coordinated cushions. Lightweight, soft-feel and made for complete summer styling in seven prints.",
+    fabric: "Cotton-feel printed blend",
+    weave: "Printed summer set",
+    origin: "India",
+    care: ["Hand or machine wash at 30°C", "Do not bleach", "Medium steam iron", "Do not dry clean", "Tumble dry low heat"],
+    sizes: [
+      "Bed Sheet: 230 × 250 cm",
+      "Pillow Covers: 45 × 71 ± 5 cm",
+      "Comforter: 220 × 240 cm",
+      "Cushions: 40 × 40 ± 5 cm",
+    ],
+    colors: [
+      { name: "Blush Lily", hex: "#eab8c5" },
+      { name: "Cafe Floral", hex: "#b48f73" },
+      { name: "Pale Pistachio", hex: "#d9d2a8" },
+      { name: "Mocha Check", hex: "#6a5145" },
+      { name: "Champagne Leaf", hex: "#d9caad" },
+      { name: "Charcoal Stripe", hex: "#677078" },
+      { name: "Cocoa Bloom", hex: "#8a6042" },
+    ],
+    imageAspect: "landscape",
+    imageFit: "contain",
+    imagePadding: "4%",
+    images: [
+      goldmineImg(1),
+      goldmineImg(2),
+      goldmineImg(3),
+      goldmineImg(4),
+      goldmineImg(5),
+      goldmineImg(6),
+      goldmineImg(7),
     ],
   },
 
@@ -431,42 +528,86 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "p61",
-    slug: "risaa-summer-comforter-embroidery",
-    name: "Summer Comforter – Embroidery",
+    id: "p103",
+    slug: "risaa-desire-premium-satin-comforter",
+    name: "Desire Premium Satin Comforter",
     category: "Summer Comforters",
-    price: 3499,
-    mrp: 4499,
+    price: 3999,
     tag: "New",
-    shortDescription: "Embroidered cotton-shell summer comforter. Dry clean. India.",
+    shortDescription:
+      "Premium satin quilted comforter in 7 colourways. Soft feel, quality stitch, designer collection.",
     description:
-      "Light summer comforter with an embroidered cotton shell and poly-fill. Delicate embroidery work, dry-clean care.",
-    fabric: "Cotton Shell, Poly-Fill",
-    weave: "Embroidered, box-stitch quilted",
+      "Desire is a premium satin summer comforter with a quilted finish, soft hand-feel and floral designer colourways. A single-piece comforter made for AC rooms and warm-weather layering.",
+    fabric: "Premium Satin, Poly-Fill",
+    weave: "Quilted comforter",
     origin: "India",
-    care: ["Dry clean"],
-    sizes: ["Single", "Double"],
-    colors: [IVORY, CHAMPAGNE, ROSE, PEARL],
-    images: [IMG.comforter1],
+    care: ["Hand or machine wash at 30°C", "Do not bleach", "Medium steam iron", "Do not dry clean", "Tumble dry low heat"],
+    sizes: ["Quilted Comforter: 220 × 235 cm"],
+    colors: [
+      { name: "Powder Blue", hex: "#b9d2e3" },
+      { name: "Sage Satin", hex: "#c2c9ac" },
+      { name: "Champagne Satin", hex: "#d8c8ad" },
+      { name: "Ivory Blue Floral", hex: "#c5b49b" },
+      { name: "Sky Blue", hex: "#aac7df" },
+      { name: "Graphite Grey", hex: "#707274" },
+      { name: "Deep Teal", hex: "#3d6f6f" },
+    ],
+    imageAspect: "landscape",
+    imageFit: "contain",
+    imagePadding: "4%",
+    images: [
+      desireComforterImg(1),
+      desireComforterImg(2),
+      desireComforterImg(3),
+      desireComforterImg(4),
+      desireComforterImg(5),
+      desireComforterImg(6),
+      desireComforterImg(7),
+    ],
   },
   {
-    id: "p62",
-    slug: "risaa-summer-comforter-printed",
-    name: "Summer Comforter – Printed",
+    id: "p104",
+    slug: "risaa-temptation-luxury-comforter",
+    name: "Temptation Luxury Comforter",
     category: "Summer Comforters",
-    price: 2999,
-    mrp: 3799,
+    price: 3799,
     tag: "New",
-    shortDescription: "Printed cotton-shell summer comforter. Dry clean. India.",
+    shortDescription:
+      "Luxury printed comforter in 10 colourways. Lightweight, soft-feel summer comfort.",
     description:
-      "Summer comforter with a bold printed cotton shell and poly-fill. Lightweight, drapes clean.",
-    fabric: "Cotton Shell, Poly-Fill",
-    weave: "Reactive printed, box-stitch quilted",
+      "Temptation is a lightweight luxury comforter with soft printed surfaces and an easy summer loft. Designed as a one-piece comforter for relaxed daily use, with ten colourways from florals to checks.",
+    fabric: "Printed Microfiber, Poly-Fill",
+    weave: "Printed comforter",
     origin: "India",
-    care: ["Dry clean"],
-    sizes: ["Single", "Double"],
-    colors: [TEAL, SLATE, OLIVE, MUSTARD],
-    images: [IMG.comforter1, IMG.comforter2],
+    care: ["Hand or machine wash at 30°C", "Do not bleach", "Medium steam iron", "Do not dry clean", "Tumble dry low heat"],
+    sizes: ["Comforter: 220 × 235 cm"],
+    colors: [
+      { name: "Blue Botanical", hex: "#6f8aae" },
+      { name: "Pink Floral", hex: "#e8b6c3" },
+      { name: "Taupe Geometry", hex: "#a7876b" },
+      { name: "Mauve Bloom", hex: "#836c76" },
+      { name: "Silver Floral", hex: "#c5c8ca" },
+      { name: "Rose Check", hex: "#c8829a" },
+      { name: "Blush Garden", hex: "#e8a3ad" },
+      { name: "Charcoal Floral", hex: "#77777d" },
+      { name: "Powder Blue", hex: "#bcd5ea" },
+      { name: "Sage Rose", hex: "#c1c4a2" },
+    ],
+    imageAspect: "landscape",
+    imageFit: "contain",
+    imagePadding: "4%",
+    images: [
+      temptationComforterImg(1),
+      temptationComforterImg(2),
+      temptationComforterImg(3),
+      temptationComforterImg(4),
+      temptationComforterImg(5),
+      temptationComforterImg(6),
+      temptationComforterImg(7),
+      temptationComforterImg(8),
+      temptationComforterImg(9),
+      temptationComforterImg(10),
+    ],
   },
 
   // ── BED SHEETS ────────────────────────────────────────────────────────────
