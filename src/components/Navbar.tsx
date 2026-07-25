@@ -128,11 +128,11 @@ export default function Navbar() {
           <Link
             href="/"
             className="flex items-center group"
-            aria-label="Risaa Homes"
+            aria-label="Risaa Home"
           >
             <Image
               src="/logo.png"
-              alt="Risaa Homes"
+              alt="Risaa Home"
               width={240}
               height={84}
               className={`w-auto object-contain ${
@@ -330,7 +330,7 @@ export default function Navbar() {
             <div className="flex items-center justify-between px-6 h-20 border-b border-white/10">
               <Image
                 src="/logo.png"
-                alt="Risaa Homes"
+                alt="Risaa Home"
                 width={130}
                 height={46}
                 className="h-12 w-auto object-contain brightness-0 invert"
@@ -359,7 +359,7 @@ export default function Navbar() {
             </nav>
             <div className="px-6 pb-10 border-t border-white/10 pt-6">
               <p className="text-[10px] tracking-[0.32em] uppercase text-white/60">
-                Risaa Homes · The Royal Bedding Atelier
+                Risaa Home · The Royal Bedding Atelier
               </p>
             </div>
           </motion.div>
