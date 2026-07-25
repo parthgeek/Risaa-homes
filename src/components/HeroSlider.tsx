@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 const slides = [
   {
     src: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=2400&q=85&auto=format&fit=crop",
-    eyebrow: "Heirloom Bedding · Est. 2009",
+    eyebrow: "Heirloom Bedding · Est. 2026",
     titleA: "Woven for",
     titleB: "the long night.",
   },
@@ -140,7 +140,7 @@ export default function HeroSlider() {
 
       {/* Side ticker */}
       <div className="hidden lg:block absolute right-10 top-[38%] -rotate-90 origin-top-right text-[10px] tracking-[0.5em] uppercase text-white/60 z-10 whitespace-nowrap">
-        Risaa Homes — Royal Bedding Atelier
+        Risaa Home — Royal Bedding Atelier
       </div>
 
     </section>
