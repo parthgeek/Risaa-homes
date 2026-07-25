@@ -39,7 +39,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-ivory-2)]">
               <Image
                 src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600&q=85&auto=format&fit=crop"
-                alt="Risaa Homes textile collection"
+                alt="Risaa Home textile collection"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-cover"
@@ -57,7 +57,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="text-lg leading-relaxed text-[var(--color-ink)]/75 max-w-2xl">
-                Risaa Homes, a distinguished venture of Gursam International
+                Risaa Home, a distinguished venture of Gursam International
                 Pvt. Ltd., brings together legacy, craftsmanship, and a refined
                 design sensibility to create luxury home experiences.
               </p>
@@ -65,7 +65,7 @@ export default function AboutPage() {
             <Reveal delay={0.2}>
               <p className="text-lg leading-relaxed text-[var(--color-ink)]/75 max-w-2xl">
                 In 2026, this vision evolved further with the launch of Risaa
-                Homes — a luxury home textile brand crafted for those who value
+                Home — a luxury home textile brand crafted for those who value
                 understated opulence and elevated living. Our collections
                 include exquisitely designed blankets, bed linens, comforters,
                 and rugs, curated to transform everyday spaces into experiences
@@ -169,14 +169,14 @@ export default function AboutPage() {
               {
                 name: "Founder Name",
                 role: "Founder & Managing Director",
-                bio: "Leads the group from Gursam International into Risaa Homes, with two decades of building precision-led, export-grade businesses.",
+                bio: "Leads the group from Gursam International into Risaa Home, with two decades of building precision-led, export-grade businesses.",
                 image:
                   "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&q=85&auto=format&fit=crop",
               },
               {
                 name: "Co-Founder Name",
                 role: "Co-Founder & Creative Director",
-                bio: "Shapes the design language across Risaa and Risaa Homes — quiet palettes, considered weaves, finishes that read in the hand before the eye.",
+                bio: "Shapes the design language across Risaa and Risaa Home — quiet palettes, considered weaves, finishes that read in the hand before the eye.",
                 image:
                   "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=85&auto=format&fit=crop",
               },
@@ -224,7 +224,7 @@ export default function AboutPage() {
             { k: "25+ yrs", v: "Group legacy" },
             { k: "₹150 Cr", v: "Annual turnover" },
             { k: "Hong Kong", v: "International office" },
-            { k: "2026", v: "Risaa Homes launch" },
+            { k: "2026", v: "Risaa Home launch" },
           ].map((s, i) => (
             <Reveal key={s.k} delay={i * 0.06}>
               <div>
@@ -255,7 +255,7 @@ export default function AboutPage() {
                 made in Panipat
               </span>{" "}
               and selected ranges imported from the People&rsquo;s Republic of
-              China. Risaa Homes focuses on comfortable materials, dependable
+              China. Risaa Home focuses on comfortable materials, dependable
               construction and contemporary design for modern living.
             </p>
           </Reveal>
@@ -264,7 +264,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.25}>
             <p className="font-display text-[clamp(1.6rem,2.6vw,2.2rem)] leading-snug italic font-light text-[var(--color-royal-900)] max-w-3xl mx-auto">
-              At Risaa Homes, we don&rsquo;t just create home textiles — we
+              At Risaa Home, we don&rsquo;t just create home textiles — we
               curate a lifestyle of quiet luxury, where every detail is
               designed to be felt.
             </p>
