@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const PHONE = "919876543210";
 const MESSAGE =
-  "Hello Risaa Homes — I'd love to know more about your bedding collection.";
+  "Hello Risaa Home — I'd love to know more about your bedding collection.";
 
 export default function WhatsAppFloat() {
   const [mounted, setMounted] = useState(false);
@@ -21,7 +21,7 @@ export default function WhatsAppFloat() {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with Risaa Homes on WhatsApp"
+      aria-label="Chat with Risaa Home on WhatsApp"
       className={`group fixed z-40 bottom-6 right-6 md:bottom-8 md:right-8 flex items-center gap-3 transition-all duration-700 ease-[cubic-bezier(.2,.8,.2,1)] ${
         mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
