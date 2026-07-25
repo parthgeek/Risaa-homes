@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import { MapPin } from "lucide-react";
 import NewsletterForm from "./NewsletterForm";
+
+const SHOWROOM_MAP_URL =
+  "https://maps.google.com/?q=30.879967,75.771255";
 
 function Instagram({ className }: { className?: string }) {
   return (
@@ -93,6 +97,18 @@ export default function Footer() {
             selected partners in the People&rsquo;s Republic of China. Comfort
             and quality, without noise.
           </p>
+          <a
+            href={SHOWROOM_MAP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-6 flex w-fit items-center gap-3 text-sm text-white/70 hover:text-white transition-colors"
+          >
+            <MapPin
+              className="w-4 h-4 text-[var(--color-champagne)]"
+              strokeWidth={1.5}
+            />
+            <span className="luxe-link">Risaa Home Showroom · Google Maps</span>
+          </a>
           <div className="flex items-center gap-4 mt-8">
             {[
               { Icon: Instagram, label: "Instagram" },
