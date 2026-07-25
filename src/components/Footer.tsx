@@ -89,7 +89,9 @@ export default function Footer() {
             />
           </div>
           <p className="text-sm text-white/60 leading-relaxed max-w-sm">
-            Heirloom blankets, comforters, and linens — woven on slow looms across India and finished by hand. Class without noise.
+            Blankets, comforters and linens made in Panipat or sourced from
+            selected partners in the People&rsquo;s Republic of China. Comfort
+            and quality, without noise.
           </p>
           <div className="flex items-center gap-4 mt-8">
             {[

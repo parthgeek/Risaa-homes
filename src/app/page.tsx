@@ -16,10 +16,10 @@ export default function Home() {
 
       <Marquee
         items={[
-          "Heirloom Bedding",
-          "Royal Blue Atelier",
-          "Woven in India",
-          "Hand-finished",
+          "Comfort-led Bedding",
+          "Royal Blue Collection",
+          "Made in Panipat",
+          "Machine-finished",
           "Since 2009",
           "Quiet Luxury",
         ]}
@@ -32,7 +32,7 @@ export default function Home() {
             <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-ivory-2)]">
               <Image
                 src="https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=1600&q=85&auto=format&fit=crop"
-                alt="Hand-finished textile detail"
+                alt="Risaa Homes textile detail"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-cover"
@@ -55,11 +55,11 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-10 max-w-2xl text-lg leading-relaxed text-[var(--color-ink)]/75">
-                Risaa Homes weaves blankets, linens and comforters on
-                slow looms across Erode, Bhuj and Bhadohi. Every piece is
-                finished by hand — selvages stitched, piping run, edges pressed
-                — so it arrives in your home the way it left ours: quiet,
-                considered, and made to be kept.
+                Risaa Homes brings together blankets, linens and comforters
+                made in Panipat, India&rsquo;s textile hub, and selected
+                collections imported from the People&rsquo;s Republic of
+                China. Every piece is chosen for comfort, dependable quality
+                and everyday value.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
@@ -230,67 +230,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Editorial split */}
-      <section className="bg-[var(--color-ivory-2)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12 grid md:grid-cols-2 gap-16 items-center">
-          <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-royal-950)]">
-            <Image
-              src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=1600&q=85&auto=format&fit=crop"
-              alt="Slow loom in the atelier"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-              priority
-            />
-          </div>
-          <div>
-            <Reveal>
-              <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mb-6">
-                05 — The Craft
-              </p>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <h2 className="font-display text-[clamp(2.2rem,4.5vw,4.5rem)] leading-[1.05] font-light">
-                Slow looms. <br />
-                <span className="italic text-[var(--color-royal-900)]">
-                  Steady hands.
-                </span>
-              </h2>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <p className="mt-8 text-lg text-[var(--color-ink)]/75 leading-relaxed max-w-lg">
-                A Sovereign blanket takes seven days on the loom and another
-                two in finishing. We’re not in a rush. The thread isn’t either.
-              </p>
-            </Reveal>
-            <Reveal delay={0.3}>
-              <div className="mt-10 grid grid-cols-3 gap-6 max-w-md">
-                {[
-                  { k: "07", v: "days on loom" },
-                  { k: "120", v: "knots / sq in" },
-                  { k: "100%", v: "hand-finished" },
-                ].map((s) => (
-                  <div key={s.k}>
-                    <p className="font-display text-4xl text-[var(--color-royal-900)]">
-                      {s.k}
-                    </p>
-                    <p className="text-xs tracking-[0.2em] uppercase text-[var(--color-ink)]/60 mt-2">
-                      {s.v}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="bg-[var(--color-ivory)]">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12 text-center">
           <Reveal>
             <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mb-6">
-              06 — Visit
+              05 — Visit
             </p>
           </Reveal>
           <Reveal delay={0.1}>

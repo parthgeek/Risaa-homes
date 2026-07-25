@@ -55,7 +55,7 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
   },
   {
     name: "Bed Sheets",
-    blurb: "180 TC pure cotton. Crisp, cool, and colour-fast.",
+    blurb: "Micro-polyester and pure-cotton base fabrics, across Indian and imported ranges.",
     image:
       "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1600&q=80&auto=format&fit=crop",
   },
@@ -85,7 +85,6 @@ const IMG = {
   comforter1: "https://images.unsplash.com/photo-1606170033648-5d55a3edf314?w=1400&q=80&auto=format&fit=crop",
   comforter2: "https://images.unsplash.com/photo-1531001389693-3a2630f196aa?w=1400&q=80&auto=format&fit=crop",
   blanket1:   "https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=1400&q=80&auto=format&fit=crop",
-  flannel1:   "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0001.jpg",
   sheet1:     "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1400&q=80&auto=format&fit=crop",
   pillow1:    "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=1400&q=80&auto=format&fit=crop",
   mattress1:  "https://images.unsplash.com/photo-1631049307290-bb947b114627?w=1400&q=80&auto=format&fit=crop",
@@ -145,7 +144,8 @@ export const products: Product[] = [
     slug: "risaa-royal-feather-blanket",
     name: "Royal Feather Blanket",
     category: "Mink Blankets",
-    price: 2499,
+    price: 1100,
+    mrp: 2399,
     tag: "New",
     shortDescription:
       "Double bed mink blanket with feather emboss — 8 colourways across 4 approved designs.",
@@ -196,8 +196,8 @@ export const products: Product[] = [
     slug: "risaa-romance-single-bed-blanket",
     name: "Romance Blanket – Single Bed",
     category: "Mink Blankets",
-    price: 1499,
-    mrp: 1899,
+    price: 833,
+    mrp: 1999,
     tag: "New",
     shortDescription: "Single bed premium mink blanket in bold geometric prints. Dry clean.",
     description:
@@ -209,15 +209,18 @@ export const products: Product[] = [
     sizes: ["Single Bed"],
     colors: [{ name: "Geometric Teal & Red", hex: "#2f6f73" }],
     imageFit: "contain",
-    images: ["/ROMANCE%20SINGLE%20BED-1.jpg"],
+    images: [
+      "/ROMANCE%20SINGLE%20BED-1.jpg",
+      "/romance-box.png",
+    ],
   },
   {
     id: "p55",
     slug: "risaa-royal-comfort-blanket",
     name: "Royal Comfort Blanket",
     category: "Mink Blankets",
-    price: 2199,
-    mrp: 2799,
+    price: 1950,
+    mrp: 5199,
     shortDescription: "Premium mink blanket. Deep, rich colours. Dry clean.",
     description:
       "The Royal Comfort — dense mink pile in deep, rich colourways. A step up in weight and coverage.",
@@ -231,17 +234,16 @@ export const products: Product[] = [
   },
   {
     id: "p56",
-    slug: "risaa-casino-royal-blanket",
-    name: "Casino Royal Blanket",
+    slug: "risaa-emperor-blanket",
+    name: "Emperor Blanket",
     category: "Mink Blankets",
     price: 2799,
     mrp: 3499,
-    tag: "Bestseller",
-    shortDescription: "Heavyweight mink blanket. Bold patterns, gold-tone borders.",
+    shortDescription: "Double-bed triple-ply mink blanket made for deep winter warmth.",
     description:
-      "Casino Royal — the boldest in the mink range. Heavy pile, contrast border and statement colour pairings.",
-    fabric: "Mink (brushed polyester)",
-    weave: "Jacquard mink",
+      "The Risaa Home Emperor is a substantial double-bed blanket built with a triple-ply construction for generous warmth and coverage.",
+    fabric: "Mink (triple-ply brushed polyester)",
+    weave: "Triple-ply mink",
     origin: "India",
     care: ["Dry clean"],
     sizes: ["Double Bed"],
@@ -254,8 +256,8 @@ export const products: Product[] = [
     slug: "risaa-royal-feather-classic-blanket",
     name: "Royal Feather Blanket – Classic",
     category: "Mink Blankets",
-    price: 1999,
-    mrp: 2499,
+    price: 1100,
+    mrp: 2399,
     tag: "New",
     shortDescription:
       "Feather-emboss mink blanket in 8 classic designs — floral, bouquet & lattice. Currently in production.",
@@ -307,7 +309,9 @@ export const products: Product[] = [
     care: ["Machine wash cold", "Tumble dry low"],
     sizes: ["Baby"],
     colors: [PEARL, SKY, PEACH, LILAC],
-    images: [IMG.flannel1],
+    images: [
+      "https://images.pexels.com/photos/4964222/pexels-photo-4964222.jpeg?cs=srgb&dl=pexels-karola-g-4964222.jpg&fm=jpg",
+    ],
   },
   {
     id: "p58",
@@ -325,7 +329,9 @@ export const products: Product[] = [
     care: ["Machine wash cold", "Tumble dry low"],
     sizes: ["Single Bed"],
     colors: [SLATE, TEAL, ROSE, BONE],
-    images: [IMG.flannel1],
+    images: [
+      "https://images.pexels.com/photos/9899861/pexels-photo-9899861.jpeg?cs=srgb&dl=pexels-introspectivedsgn-9899861.jpg&fm=jpg",
+    ],
   },
   {
     id: "p59",
@@ -343,7 +349,9 @@ export const products: Product[] = [
     care: ["Machine wash cold", "Tumble dry low"],
     sizes: ["Double Bed"],
     colors: [SLATE, MIDNIGHT, BURGUNDY, OLIVE],
-    images: [IMG.flannel1],
+    images: [
+      "https://images.pexels.com/photos/14676726/pexels-photo-14676726.jpeg?cs=srgb&dl=pexels-camerongawn-14676726.jpg&fm=jpg",
+    ],
   },
   {
     id: "p60",
@@ -361,7 +369,9 @@ export const products: Product[] = [
     care: ["Machine wash cold", "Tumble dry low"],
     sizes: ["S/6 (Sofa)"],
     colors: [IVORY, SLATE, GRAPHITE, TEAL],
-    images: [IMG.flannel1],
+    images: [
+      "https://images.pexels.com/photos/30380666/pexels-photo-30380666.jpeg?cs=srgb&dl=pexels-slipcoverkas-30380666.jpg&fm=jpg",
+    ],
   },
 
   // ── SUMMER SETS ───────────────────────────────────────────────────────────

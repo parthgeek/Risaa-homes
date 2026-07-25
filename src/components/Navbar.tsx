@@ -277,7 +277,7 @@ export default function Navbar() {
                   The Atelier
                 </p>
                 <h4 className="font-display text-3xl leading-snug mb-4">
-                  Heirloom textiles, finished by hand.
+                  Textiles from Panipat and selected partners in China.
                 </h4>
                 <Link
                   href="/products"

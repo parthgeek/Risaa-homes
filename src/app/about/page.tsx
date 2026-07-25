@@ -39,7 +39,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-ivory-2)]">
               <Image
                 src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600&q=85&auto=format&fit=crop"
-                alt="Hand-finished textile detail"
+                alt="Risaa Homes textile collection"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-cover"
@@ -183,7 +183,7 @@ export default function AboutPage() {
               {
                 name: "Director Name",
                 role: "Director, Sourcing & Operations",
-                bio: "Anchors the supply chain across Indian mills and global partners — long-staple cottons, sateen weaves, hand-knotted rugs, finished without compromise.",
+                bio: "Anchors sourcing across Panipat and selected manufacturing partners in the People’s Republic of China, with a focus on dependable quality and value.",
                 image:
                   "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=85&auto=format&fit=crop",
               },
@@ -250,13 +250,13 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-snug font-light text-[var(--color-ink)]/85">
-              Rooted in the ethos of{" "}
+              Our collections bring together products{" "}
               <span className="italic text-[var(--color-royal-900)]">
-                Made in India
+                made in Panipat
               </span>{" "}
-              while also sourcing premium-quality imports from global markets, Risaa
-              Homes brings together the finest materials, superior
-              craftsmanship, and contemporary design to redefine modern living.
+              and selected ranges imported from the People&rsquo;s Republic of
+              China. Risaa Homes focuses on comfortable materials, dependable
+              construction and contemporary design for modern living.
             </p>
           </Reveal>
           <Reveal delay={0.2}>

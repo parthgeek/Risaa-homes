@@ -41,7 +41,8 @@ function ProductsInner() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-4 max-w-xl text-lg text-[var(--color-ink)]/70 leading-relaxed">
-              Filter by room. Sort by weight. Each piece is finished by hand and shipped in linen paper.
+              Explore collections made in Panipat and selected ranges imported
+              from the People&rsquo;s Republic of China.
             </p>
           </Reveal>
         </div>
