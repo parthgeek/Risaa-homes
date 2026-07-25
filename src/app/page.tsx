@@ -20,7 +20,7 @@ export default function Home() {
           "Royal Blue Collection",
           "Made in Panipat",
           "Machine-finished",
-          "Since 2009",
+          "Since 2026",
           "Quiet Luxury",
         ]}
       />
@@ -32,7 +32,7 @@ export default function Home() {
             <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-ivory-2)]">
               <Image
                 src="https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=1600&q=85&auto=format&fit=crop"
-                alt="Risaa Homes textile detail"
+                alt="Risaa Home textile detail"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-cover"
@@ -55,7 +55,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-10 max-w-2xl text-lg leading-relaxed text-[var(--color-ink)]/75">
-                Risaa Homes brings together blankets, linens and comforters
+                Risaa Home brings together blankets, linens and comforters
                 made in Panipat, India&rsquo;s textile hub, and selected
                 collections imported from the People&rsquo;s Republic of
                 China. Every piece is chosen for comfort, dependable quality
@@ -133,63 +133,6 @@ export default function Home() {
                 </Link>
               </Reveal>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Big royal moment */}
-      <section className="relative bg-[var(--color-royal-950)] text-[var(--color-ivory)] overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1631049307290-bb947b114627?w=2400&q=85&auto=format&fit=crop"
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover opacity-70 animate-kenburns"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(6,10,43,0.95)] via-[rgba(6,10,43,0.55)] to-[rgba(6,10,43,0.15)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[rgba(6,10,43,0.4)]" />
-
-        <div className="relative max-w-[1600px] mx-auto px-6 lg:px-12 py-14 md:py-20 grid md:grid-cols-12 gap-10">
-          <div className="md:col-span-7">
-            <Reveal>
-              <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-champagne)] mb-6">
-                03 — The Signature
-              </p>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <h2 className="font-display text-[clamp(2.6rem,6vw,6.5rem)] leading-[0.98] font-light">
-                Royal blue, <br />
-                <span className="italic">kept honest.</span>
-              </h2>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <p className="mt-10 max-w-xl text-lg text-white/75 leading-relaxed">
-                Our house colour is mixed in small batches and dyed under
-                supervision. Three saturations. One temperament. The thread
-                that runs through every piece in the atelier.
-              </p>
-            </Reveal>
-            <Reveal delay={0.3}>
-              <div className="mt-10 flex items-center gap-3">
-                {[
-                  { name: "Royal", hex: "#0f1a66" },
-                  { name: "Indigo", hex: "#15217f" },
-                  { name: "Midnight", hex: "#060a2b" },
-                ].map((s) => (
-                  <div key={s.name} className="flex items-center gap-3">
-                    <span
-                      className="block w-12 h-12 border border-white/30"
-                      style={{ background: s.hex }}
-                    />
-                    <span className="text-xs tracking-[0.3em] uppercase">
-                      {s.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
           </div>
         </div>
       </section>
