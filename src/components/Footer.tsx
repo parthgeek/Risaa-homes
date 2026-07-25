@@ -82,7 +82,7 @@ export default function Footer() {
           <div className="mb-6">
             <Image
               src="/logo.png"
-              alt="Risaa Homes"
+              alt="Risaa Home"
               width={150}
               height={52}
               className="h-13 w-auto object-contain brightness-0 invert"
@@ -150,7 +150,7 @@ export default function Footer() {
                 className="footer-wordmark-shine text-[clamp(3rem,10vw,10rem)] tracking-[0.32em] uppercase font-light leading-none"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
-                Homes
+                Home
               </span>
               <span className="text-[var(--color-champagne)] font-display text-[clamp(3rem,10vw,10rem)] opacity-70">
                 ✦
