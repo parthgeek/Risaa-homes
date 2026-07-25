@@ -58,7 +58,7 @@ export default function DiscountPopups() {
       ? {
           eyebrow: "First Welcome",
           title: "10% off your first order.",
-          body: "Join the Risaa Homes house list. We'll send a one-time code to your inbox, plus early access to seasonal drops.",
+          body: "Join the Risaa Home house list. We'll send a one-time code to your inbox, plus early access to seasonal drops.",
           code: "WELCOME10",
           cta: "Apply at checkout",
         }
@@ -101,7 +101,7 @@ export default function DiscountPopups() {
           <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(6,10,43,0.85)] via-[rgba(6,10,43,0.45)] to-transparent" />
           <div className="relative h-full p-10 flex flex-col justify-end text-[var(--color-ivory)]">
             <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-champagne)]">
-              Risaa Homes
+              Risaa Home
             </p>
             <p className="font-display italic text-3xl mt-3 leading-tight">
               Woven in tradition,
