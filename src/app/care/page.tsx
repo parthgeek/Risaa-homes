@@ -67,7 +67,7 @@ export default function CarePage() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-8 max-w-2xl text-lg text-white/75 leading-relaxed">
-              Every Risaa Homes piece is built to soften with use and last for
+              Every Risaa Home piece is built to soften with use and last for
               years. A few quiet rituals will keep the weave, the loft and the
               colour at their best.
             </p>
