@@ -37,6 +37,10 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 html,
@@ -50,7 +54,27 @@ body {
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
+  overflow-x: clip;
+}
+
+main,
+footer {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* The source artwork is maroon. It becomes white only while the home
+   navigation sits transparently over the hero, then returns to maroon. */
+.brand-logo {
+  transition: filter 500ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.brand-logo--light {
+  filter: brightness(0) invert(1);
 }
 
 ::selection {

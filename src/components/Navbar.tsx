@@ -112,6 +112,7 @@ export default function Navbar() {
   return (
     <header
       onMouseLeave={() => setOpenMega(false)}
+      data-solid={solid}
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         solid
           ? "bg-[var(--color-ivory)]/95 backdrop-blur-md text-[var(--color-ink)]"
@@ -135,7 +136,9 @@ export default function Navbar() {
               alt="Risaa Home"
               width={240}
               height={84}
-              className={`w-auto object-contain ${
+              className={`brand-logo w-auto object-contain ${
+                solid ? "" : "brand-logo--light"
+              } ${
                 isLanding
                   ? "h-16 md:h-[6.5rem] max-w-[170px] md:max-w-none"
                   : "h-12 md:h-20 max-w-[130px] md:max-w-none"
