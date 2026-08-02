@@ -183,7 +183,7 @@ export default function AboutPage() {
               {
                 name: "Director Name",
                 role: "Director, Sourcing & Operations",
-                bio: "Anchors sourcing across Panipat and selected manufacturing partners in the People’s Republic of China, with a focus on dependable quality and value.",
+                bio: "Builds relationships with selected manufacturers in India and abroad, setting clear standards for materials, construction and finish.",
                 image:
                   "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=85&auto=format&fit=crop",
               },
@@ -250,13 +250,10 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-snug font-light text-[var(--color-ink)]/85">
-              Our collections bring together products{" "}
-              <span className="italic text-[var(--color-royal-900)]">
-                made in Panipat
-              </span>{" "}
-              and selected ranges imported from the People&rsquo;s Republic of
-              China. Risaa Home focuses on comfortable materials, dependable
-              construction and contemporary design for modern living.
+              We work with selected manufacturing partners in India and abroad,
+              guided by one Risaa Home standard for materials, construction and
+              finish. Every piece is inspected and checked twice before it is
+              packed.
             </p>
           </Reveal>
           <Reveal delay={0.2}>

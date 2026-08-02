@@ -49,6 +49,7 @@ const cols = [
       { href: "/products?cat=Mink%20Blankets", label: "Mink Blankets" },
       { href: "/products?cat=Summer%20Comforters", label: "Summer Comforters" },
       { href: "/products?cat=Winter%20Comforters", label: "Winter Comforters" },
+      { href: "/products?cat=Carpets", label: "Carpets" },
     ],
   },
   {
@@ -93,9 +94,9 @@ export default function Footer() {
             />
           </div>
           <p className="text-sm text-white/60 leading-relaxed max-w-sm">
-            Blankets, comforters and linens made in Panipat or sourced from
-            selected partners in the People&rsquo;s Republic of China. Comfort
-            and quality, without noise.
+            Blankets, comforters, linens and carpets produced with trusted
+            manufacturing partners in India and abroad. Every piece is
+            inspected twice before packing.
           </p>
           <a
             href={SHOWROOM_MAP_URL}

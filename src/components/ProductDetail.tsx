@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Product, formatPrice } from "@/lib/products";
+import { Product } from "@/lib/products";
 import Reveal from "@/components/Reveal";
 import ProductCard from "@/components/ProductCard";
+import ProductPrice from "@/components/ProductPrice";
 
 export default function ProductDetail({
   product,
@@ -124,14 +125,7 @@ export default function ProductDetail({
               </p>
             </Reveal>
             <Reveal delay={0.15}>
-              <p className="mt-7 font-display text-3xl text-[var(--color-ink)]">
-                {formatPrice(product.price)}
-                {product.mrp && (
-                  <span className="ml-3 text-xl line-through text-[var(--color-ink)]/40">
-                    {formatPrice(product.mrp)}
-                  </span>
-                )}
-              </p>
+              <ProductPrice product={product} variant="detail" />
             </Reveal>
 
             <div className="divider-rule my-10" />

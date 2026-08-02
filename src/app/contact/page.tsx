@@ -7,8 +7,6 @@ import Reveal from "@/components/Reveal";
 
 const SHOWROOM_MAP_URL =
   "https://maps.google.com/?q=30.879967,75.771255";
-const SHOWROOM_EMBED_URL =
-  "https://www.google.com/maps?q=30.879967,75.771255&z=16&output=embed";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -133,8 +131,8 @@ export default function ContactPage() {
                     Risaa Home Showroom
                   </p>
                   <p className="mt-4 text-sm text-[var(--color-ink)]/65 leading-relaxed">
-                    Visit our showroom to explore blankets, comforters and home
-                    textiles in person.
+                    Visit our Ludhiana showroom to explore blankets,
+                    comforters, bed linen and home textiles in person.
                   </p>
                   <p className="mt-5 text-[10px] tracking-[0.26em] uppercase text-[var(--color-ink)]/50">
                     30.879967 · 75.771255
@@ -157,28 +155,30 @@ export default function ContactPage() {
 
             <Reveal delay={0.1} className="lg:col-span-8">
               <div className="relative min-h-[320px] md:min-h-[380px] overflow-hidden bg-[var(--color-ivory-3)]">
-                <iframe
-                  title="Risaa Home showroom location"
-                  src={SHOWROOM_EMBED_URL}
-                  className="absolute inset-0 w-full h-full border-0 grayscale-[15%] contrast-[0.95]"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
+                <Image
+                  src="/showroom%20and%20office/s3.jpeg"
+                  alt="Risaa Home Ludhiana showroom with bedding collections on display"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                  className="object-cover"
                 />
-
-                <div
-                  className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-full"
-                  aria-hidden="true"
-                >
-                  <div className="relative bg-[var(--color-royal-950)] px-4 py-3 shadow-[0_18px_45px_-12px_rgba(6,10,43,0.65)] border border-white/20">
-                    <Image
-                      src="/logo.png"
-                      alt=""
-                      width={104}
-                      height={38}
-                      className="h-9 w-auto object-contain brightness-0 invert"
-                    />
-                    <span className="absolute left-1/2 top-full w-4 h-4 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-[var(--color-royal-950)] border-r border-b border-white/20" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(6,10,43,0.72)] via-transparent to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 text-white">
+                  <p className="text-[10px] tracking-[0.3em] uppercase text-[var(--color-champagne)]">
+                    Inside the house
+                  </p>
+                  <div className="mt-2 flex flex-wrap items-end justify-between gap-4">
+                    <p className="font-display text-3xl md:text-4xl leading-none">
+                      See every finish in person.
+                    </p>
+                    <a
+                      href={SHOWROOM_MAP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="luxe-link text-[10px] tracking-[0.26em] uppercase"
+                    >
+                      Get directions
+                    </a>
                   </div>
                 </div>
               </div>

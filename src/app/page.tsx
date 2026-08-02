@@ -17,29 +17,30 @@ export default function Home() {
       <Marquee
         items={[
           "Comfort-led Bedding",
-          "Royal Blue Collection",
-          "Made in Panipat",
-          "Machine-finished",
+          "Trusted makers in India & abroad",
+          "Every piece checked twice",
+          "Blankets · Linens · Comforters · Carpets",
           "Since 2026",
-          "Quiet Luxury",
+          "Packed only after final checks",
         ]}
       />
 
       {/* Manifesto */}
       <section className="bg-[var(--color-ivory)]">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12 md:py-16 grid md:grid-cols-12 gap-12 items-center">
-          <div className="md:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-ivory-2)]">
+          <div className="md:col-span-6">
+            <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-ivory-2)]">
               <Image
-                src="https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=1600&q=85&auto=format&fit=crop"
-                alt="Risaa Home textile detail"
+                src="/showroom%20and%20office/office1.jpeg"
+                alt="Risaa Home reception and office in Ludhiana"
                 fill
-                sizes="(max-width: 768px) 100vw, 40vw"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
+                priority
               />
             </div>
           </div>
-          <div className="md:col-span-7">
+          <div className="md:col-span-6">
             <Reveal>
               <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)]">
                 01 — The House
@@ -55,11 +56,11 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-10 max-w-2xl text-lg leading-relaxed text-[var(--color-ink)]/75">
-                Risaa Home brings together blankets, linens and comforters
-                made in Panipat, India&rsquo;s textile hub, and selected
-                collections imported from the People&rsquo;s Republic of
-                China. Every piece is chosen for comfort, dependable quality
-                and everyday value.
+                Risaa Home works with carefully selected manufacturers in
+                India and abroad. We set the material, finish and construction
+                standards for every collection, then inspect each piece twice
+                before it is packed. The result is dependable comfort with a
+                consistent Risaa Home finish.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
@@ -87,8 +88,8 @@ export default function Home() {
               </Reveal>
               <Reveal delay={0.1}>
                 <h2 className="font-display text-[clamp(2.4rem,5vw,5rem)] leading-[1.02] font-light">
-                  Four rooms.
-                  <span className="italic text-[var(--color-royal-900)]"> One language.</span>
+                  Across every room.
+                  <span className="italic text-[var(--color-royal-900)]"> One standard.</span>
                 </h2>
               </Reveal>
             </div>
@@ -133,6 +134,53 @@ export default function Home() {
                 </Link>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Carpets */}
+      <section id="carpets" className="bg-[var(--color-ivory-2)]">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-12 grid md:grid-cols-12 gap-10 lg:gap-16 items-center">
+          <div className="md:col-span-7">
+            <Reveal>
+              <div className="relative aspect-[16/11] overflow-hidden bg-[var(--color-ivory-3)]">
+                <Image
+                  src="https://images.unsplash.com/photo-1600166898405-da9535204843?w=1800&q=85&auto=format&fit=crop"
+                  alt="Textured carpet anchoring a considered living space"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 58vw"
+                  className="object-cover tile-img"
+                />
+              </div>
+            </Reveal>
+          </div>
+          <div className="md:col-span-5 md:pl-4">
+            <Reveal delay={0.05}>
+              <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)]">
+                03 — Carpets
+              </p>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <h2 className="mt-6 font-display text-[clamp(2.6rem,5vw,5.5rem)] leading-[0.98] font-light text-balance">
+                Ground the room in
+                <span className="italic text-[var(--color-royal-900)]"> texture.</span>
+              </h2>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <p className="mt-8 max-w-xl text-lg leading-relaxed text-[var(--color-ink)]/70">
+                Our carpet collection is selected for surface character,
+                dependable construction and everyday durability. Explore the
+                range through our showroom and wholesale team.
+              </p>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <Link
+                href="/contact?collection=Carpets"
+                className="luxe-link mt-9 inline-block text-[11px] tracking-[0.32em] uppercase"
+              >
+                Request the carpet catalogue
+              </Link>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -186,15 +234,10 @@ export default function Home() {
               Step into the <span className="italic text-[var(--color-royal-900)]">atelier.</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.2}>
-            <p className="mt-8 text-lg text-[var(--color-ink)]/70 max-w-xl mx-auto">
-              Showrooms in Mumbai, Bangalore and Delhi. By appointment, always.
-            </p>
-          </Reveal>
           <Reveal delay={0.3}>
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-4 mt-6text-[11px] tracking-[0.32em] uppercase border border-[var(--color-royal-900)] px-8 py-4 hover:bg-[var(--color-royal-900)] hover:text-[var(--color-ivory)] transition-colors duration-500"
+              className="group inline-flex items-center gap-4 mt-8 text-[11px] tracking-[0.32em] uppercase border border-[var(--color-royal-900)] px-8 py-4 hover:bg-[var(--color-royal-900)] hover:text-[var(--color-ivory)] transition-colors duration-500"
             >
               Book a visit
               <span className="block w-8 h-px bg-current transition-all duration-500 group-hover:w-14" />

@@ -280,7 +280,7 @@ export default function Navbar() {
                   The Atelier
                 </p>
                 <h4 className="font-display text-3xl leading-snug mb-4">
-                  Textiles from Panipat and selected partners in China.
+                  Textiles from trusted makers in India and abroad.
                 </h4>
                 <Link
                   href="/products"

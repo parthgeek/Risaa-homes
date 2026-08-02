@@ -41,8 +41,12 @@ function ProductsInner() {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-4 max-w-xl text-lg text-[var(--color-ink)]/70 leading-relaxed">
-              Explore collections made in Panipat and selected ranges imported
-              from the People&rsquo;s Republic of China.
+              Explore collections produced with trusted manufacturing partners
+              in India and abroad. Every piece is inspected twice before it is
+              packed.
+            </p>
+            <p className="mt-5 text-[10px] font-medium tracking-[0.25em] uppercase text-[var(--color-royal-700)]">
+              WSP shown first · MRP shown where available
             </p>
           </Reveal>
         </div>
@@ -69,9 +73,21 @@ function ProductsInner() {
       <section className="bg-[var(--color-ivory)]">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-10">
           {filtered.length === 0 ? (
-            <p className="text-center py-32 text-[var(--color-ink)]/60">
-              No pieces in this room yet.
-            </p>
+            <div className="py-28 text-center">
+              <p className="font-display text-3xl md:text-4xl text-[var(--color-ink)]/80">
+                {active === "Carpets"
+                  ? "The carpet collection is available through our showroom and wholesale team."
+                  : "No pieces in this room yet."}
+              </p>
+              {active === "Carpets" && (
+                <Link
+                  href="/contact?collection=Carpets"
+                  className="luxe-link mt-8 inline-block text-[11px] tracking-[0.28em] uppercase text-[var(--color-royal-900)]"
+                >
+                  Request the carpet catalogue
+                </Link>
+              )}
+            </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
               {filtered.map((p, i) => (

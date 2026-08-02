@@ -6,6 +6,7 @@ export type Category =
   | "Bed Sheets"
   | "Pillows"
   | "Mattress Covers"
+  | "Carpets"
   | "Winter Comforters";
 
 export type Product = {
@@ -13,6 +14,7 @@ export type Product = {
   slug: string;
   name: string;
   category: Category;
+  // When mrp is present, price is the WSP. Otherwise price is the MRP.
   price: number;
   mrp?: number;
   tag?: "New" | "Heirloom" | "Limited" | "Bestseller";
@@ -72,6 +74,12 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
       "https://images.unsplash.com/photo-1631049307290-bb947b114627?w=1600&q=80&auto=format&fit=crop",
   },
   {
+    name: "Carpets",
+    blurb: "Considered floor coverings selected for texture, finish and everyday durability.",
+    image:
+      "https://images.unsplash.com/photo-1600166898405-da9535204843?w=1600&q=80&auto=format&fit=crop",
+  },
+  {
     name: "Winter Comforters",
     blurb: "Heavy down-alt loft. Quilted shells. Built for January.",
     image:
@@ -101,6 +109,9 @@ const celebrationImg = (n: number) =>
 
 const goldmineImg = (n: number) =>
   publicImage("GOLDMINE SET", `Goldmine 6 Pcs Risaa Home 2_page-${String(n).padStart(4, "0")}.jpg`);
+
+const sukoonImg = (n: number) =>
+  publicImage("sukoon set", `Sukoon 6 Pcs _page-${String(n).padStart(4, "0")}.jpg`);
 
 const desireComforterImg = (n: number) =>
   publicImage("desire comforter set", `Desire Comforter Risaa Home  (1)_page-${String(n).padStart(4, "0")}.jpg`);
@@ -143,7 +154,7 @@ export const products: Product[] = [
     slug: "risaa-royal-feather-blanket",
     name: "Royal Feather Blanket",
     category: "Mink Blankets",
-    price: 1100,
+    price: 1115,
     mrp: 2399,
     tag: "New",
     shortDescription:
@@ -172,7 +183,7 @@ export const products: Product[] = [
     slug: "risaa-romance-blanket",
     name: "Romance Blanket",
     category: "Mink Blankets",
-    price: 1799,
+    price: 820,
     mrp: 2299,
     shortDescription: "Premium mink blanket in floral colourways. Best for gifting & weddings. Dry clean.",
     description:
@@ -218,7 +229,7 @@ export const products: Product[] = [
     slug: "risaa-royal-comfort-blanket",
     name: "Royal Comfort Blanket",
     category: "Mink Blankets",
-    price: 1950,
+    price: 1900,
     mrp: 5199,
     shortDescription:
       "Double-bed, double-ply mink blanket with one-side embossing in assorted designs.",
@@ -258,7 +269,7 @@ export const products: Product[] = [
     slug: "risaa-royal-feather-classic-blanket",
     name: "Royal Feather Blanket – Classic",
     category: "Mink Blankets",
-    price: 1100,
+    price: 1115,
     mrp: 2399,
     tag: "New",
     shortDescription:
@@ -381,19 +392,24 @@ export const products: Product[] = [
   {
     id: "p100",
     slug: "risaa-shagun-double-bed-set",
-    name: "Risaa Home Shagun Set (Double Bed)",
+    name: "Shagun 5 Pc Set (Double Bed)",
     category: "Summer Sets",
-    price: 3499,
+    price: 799,
+    mrp: 1999,
     tag: "New",
     shortDescription:
-      "5-piece printed double bed set — 1 bedsheet, 2 pillow covers, 2 cushion covers. 11 prints.",
+      "5-piece polyester double-bed set — 1 bedsheet, 2 pillowcases and 2 filled cushion covers.",
     description:
-      "The Shagun Set — built for gifting and for everyday. A 5-piece double bed ensemble in soft-touch printed cotton-blend: one double bedsheet, two pillow covers and two cushion covers. Eleven heritage prints across damask, scroll and botanical motifs.",
-    fabric: "Soft-touch Cotton Blend",
-    weave: "Plain weave, reactive print",
+      "The Shagun Set is a coordinated 5-piece polyester ensemble for gifting and everyday use: one double bedsheet, two pillowcases and two cushion covers supplied with fillers. Available in eleven damask, scroll and botanical prints.",
+    fabric: "100% Polyester",
+    weave: "Printed plain weave",
     origin: "India",
-    care: ["Cold machine wash", "Wash darks separately the first time", "Iron warm"],
-    sizes: ["Double (90 × 100 in)"],
+    care: ["Cold wash", "Do not bleach", "Do not iron"],
+    sizes: [
+      "Bedsheet: 220 × 240 cm",
+      "Pillowcases (2): 46 × 69 cm",
+      "Filled cushion covers (2): 40 × 40 cm",
+    ],
     colors: [LILAC, SKY, OLIVE, ROSE, ROYAL, CHAMPAGNE],
     imageAspect: "square",
     imageFit: "contain",
@@ -493,6 +509,63 @@ export const products: Product[] = [
       goldmineImg(5),
       goldmineImg(6),
       goldmineImg(7),
+    ],
+  },
+  {
+    id: "p105",
+    slug: "risaa-sukoon-6-pcs-set",
+    name: "Sukoon 6 Pcs Set",
+    category: "Summer Sets",
+    price: 8999,
+    tag: "New",
+    shortDescription:
+      "Digital-print 6-piece set with a quilted comforter, bedsheet, 2 pillow covers and 2 filled cushions.",
+    description:
+      "Sukoon is a coordinated 6-piece digital-print bedding set comprising one quilted comforter, one generously sized bedsheet, two pillow covers and two cushions supplied with fillers. Available in eleven floral, botanical and framed-border designs.",
+    fabric: "Digital-print textile",
+    weave: "Quilted comforter set",
+    origin: "India",
+    care: [
+      "Machine wash at 30°C",
+      "Do not bleach",
+      "Cool iron",
+      "Do not dry clean",
+      "Do not tumble dry",
+    ],
+    sizes: [
+      "Quilted comforter: 220 × 240 cm",
+      "Bedsheet: 275 × 275 cm",
+      "Pillow covers (2): 48 × 73 cm",
+      "Filled cushions (2): 40 × 40 ± 5 cm",
+    ],
+    colors: [
+      { name: "Design 01", hex: "#d5c6a5" },
+      { name: "Design 02", hex: "#cbbcae" },
+      { name: "Design 03", hex: "#c7b396" },
+      { name: "Design 04", hex: "#b9a69b" },
+      { name: "Design 05", hex: "#a8aaa0" },
+      { name: "Design 06", hex: "#d3cec4" },
+      { name: "Design 07", hex: "#b8aaa6" },
+      { name: "Design 08", hex: "#c9b7a4" },
+      { name: "Design 09", hex: "#aaa59b" },
+      { name: "Design 10", hex: "#c6b39e" },
+      { name: "Design 11", hex: "#aa8977" },
+    ],
+    imageAspect: "landscape",
+    imageFit: "contain",
+    imagePadding: "2%",
+    images: [
+      sukoonImg(1),
+      sukoonImg(2),
+      sukoonImg(3),
+      sukoonImg(4),
+      sukoonImg(5),
+      sukoonImg(6),
+      sukoonImg(7),
+      sukoonImg(8),
+      sukoonImg(9),
+      sukoonImg(10),
+      sukoonImg(11),
     ],
   },
 

@@ -29,7 +29,7 @@ const allura = Allura({
 export const metadata: Metadata = {
   title: "Risaa Home — Heirloom Bedding & Home Textiles",
   description:
-    "Royal-grade blankets, comforters, and bed linens. Crafted for homes that demand class. Risaa Home — woven in tradition, finished to last forever.",
+    "Blankets, comforters, bed linens and carpets selected to exacting quality standards and inspected twice before packing.",
 };
 
 export default function RootLayout({
