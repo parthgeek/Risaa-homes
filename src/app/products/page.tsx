@@ -1,26 +1,43 @@
 "use client";
 
-import { Suspense, useMemo, useState } from "react";
+import { Suspense, useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
+import CarpetShowcase from "@/components/CarpetShowcase";
 import Reveal from "@/components/Reveal";
-import { products, categories, Category } from "@/lib/products";
+import {
+  products,
+  categories,
+  featuredBeddingProductIds,
+  featuredBeddingProducts,
+  Category,
+} from "@/lib/products";
 
 const CATS: ("All" | Category)[] = ["All", ...categories.map((c) => c.name)];
+const featuredBeddingIds = new Set(featuredBeddingProductIds);
+const prioritizedProducts = [
+  ...featuredBeddingProducts,
+  ...products.filter((product) => !featuredBeddingIds.has(product.id)),
+];
 
 function ProductsInner() {
   const sp = useSearchParams();
   const router = useRouter();
-  const initial = (sp.get("cat") as Category | null) ?? "All";
-  const [active, setActive] = useState<"All" | Category>(initial);
+  const requestedCategory = sp.get("cat");
+  const active: "All" | Category = categories.some(
+    (category) => category.name === requestedCategory,
+  )
+    ? (requestedCategory as Category)
+    : "All";
 
   const filtered = useMemo(() => {
-    return active === "All" ? products : products.filter((p) => p.category === active);
+    if (active === "All") return prioritizedProducts;
+    if (active === "Bed Sheets") return featuredBeddingProducts;
+    return products.filter((p) => p.category === active);
   }, [active]);
 
   function pick(c: "All" | Category) {
-    setActive(c);
     const url = c === "All" ? "/products" : `/products?cat=${encodeURIComponent(c)}`;
     router.replace(url, { scroll: false });
   }
@@ -72,21 +89,13 @@ function ProductsInner() {
 
       <section className="bg-[var(--color-ivory)]">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-10">
-          {filtered.length === 0 ? (
+          {active === "Carpets" ? (
+            <CarpetShowcase />
+          ) : filtered.length === 0 ? (
             <div className="py-28 text-center">
               <p className="font-display text-3xl md:text-4xl text-[var(--color-ink)]/80">
-                {active === "Carpets"
-                  ? "The carpet collection is available through our showroom and wholesale team."
-                  : "No pieces in this room yet."}
+                No pieces in this room yet.
               </p>
-              {active === "Carpets" && (
-                <Link
-                  href="/contact?collection=Carpets"
-                  className="luxe-link mt-8 inline-block text-[11px] tracking-[0.28em] uppercase text-[var(--color-royal-900)]"
-                >
-                  Request the carpet catalogue
-                </Link>
-              )}
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">

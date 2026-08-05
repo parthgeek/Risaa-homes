@@ -17,7 +17,7 @@ export type Product = {
   // When mrp is present, price is the WSP. Otherwise price is the MRP.
   price: number;
   mrp?: number;
-  tag?: "New" | "Heirloom" | "Limited" | "Bestseller";
+  tag?: "New" | "Heirloom" | "Limited" | "Bestseller" | "Best for Gifting" | "Hot Selling";
   shortDescription: string;
   description: string;
   fabric: string;
@@ -57,9 +57,8 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
   },
   {
     name: "Bed Sheets",
-    blurb: "Micro-polyester and pure-cotton base fabrics, across Indian and imported ranges.",
-    image:
-      "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1600&q=80&auto=format&fit=crop",
+    blurb: "Coordinated bedsheet, comforter and cushion sets for complete-room styling.",
+    image: "/GOLDMINE%20SET/Goldmine%206%20Pcs%20Risaa%20Home%202_page-0001.jpg",
   },
   {
     name: "Pillows",
@@ -75,25 +74,20 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
   },
   {
     name: "Carpets",
-    blurb: "Considered floor coverings selected for texture, finish and everyday durability.",
-    image:
-      "https://images.unsplash.com/photo-1600166898405-da9535204843?w=1600&q=80&auto=format&fit=crop",
+    blurb: "Expressive rugs selected with Orbis Luxury for colour, character and everyday ease.",
+    image: "/orbis-luxury/neeldhara.jpg",
   },
   {
     name: "Winter Comforters",
-    blurb: "Heavy down-alt loft. Quilted shells. Built for January.",
-    image:
-      "https://images.unsplash.com/photo-1631049307290-bb947b114627?w=1600&q=80&auto=format&fit=crop",
+    blurb: "Deep plush warmth in rich solid colourways. Built for the coldest nights.",
+    image: "/realcomforter.png",
   },
 ];
 
 // ── Image helpers ──────────────────────────────────────────────────────────────
 
 const IMG = {
-  comforter1: "https://images.unsplash.com/photo-1606170033648-5d55a3edf314?w=1400&q=80&auto=format&fit=crop",
-  comforter2: "https://images.unsplash.com/photo-1531001389693-3a2630f196aa?w=1400&q=80&auto=format&fit=crop",
   blanket1:   "https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=1400&q=80&auto=format&fit=crop",
-  sheet1:     "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1400&q=80&auto=format&fit=crop",
   pillow1:    "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=1400&q=80&auto=format&fit=crop",
 };
 
@@ -142,8 +136,6 @@ const BURGUNDY   = { name: "Burgundy",     hex: "#6e1423" };
 const GOLD       = { name: "Gold",         hex: "#b5860d" };
 const TEAL       = { name: "Teal",         hex: "#2e7d72" };
 const PEACH      = { name: "Peach",        hex: "#e8a98c" };
-const SAGE       = { name: "Sage",         hex: "#87a884" };
-const MUSTARD    = { name: "Mustard",      hex: "#c8950a" };
 
 export const products: Product[] = [
 
@@ -394,13 +386,13 @@ export const products: Product[] = [
     slug: "risaa-shagun-double-bed-set",
     name: "Shagun 5 Pc Set (Double Bed)",
     category: "Summer Sets",
-    price: 799,
+    price: 825,
     mrp: 1999,
-    tag: "New",
+    tag: "Best for Gifting",
     shortDescription:
-      "5-piece polyester double-bed set — 1 bedsheet, 2 pillowcases and 2 filled cushion covers.",
+      "An economical 5-piece set for corporate gifting and personal festive gifting, with wide price appeal.",
     description:
-      "The Shagun Set is a coordinated 5-piece polyester ensemble for gifting and everyday use: one double bedsheet, two pillowcases and two cushion covers supplied with fillers. Available in eleven damask, scroll and botanical prints.",
+      "The Shagun Set is an economical gifting choice that suits a wide range of budgets. Ideal for corporate gifting and personal gifting during festivals, this coordinated 5-piece polyester ensemble includes one double bedsheet, two pillowcases and two cushion covers supplied with fillers. Available in eleven damask, scroll and botanical prints.",
     fabric: "100% Polyester",
     weave: "Printed plain weave",
     origin: "India",
@@ -432,7 +424,8 @@ export const products: Product[] = [
     slug: "risaa-celebration-6-pcs-set",
     name: "Celebration 6 Pcs Set",
     category: "Summer Sets",
-    price: 7900,
+    price: 1700,
+    mrp: 7900,
     tag: "New",
     shortDescription:
       "Premium 6-piece summer set with double bedsheet, comforter, 2 pillow covers and 2 lace cushions.",
@@ -473,7 +466,8 @@ export const products: Product[] = [
     slug: "risaa-goldmine-6-pcs-set",
     name: "Goldmine 6 Pcs Set",
     category: "Summer Sets",
-    price: 7900,
+    price: 1900,
+    mrp: 7900,
     tag: "New",
     shortDescription:
       "Premium 6-piece summer set with double bedsheet, comforter, 2 pillow covers and 2 cushions.",
@@ -516,8 +510,9 @@ export const products: Product[] = [
     slug: "risaa-sukoon-6-pcs-set",
     name: "Sukoon 6 Pcs Set",
     category: "Summer Sets",
-    price: 8999,
-    tag: "New",
+    price: 2100,
+    mrp: 8999,
+    tag: "Hot Selling",
     shortDescription:
       "Digital-print 6-piece set with a quilted comforter, bedsheet, 2 pillow covers and 2 filled cushions.",
     description:
@@ -617,7 +612,8 @@ export const products: Product[] = [
     slug: "risaa-desire-premium-satin-comforter",
     name: "Desire Premium Satin Comforter",
     category: "Summer Comforters",
-    price: 3999,
+    price: 1425,
+    mrp: 3999,
     tag: "New",
     shortDescription:
       "Premium satin quilted comforter in 7 colourways. Soft feel, quality stitch, designer collection.",
@@ -655,7 +651,8 @@ export const products: Product[] = [
     slug: "risaa-temptation-luxury-comforter",
     name: "Temptation Luxury Comforter",
     category: "Summer Comforters",
-    price: 3799,
+    price: 700,
+    mrp: 3799,
     tag: "New",
     shortDescription:
       "Luxury printed comforter in 10 colourways. Lightweight, soft-feel summer comfort.",
@@ -693,82 +690,6 @@ export const products: Product[] = [
       temptationComforterImg(9),
       temptationComforterImg(10),
     ],
-  },
-
-  // ── BED SHEETS ────────────────────────────────────────────────────────────
-
-  {
-    id: "p63",
-    slug: "risaa-bed-sheet-set-1-2",
-    name: "Bed Sheet Set – 1+2",
-    category: "Bed Sheets",
-    price: 1299,
-    mrp: 1699,
-    shortDescription: "180 TC pure cotton — 1 bedsheet + 2 pillow covers. Machine wash. India.",
-    description:
-      "Crisp 180 TC pure cotton bedsheet set — one double bedsheet and two matching pillow covers. Colour-fast reactive print.",
-    fabric: "180 TC Pure Cotton",
-    weave: "Plain weave, reactive print",
-    origin: "India",
-    care: ["Machine wash cold", "Wash darks separately first time", "Iron warm"],
-    sizes: ["Double"],
-    colors: [IVORY, SKY, LILAC, ROSE, TEAL, SAGE],
-    images: [IMG.sheet1],
-  },
-  {
-    id: "p64",
-    slug: "risaa-bed-sheet-set-1-2-1",
-    name: "Bed Sheet Set – 1+2+1",
-    category: "Bed Sheets",
-    price: 1799,
-    mrp: 2299,
-    shortDescription: "180 TC pure cotton — 1 bedsheet + 2 pillow covers + 1 slipcover. Machine wash. India.",
-    description:
-      "Bedsheet set with one double bedsheet, two pillow covers and one slipcover — all in matching 180 TC cotton print.",
-    fabric: "180 TC Pure Cotton",
-    weave: "Plain weave, reactive print",
-    origin: "India",
-    care: ["Machine wash cold", "Wash darks separately first time", "Iron warm"],
-    sizes: ["Double"],
-    colors: [IVORY, SKY, MUSTARD, ROSE, OLIVE, CHAMPAGNE],
-    images: [IMG.sheet1],
-  },
-  {
-    id: "p65",
-    slug: "risaa-bed-sheet-set-1-2-2",
-    name: "Bed Sheet Set – 1+2+2",
-    category: "Bed Sheets",
-    price: 2199,
-    mrp: 2799,
-    shortDescription: "180 TC pure cotton — 1 bedsheet + 2 pillow covers + 2 slipcovers. Machine wash. India.",
-    description:
-      "Complete bedsheet set in 180 TC cotton — one bedsheet, two pillow covers and two slipcovers for full bed coverage.",
-    fabric: "180 TC Pure Cotton",
-    weave: "Plain weave, reactive print",
-    origin: "India",
-    care: ["Machine wash cold", "Wash darks separately first time", "Iron warm"],
-    sizes: ["Double"],
-    colors: [TEAL, BURGUNDY, LILAC, BONE, SAGE, SLATE],
-    images: [IMG.sheet1],
-  },
-  {
-    id: "p66",
-    slug: "risaa-bed-sheet-set-1-2-3",
-    name: "Bed Sheet Set – 1+2+3",
-    category: "Bed Sheets",
-    price: 2699,
-    mrp: 3499,
-    tag: "Bestseller",
-    shortDescription: "180 TC pure cotton — 1 bedsheet + 2 pillow covers + 3 slipcovers. Machine wash. India.",
-    description:
-      "The most complete bed linen set — one bedsheet, two pillow covers and three slipcovers in matching 180 TC pure cotton.",
-    fabric: "180 TC Pure Cotton",
-    weave: "Plain weave, reactive print",
-    origin: "India",
-    care: ["Machine wash cold", "Wash darks separately first time", "Iron warm"],
-    sizes: ["Double"],
-    colors: [IVORY, ROYAL, MUSTARD, TEAL, ROSE, CHAMPAGNE],
-    images: [IMG.sheet1],
   },
 
   // ── PILLOWS ───────────────────────────────────────────────────────────────
@@ -836,7 +757,8 @@ export const products: Product[] = [
     slug: "risaa-waterproof-fitted-mattress-protector",
     name: "Waterproof Fitted Mattress Protector",
     category: "Mattress Covers",
-    price: 2000,
+    price: 921,
+    mrp: 2000,
     tag: "New",
     shortDescription:
       "Soft, breathable waterproof protection with a secure corner-elastic fit.",
@@ -866,8 +788,8 @@ export const products: Product[] = [
     slug: "risaa-heavy-winter-comforter-1",
     name: "Heavy Winter Comforter – Solid",
     category: "Winter Comforters",
-    price: 3999,
-    mrp: 4999,
+    price: 800,
+    mrp: 1999,
     tag: "Bestseller",
     shortDescription:
       "Heavy 5′ × 7′ winter comforter with a deep plush finish in rich solid colours.",
@@ -889,45 +811,21 @@ export const products: Product[] = [
     ],
     images: ["/realcomforter.png"],
   },
-  {
-    id: "p46",
-    slug: "risaa-heavy-winter-comforter-2",
-    name: "Heavy Winter Comforter – Printed",
-    category: "Winter Comforters",
-    price: 4499,
-    mrp: 5499,
-    tag: "New",
-    shortDescription: "Heavy poly-fill winter comforter. Printed shell. Dry clean. India.",
-    description:
-      "Heavyweight winter comforter with a bold printed cotton shell and heavy poly-fill. Stays warm, looks sharp.",
-    fabric: "Cotton Shell, Heavy Poly-Fill",
-    weave: "Printed, box-stitch quilted",
-    origin: "India",
-    care: ["Dry clean"],
-    sizes: ["Single", "Double"],
-    colors: [TEAL, BURGUNDY, MUSTARD],
-    images: [IMG.comforter1],
-  },
-  {
-    id: "p47",
-    slug: "risaa-heavy-winter-comforter-3",
-    name: "Heavy Winter Comforter – Embroidery",
-    category: "Winter Comforters",
-    price: 5499,
-    mrp: 6999,
-    tag: "Heirloom",
-    shortDescription: "Heavy poly-fill winter comforter. Embroidered shell. Dry clean. India.",
-    description:
-      "The premium winter comforter — heavy poly-fill with a hand-embroidered cotton shell. Decorative and deeply warm.",
-    fabric: "Cotton Shell, Heavy Poly-Fill",
-    weave: "Embroidered, quilted",
-    origin: "India",
-    care: ["Dry clean"],
-    sizes: ["Double", "Queen"],
-    colors: [CHAMPAGNE, IVORY, ROSE],
-    images: [IMG.comforter2],
-  },
 ];
+
+export const featuredBeddingProductIds = [
+  "p102", // Goldmine 6 Pcs Set
+  "p105", // Sukoon 6 Pcs Set
+  "p52",  // Risaa Flannel AC Blanket
+  "p103", // Desire Premium Satin Comforter
+  "p104", // Temptation Luxury Comforter
+  "p100", // Shagun 5 Pc Set
+  "p101", // Celebration 6 Pcs Set
+];
+
+export const featuredBeddingProducts = featuredBeddingProductIds
+  .map((id) => products.find((product) => product.id === id))
+  .filter((product): product is Product => product !== undefined);
 
 export function formatPrice(p: number): string {
   return `₹${p.toLocaleString("en-IN")}`;
