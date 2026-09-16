@@ -91,11 +91,6 @@ const desireComforterImg = (n: number) =>
 const temptationComforterImg = (n: number) =>
   publicImage("temptation set", `Temptation Comforter Risaa Home -1_page-${String(n).padStart(4, "0")}.jpg`);
 
-const ROYAL_FEATHER_IMAGES = [
-  "/WhatsApp%20Image%202026-05-25%20at%2012.46.46.jpeg",
-  "/WhatsApp%20Image%202026-05-25%20at%2012.46.46%20%281%29.jpeg",
-];
-
 // ── Colour tokens ──────────────────────────────────────────────────────────────
 
 const CHAMPAGNE  = { name: "Champagne",    hex: "#c8a96a" };
@@ -114,31 +109,34 @@ export const products: Product[] = [
   {
     id: "p53",
     slug: "risaa-royal-feather-blanket",
-    name: "Royal Feather Blanket",
+    name: "Royal Feather Blanket – Double Ply",
     category: "Mink Blankets",
     price: 1115,
     mrp: 2399,
     tag: "New",
     shortDescription:
-      "Double bed mink blanket in 8 colourways across 4 approved designs.",
+      "Double-bed, double-ply mink blanket in four signature designs.",
     description:
-      "The Royal Feather in the final 2.2 kg double bed mink, brushed to a velvet hand. Available in four design layouts and eight colourways: N01 Chocolate & Pink, N02 Mauve & Peach, 332 Olive & Mauve, and 959 Beige & Dried Herb.",
+      "Royal Feather is a double-bed, double-ply mink blanket with a rich velvet hand and generous winter warmth. Available in four distinctive designs: Honey Lattice, Teal Lattice, Burgundy Floral and Cream Floral.",
     fabric: "Mink (brushed polyester)",
-    weave: "Soft brushed mink",
+    weave: "Double-ply brushed mink",
     origin: "India",
     care: ["Dry clean"],
     sizes: ["Double Bed"],
     colors: [
-      { name: "N01 Chocolate", hex: "#6b3a2c" },
-      { name: "N01 Pink",      hex: "#7c2744" },
-      { name: "N02 Mauve",     hex: "#8f7896" },
-      { name: "N02 Peach",     hex: "#df9b89" },
-      { name: "332 Olive",     hex: "#68441f" },
-      { name: "332 Mauve",     hex: "#8e5c82" },
-      { name: "959 Beige",     hex: "#aa7c55" },
-      { name: "959 Dried Herb",hex: "#5a523b" },
+      { name: "Honey Lattice",   hex: "#a9783e" },
+      { name: "Teal Lattice",    hex: "#1b5961" },
+      { name: "Burgundy Floral", hex: "#781d2d" },
+      { name: "Cream Floral",    hex: "#d3b276" },
     ],
-    images: ROYAL_FEATHER_IMAGES,
+    imageAspect: "portrait",
+    imageFit: "cover",
+    images: [
+      "/royal-feather-double-ply/honey-lattice.png",
+      "/royal-feather-double-ply/teal-lattice.png",
+      "/royal-feather-double-ply/burgundy-floral.png",
+      "/royal-feather-double-ply/cream-floral.png",
+    ],
   },
   {
     id: "p54",
@@ -171,18 +169,29 @@ export const products: Product[] = [
     price: 833,
     mrp: 1999,
     tag: "New",
-    shortDescription: "Single bed premium mink blanket in bold geometric prints. Dry clean.",
+    shortDescription: "Single-bed premium mink blanket in five rich floral, geometric and patchwork designs. Dry clean.",
     description:
-      "The Romance in a single bed size — a plush premium mink blanket with a bold geometric print. Super soft, extra warm and brushed to a velvet finish. Available in five designs.",
+      "The Romance in a single-bed size — a plush premium mink blanket, super soft, extra warm and brushed to a velvet finish. Available in five statement designs: Brown Bouquet, Teal Geometric, Crimson Daisies, Rose Garden and Camel Branch.",
     fabric: "Mink (brushed polyester)",
     weave: "Plain mink",
     origin: "India",
     care: ["Dry clean"],
     sizes: ["Single Bed"],
-    colors: [{ name: "Geometric Teal & Red", hex: "#2f6f73" }],
-    imageFit: "contain",
+    colors: [
+      { name: "Brown Bouquet",     hex: "#7b3f13" },
+      { name: "Teal Geometric",    hex: "#05666c" },
+      { name: "Crimson Daisies",   hex: "#a10c37" },
+      { name: "Rose Garden",       hex: "#b22f5b" },
+      { name: "Camel Branch",      hex: "#b69260" },
+    ],
+    imageAspect: "portrait",
+    imageFit: "cover",
     images: [
-      "/romance-single-bed-new.jpeg",
+      "/romance-single-bed/brown-bouquet-studio.png",
+      "/romance-single-bed/teal-geometric-studio.png",
+      "/romance-single-bed/crimson-daisies-studio.png",
+      "/romance-single-bed/rose-garden-studio.png",
+      "/romance-single-bed/camel-branch-studio.png",
     ],
   },
   {
