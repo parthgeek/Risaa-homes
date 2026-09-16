@@ -2,16 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-type PopupKind = "newuser" | "seasonal";
+type PopupKind = "newuser";
 
 const STORAGE = {
   newuser: "risaa_popup_newuser_dismissed_v1",
-  seasonal: "risaa_popup_seasonal_dismissed_v1",
 };
 
 const DELAY = {
   newuser: 1500,
-  seasonal: 12000,
 };
 
 export default function DiscountPopups() {
@@ -20,29 +18,20 @@ export default function DiscountPopups() {
 
   useEffect(() => {
     const newuserDone = localStorage.getItem(STORAGE.newuser);
-    const seasonalDone = localStorage.getItem(STORAGE.seasonal);
-
     let t1: ReturnType<typeof setTimeout> | undefined;
-    let t2: ReturnType<typeof setTimeout> | undefined;
 
     if (!newuserDone) {
       t1 = setTimeout(() => setActive("newuser"), DELAY.newuser);
-    } else if (!seasonalDone) {
-      t2 = setTimeout(() => setActive("seasonal"), DELAY.seasonal);
     }
 
     return () => {
       if (t1) clearTimeout(t1);
-      if (t2) clearTimeout(t2);
     };
   }, []);
 
   function dismiss(kind: PopupKind) {
     localStorage.setItem(STORAGE[kind], "1");
     setActive(null);
-    if (kind === "newuser" && !localStorage.getItem(STORAGE.seasonal)) {
-      setTimeout(() => setActive("seasonal"), DELAY.seasonal);
-    }
   }
 
   function copyCode(code: string) {
@@ -53,25 +42,12 @@ export default function DiscountPopups() {
 
   if (!active) return null;
 
-  const config =
-    active === "newuser"
-      ? {
-          eyebrow: "First Welcome",
-          title: "10% off your first order.",
-          body: "Join the Risaa Home house list. We'll send a one-time code to your inbox, plus early access to seasonal drops.",
-          code: "WELCOME10",
-          cta: "Apply at checkout",
-        }
-      : {
-          eyebrow: "Seasonal Offer",
-          title: "Winter Edit — flat 20% off.",
-          body: "Our heaviest mink blankets and down-alt winter comforters are on the season's only sitewide markdown. Closes once stocks turn.",
-          code: "WINTER20",
-          cta: "Shop the Winter Edit",
-        };
-
-  const shopHref =
-    active === "seasonal" ? "/products?cat=Winter%20Comforters" : "/products";
+  const config = {
+    eyebrow: "First Welcome",
+    title: "10% off your first order.",
+    body: "Join the Risaa Home house list. We'll send a one-time code to your inbox, plus early access to seasonal drops.",
+    code: "WELCOME10",
+  };
 
   return (
     <div
@@ -93,9 +69,7 @@ export default function DiscountPopups() {
             className="absolute inset-0 bg-cover bg-center opacity-70"
             style={{
               backgroundImage:
-                active === "seasonal"
-                  ? "url('https://images.unsplash.com/photo-1631049307290-bb947b114627?w=1200&q=80&auto=format&fit=crop')"
-                  : "url('https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1200&q=80&auto=format&fit=crop')",
+                "url('https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1200&q=80&auto=format&fit=crop')",
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-tr from-[rgba(6,10,43,0.85)] via-[rgba(6,10,43,0.45)] to-transparent" />
@@ -142,36 +116,26 @@ export default function DiscountPopups() {
             {config.body}
           </p>
 
-          {active === "newuser" ? (
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                dismiss("newuser");
-              }}
-              className="mt-7 flex flex-col sm:flex-row gap-3"
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              dismiss("newuser");
+            }}
+            className="mt-7 flex flex-col sm:flex-row gap-3"
+          >
+            <input
+              type="email"
+              required
+              placeholder="your@email.com"
+              className="flex-1 border border-[var(--color-royal-900)]/20 bg-white px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-royal-900)]"
+            />
+            <button
+              type="submit"
+              className="bg-[var(--color-royal-900)] text-[var(--color-ivory)] px-6 py-3 text-[11px] tracking-[0.28em] uppercase hover:bg-[var(--color-royal-950)] transition"
             >
-              <input
-                type="email"
-                required
-                placeholder="your@email.com"
-                className="flex-1 border border-[var(--color-royal-900)]/20 bg-white px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-royal-900)]"
-              />
-              <button
-                type="submit"
-                className="bg-[var(--color-royal-900)] text-[var(--color-ivory)] px-6 py-3 text-[11px] tracking-[0.28em] uppercase hover:bg-[var(--color-royal-950)] transition"
-              >
-                Claim 10% Off
-              </button>
-            </form>
-          ) : (
-            <a
-              href={shopHref}
-              onClick={() => dismiss("seasonal")}
-              className="mt-7 inline-block bg-[var(--color-royal-900)] text-[var(--color-ivory)] px-7 py-3 text-[11px] tracking-[0.28em] uppercase hover:bg-[var(--color-royal-950)] transition"
-            >
-              {config.cta}
-            </a>
-          )}
+              Claim 10% Off
+            </button>
+          </form>
 
           <div className="mt-8 flex items-center gap-3">
             <span className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-ink)]/50">

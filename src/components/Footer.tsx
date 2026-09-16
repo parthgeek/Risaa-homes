@@ -46,9 +46,9 @@ const cols = [
     links: [
       { href: "/products", label: "All Pieces" },
       { href: "/products?cat=Summer%20Sets", label: "Summer Sets" },
+      { href: "/products?cat=Bed%20Sheets%20%26%20Sets", label: "Bed Sheets & Sets" },
       { href: "/products?cat=Mink%20Blankets", label: "Mink Blankets" },
       { href: "/products?cat=Summer%20Comforters", label: "Summer Comforters" },
-      { href: "/products?cat=Winter%20Comforters", label: "Winter Comforters" },
       { href: "/products?cat=Carpets", label: "Carpets" },
     ],
   },

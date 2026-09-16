@@ -16,7 +16,7 @@ const links = [
 ];
 
 const placeholders = [
-  "royal flannel throw",
+  "romance mink blanket",
   "Egyptian sateen sheets",
   "king-size comforter",
   "single-ply blanket",

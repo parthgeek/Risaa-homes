@@ -13,10 +13,10 @@ const slides = [
     titleB: "the long night.",
   },
   {
-    src: "https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=2400&q=85&auto=format&fit=crop",
-    eyebrow: "Imperial Flannel — New Drop",
-    titleA: "A weight",
-    titleB: "you remember.",
+    src: "/romance-single-bed-new.jpeg",
+    eyebrow: "Romance Mink Blanket",
+    titleA: "Warmth that",
+    titleB: "feels like love.",
   },
   {
     src: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=2400&q=85&auto=format&fit=crop",

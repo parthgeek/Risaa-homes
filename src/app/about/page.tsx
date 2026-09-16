@@ -164,52 +164,25 @@ export default function AboutPage() {
             </p>
           </Reveal>
 
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden border border-[var(--color-royal-900)]/15 bg-[var(--color-royal-900)]/15 sm:grid-cols-2">
             {[
               {
-                name: "Founder Name",
+                name: "Samarjeet Singh",
                 role: "Founder & Managing Director",
-                bio: "Leads the group from Gursam International into Risaa Home, with two decades of building precision-led, export-grade businesses.",
-                image:
-                  "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&q=85&auto=format&fit=crop",
               },
               {
-                name: "Co-Founder Name",
-                role: "Co-Founder & Creative Director",
-                bio: "Shapes the design language across Risaa and Risaa Home — quiet palettes, considered weaves, finishes that read in the hand before the eye.",
-                image:
-                  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=85&auto=format&fit=crop",
-              },
-              {
-                name: "Director Name",
-                role: "Director, Sourcing & Operations",
-                bio: "Builds relationships with selected manufacturers in India and abroad, setting clear standards for materials, construction and finish.",
-                image:
-                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=85&auto=format&fit=crop",
+                name: "Barjinder Singh Chahal",
+                role: "Co-Founder & General Manager",
               },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 0.08}>
-                <div className="group bg-white border border-[var(--color-royal-900)]/15 hover:border-[var(--color-royal-900)] transition-colors duration-500 h-full flex flex-col">
-                  <div className="relative aspect-[4/5] overflow-hidden bg-[var(--color-ivory-2)]">
-                    <Image
-                      src={p.image}
-                      alt={p.name}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                    />
-                  </div>
-                  <div className="p-8 flex flex-col flex-1">
-                    <p className="font-display text-2xl text-[var(--color-ink)] leading-tight">
-                      {p.name}
-                    </p>
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-[var(--color-champagne)] mt-3">
-                      {p.role}
-                    </p>
-                    <p className="text-sm text-[var(--color-ink)]/70 mt-5 leading-relaxed">
-                      {p.bio}
-                    </p>
-                  </div>
+                <div className="h-full bg-[var(--color-ivory)] px-8 py-12 md:px-12 md:py-16">
+                  <p className="font-display text-[clamp(2rem,3.5vw,3.6rem)] leading-tight text-[var(--color-ink)]">
+                    {p.name}
+                  </p>
+                  <p className="mt-4 text-[10px] tracking-[0.3em] uppercase text-[var(--color-champagne)]">
+                    {p.role}
+                  </p>
                 </div>
               </Reveal>
             ))}

@@ -5,13 +5,11 @@ import Marquee from "@/components/Marquee";
 import Reveal from "@/components/Reveal";
 import ProductCard from "@/components/ProductCard";
 import ProductPrice from "@/components/ProductPrice";
-import CarpetShowcase from "@/components/CarpetShowcase";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { categories, featuredBeddingProducts, products } from "@/lib/products";
 
 export default function Home() {
   const featured = featuredBeddingProducts;
-  const winterComforter = products.find((product) => product.id === "p45");
+  const furCarpet = products.find((product) => product.id === "p45");
 
   return (
     <>
@@ -141,32 +139,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Carpets */}
-      <section id="carpets" className="bg-[var(--color-ivory-2)]">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-16 md:py-24">
-          <CarpetShowcase />
-        </div>
-      </section>
-
-      {/* Heavy winter comforters */}
-      {winterComforter && (
-        <section id="winter-comforters" className="bg-[var(--color-ivory)]">
+      {/* Fur carpets */}
+      {furCarpet && (
+        <section id="fur-carpets" className="bg-[var(--color-ivory-2)]">
           <div className="max-w-[1600px] mx-auto grid items-stretch md:grid-cols-12">
             <div className="md:col-span-7 lg:col-span-8">
               <Reveal className="h-full">
                 <Link
-                  href={`/products/${winterComforter.slug}`}
+                  href={`/products/${furCarpet.slug}`}
                   className="group relative block min-h-[34rem] h-full overflow-hidden bg-[var(--color-ivory-2)]"
                 >
                   <Image
-                    src={winterComforter.images[0]}
-                    alt="Heavy plush winter comforters in rich solid colours"
+                    src={furCarpet.images[0]}
+                    alt="Fur carpets in pink, lilac, grey and neutral colourways"
                     fill
                     sizes="(max-width: 768px) 100vw, 66vw"
                     className="object-contain transition-transform duration-1000 ease-[cubic-bezier(.2,.8,.2,1)] group-hover:scale-[1.025]"
                   />
                   <span className="absolute bottom-6 left-6 bg-[var(--color-royal-950)] px-5 py-3 text-[10px] tracking-[0.3em] uppercase text-white md:bottom-8 md:left-8">
-                    Seven rich colourways
+                    Seven solid colourways
                   </span>
                 </Link>
               </Reveal>
@@ -174,33 +165,33 @@ export default function Home() {
             <div className="flex flex-col justify-center bg-[var(--color-royal-950)] px-7 py-14 text-white md:col-span-5 md:px-10 lg:col-span-4 lg:px-14">
               <Reveal delay={0.05}>
                 <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-champagne)]">
-                  04 — Heavy winter comforters
+                  03 — Fur carpets
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
                 <h2 className="mt-6 font-display text-[clamp(2.8rem,5vw,5.4rem)] leading-[0.92] font-light text-balance">
-                  Winter,
-                  <span className="italic text-[var(--color-champagne)]"> held softly.</span>
+                  Soft underfoot,
+                  <span className="italic text-[var(--color-champagne)]"> rich in colour.</span>
                 </h2>
               </Reveal>
               <Reveal delay={0.15}>
                 <p className="mt-8 max-w-md text-base leading-relaxed text-white/68">
-                  A substantial 5′ × 7′ comforter with a deep high-pile finish—warm, tactile and
-                  designed for the coldest part of the year.
+                  A 5′ × 7′ carpet with a dense fur pile—soft, tactile and made to bring
+                  warmth and colour to bedrooms and living spaces.
                 </p>
                 <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-[9px] tracking-[0.22em] uppercase text-white/55">
-                  <span>Deep plush</span>
+                  <span>Deep fur pile</span>
                   <span>5′ × 7′</span>
-                  <span>Dry clean</span>
+                  <span>Seven colours</span>
                 </div>
                 <div className="[&_*]:text-white [&_p:first-child]:text-[var(--color-champagne)]">
-                  <ProductPrice product={winterComforter} variant="detail" />
+                  <ProductPrice product={furCarpet} variant="detail" />
                 </div>
                 <Link
-                  href={`/products/${winterComforter.slug}`}
+                  href={`/products/${furCarpet.slug}`}
                   className="mt-10 inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-white transition-colors hover:text-[var(--color-champagne)]"
                 >
-                  View the comforter
+                  View the carpet
                   <span className="block h-px w-10 bg-current transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Reveal>
@@ -270,7 +261,6 @@ export default function Home() {
         </div>
       </section>
 
-      <WhatsAppFloat />
     </>
   );
 }

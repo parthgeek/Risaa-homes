@@ -1,22 +1,20 @@
 export type Category =
   | "Mink Blankets"
-  | "Flannel Blankets"
   | "Summer Sets"
   | "Summer Comforters"
-  | "Bed Sheets"
-  | "Pillows"
+  | "Bed Sheets & Sets"
   | "Mattress Covers"
-  | "Carpets"
-  | "Winter Comforters";
+  | "Carpets";
 
 export type Product = {
   id: string;
   slug: string;
   name: string;
   category: Category;
-  // When mrp is present, price is the WSP. Otherwise price is the MRP.
+  // When mrp is present, price is the WSP. priceType handles confirmed exceptions.
   price: number;
   mrp?: number;
+  priceType?: "WSP" | "MRP";
   tag?: "New" | "Heirloom" | "Limited" | "Bestseller" | "Best for Gifting" | "Hot Selling";
   shortDescription: string;
   description: string;
@@ -40,11 +38,6 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
       "https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=1600&q=80&auto=format&fit=crop",
   },
   {
-    name: "Flannel Blankets",
-    blurb: "Soft-brushed flannel. Warm for all seasons, light enough for AC rooms.",
-    image: "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0001.jpg",
-  },
-  {
     name: "Summer Sets",
     blurb: "Lightweight bedding sets for warm, breathable nights.",
     image:
@@ -56,15 +49,9 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
     image: "/desire%20comforter%20set/Desire%20Comforter%20Risaa%20Home%20%20(1)_page-0001.jpg",
   },
   {
-    name: "Bed Sheets",
+    name: "Bed Sheets & Sets",
     blurb: "Coordinated bedsheet, comforter and cushion sets for complete-room styling.",
     image: "/GOLDMINE%20SET/Goldmine%206%20Pcs%20Risaa%20Home%202_page-0001.jpg",
-  },
-  {
-    name: "Pillows",
-    blurb: "Supportive fills, soft covers. Sleep right.",
-    image:
-      "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=1600&q=80&auto=format&fit=crop",
   },
   {
     name: "Mattress Covers",
@@ -74,22 +61,12 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
   },
   {
     name: "Carpets",
-    blurb: "Expressive rugs selected with Orbis Luxury for colour, character and everyday ease.",
-    image: "/orbis-luxury/neeldhara.jpg",
-  },
-  {
-    name: "Winter Comforters",
-    blurb: "Deep plush warmth in rich solid colourways. Built for the coldest nights.",
+    blurb: "Soft fur carpets in two practical sizes for bedrooms and living spaces.",
     image: "/realcomforter.png",
   },
 ];
 
 // ── Image helpers ──────────────────────────────────────────────────────────────
-
-const IMG = {
-  blanket1:   "https://images.unsplash.com/photo-1631049552240-59c37f38802b?w=1400&q=80&auto=format&fit=crop",
-  pillow1:    "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=1400&q=80&auto=format&fit=crop",
-};
 
 const SHAGUN_DIR = "/SHAGUN-SET";
 const shagunImg = (n: number) =>
@@ -120,22 +97,14 @@ const ROYAL_FEATHER_IMAGES = [
 
 // ── Colour tokens ──────────────────────────────────────────────────────────────
 
-const IVORY      = { name: "Ivory",        hex: "#f1ead7" };
-const PEARL      = { name: "Pearl White",  hex: "#f5f2ec" };
 const CHAMPAGNE  = { name: "Champagne",    hex: "#c8a96a" };
-const BONE       = { name: "Bone",         hex: "#ece5d3" };
 const ROYAL      = { name: "Royal Indigo", hex: "#0f1a66" };
 const MIDNIGHT   = { name: "Midnight",     hex: "#060a2b" };
-const SLATE      = { name: "Slate Blue",   hex: "#3a4a78" };
-const GRAPHITE   = { name: "Graphite",     hex: "#1a1d28" };
 const ROSE       = { name: "Heritage Rose",hex: "#9c4a5c" };
 const LILAC      = { name: "Lilac",        hex: "#b9a3c5" };
 const SKY        = { name: "Sky Blue",     hex: "#a9c5db" };
 const OLIVE      = { name: "Olive",        hex: "#a8a55c" };
 const BURGUNDY   = { name: "Burgundy",     hex: "#6e1423" };
-const GOLD       = { name: "Gold",         hex: "#b5860d" };
-const TEAL       = { name: "Teal",         hex: "#2e7d72" };
-const PEACH      = { name: "Peach",        hex: "#e8a98c" };
 
 export const products: Product[] = [
 
@@ -150,11 +119,11 @@ export const products: Product[] = [
     mrp: 2399,
     tag: "New",
     shortDescription:
-      "Double bed mink blanket with feather emboss — 8 colourways across 4 approved designs.",
+      "Double bed mink blanket in 8 colourways across 4 approved designs.",
     description:
-      "The Royal Feather in the final 2.2 kg double bed mink. Feather-embossed surface, brushed to a velvet hand. Available in four design layouts and eight colourways: N01 Chocolate & Pink, N02 Mauve & Peach, 332 Olive & Mauve, and 959 Beige & Dried Herb.",
+      "The Royal Feather in the final 2.2 kg double bed mink, brushed to a velvet hand. Available in four design layouts and eight colourways: N01 Chocolate & Pink, N02 Mauve & Peach, 332 Olive & Mauve, and 959 Beige & Dried Herb.",
     fabric: "Mink (brushed polyester)",
-    weave: "Feather Emboss",
+    weave: "Soft brushed mink",
     origin: "India",
     care: ["Dry clean"],
     sizes: ["Double Bed"],
@@ -175,8 +144,8 @@ export const products: Product[] = [
     slug: "risaa-romance-blanket",
     name: "Romance Blanket",
     category: "Mink Blankets",
-    price: 820,
-    mrp: 2299,
+    price: 833,
+    mrp: 1999,
     shortDescription: "Premium mink blanket in floral colourways. Best for gifting & weddings. Dry clean.",
     description:
       "The Romance — a plush premium mink blanket in rich floral colourways, built for gifting and weddings. Super soft, extra warm and brushed to a velvet finish.",
@@ -186,12 +155,12 @@ export const products: Product[] = [
     care: ["Dry clean"],
     sizes: ["Double Bed"],
     colors: [
-      { name: "Black Floral", hex: "#1f1d22" },
+      { name: "Blue Floral",  hex: "#274f78" },
       { name: "Red Floral",   hex: "#7e1f2c" },
     ],
     imageAspect: "landscape",
     imageFit: "contain",
-    images: ["/romance-set.png"],
+    images: ["/romance-box.png"],
   },
   {
     id: "p72",
@@ -212,8 +181,7 @@ export const products: Product[] = [
     colors: [{ name: "Geometric Teal & Red", hex: "#2f6f73" }],
     imageFit: "contain",
     images: [
-      "/ROMANCE%20SINGLE%20BED-1.jpg",
-      "/romance-box.png",
+      "/romance-single-bed-new.jpeg",
     ],
   },
   {
@@ -224,36 +192,18 @@ export const products: Product[] = [
     price: 1900,
     mrp: 5199,
     shortDescription:
-      "Double-bed, double-ply mink blanket with one-side embossing in assorted designs.",
+      "Double-bed, double-ply mink blanket in assorted designs.",
     description:
-      "The Royal Comfort is a double-bed, double-ply mink blanket with one-side embossing. Its dense, soft pile offers generous warmth and coverage in assorted floral and geometric designs.",
+      "The Royal Comfort is a double-bed, double-ply mink blanket. Its dense, soft pile offers generous warmth and coverage in assorted floral and geometric designs.",
     fabric: "Mink (brushed polyester)",
-    weave: "Double-ply, one-side embossed",
+    weave: "Double-ply",
     origin: "India",
     care: ["Dry clean"],
     sizes: ["Double Bed"],
     colors: [ROYAL, MIDNIGHT, BURGUNDY, CHAMPAGNE],
-    imageAspect: "landscape",
+    imageAspect: "square",
     imageFit: "contain",
-    images: ["/realproduct.png"],
-  },
-  {
-    id: "p56",
-    slug: "risaa-emperor-blanket",
-    name: "Emperor Blanket",
-    category: "Mink Blankets",
-    price: 2799,
-    mrp: 3499,
-    shortDescription: "Double-bed triple-ply mink blanket made for deep winter warmth.",
-    description:
-      "The Risaa Home Emperor is a substantial double-bed blanket built with a triple-ply construction for generous warmth and coverage.",
-    fabric: "Mink (triple-ply brushed polyester)",
-    weave: "Triple-ply mink",
-    origin: "India",
-    care: ["Dry clean"],
-    sizes: ["Double Bed"],
-    colors: [GOLD, BURGUNDY, MIDNIGHT, ROYAL],
-    images: [IMG.blanket1],
+    images: ["/royal-comfort-new.jpeg"],
   },
 
   {
@@ -265,11 +215,11 @@ export const products: Product[] = [
     mrp: 2399,
     tag: "New",
     shortDescription:
-      "Feather-emboss mink blanket in 8 classic designs — floral, bouquet & lattice. Currently in production.",
+      "Soft mink blanket in 8 classic designs — floral, bouquet & lattice. Currently in production.",
     description:
-      "The Royal Feather Classic — a feather-embossed mink blanket in eight heritage designs spanning floral line-art, striped bouquets and geometric lattice. Brushed to a velvet hand. This range is currently in production; actual stock arrives soon.",
+      "The Royal Feather Classic is a soft mink blanket in eight heritage designs spanning floral line-art, striped bouquets and geometric lattice. Brushed to a velvet hand. This range is currently in production; actual stock arrives soon.",
     fabric: "Mink (brushed polyester)",
-    weave: "Feather Emboss",
+    weave: "Soft brushed mink",
     origin: "India",
     care: ["Dry clean"],
     sizes: ["Double Bed"],
@@ -293,89 +243,6 @@ export const products: Product[] = [
       "/royal-feather-classic/06.JPG",
       "/royal-feather-classic/07.JPG",
       "/royal-feather-classic/08.JPG",
-    ],
-  },
-
-  // ── FLANNEL BLANKETS ───────────────────────────────────────────────────────
-
-  {
-    id: "p57",
-    slug: "risaa-flannel-baby-blanket",
-    name: "Flannel Blanket – Baby",
-    category: "Flannel Blankets",
-    price: 799,
-    mrp: 999,
-    shortDescription: "Soft flannel baby blanket. Machine washable. India.",
-    description:
-      "Gentle, soft-touch flannel for newborns and infants. Machine washable, lightweight, and easy to care for.",
-    fabric: "Flannel (polyester)",
-    weave: "Brushed flannel",
-    origin: "India",
-    care: ["Machine wash cold", "Tumble dry low"],
-    sizes: ["Baby"],
-    colors: [PEARL, SKY, PEACH, LILAC],
-    images: [
-      "https://images.pexels.com/photos/4964222/pexels-photo-4964222.jpeg?cs=srgb&dl=pexels-karola-g-4964222.jpg&fm=jpg",
-    ],
-  },
-  {
-    id: "p58",
-    slug: "risaa-flannel-single-bed-blanket",
-    name: "Flannel Blanket – Single Bed",
-    category: "Flannel Blankets",
-    price: 1299,
-    mrp: 1599,
-    shortDescription: "Single bed flannel blanket. Machine washable. India.",
-    description:
-      "Single bed flannel blanket. Warm, breathable and easy to maintain — a year-round layering piece.",
-    fabric: "Flannel (polyester)",
-    weave: "Brushed flannel",
-    origin: "India",
-    care: ["Machine wash cold", "Tumble dry low"],
-    sizes: ["Single Bed"],
-    colors: [SLATE, TEAL, ROSE, BONE],
-    images: [
-      "https://images.pexels.com/photos/9899861/pexels-photo-9899861.jpeg?cs=srgb&dl=pexels-introspectivedsgn-9899861.jpg&fm=jpg",
-    ],
-  },
-  {
-    id: "p59",
-    slug: "risaa-flannel-double-bed-blanket",
-    name: "Flannel Blanket – Double Bed",
-    category: "Flannel Blankets",
-    price: 1799,
-    mrp: 2199,
-    shortDescription: "Double bed flannel blanket. Machine washable. India.",
-    description:
-      "Double bed flannel blanket. Soft brushed finish on both sides. Drapes well and washes clean every time.",
-    fabric: "Flannel (polyester)",
-    weave: "Brushed flannel",
-    origin: "India",
-    care: ["Machine wash cold", "Tumble dry low"],
-    sizes: ["Double Bed"],
-    colors: [SLATE, MIDNIGHT, BURGUNDY, OLIVE],
-    images: [
-      "https://images.pexels.com/photos/14676726/pexels-photo-14676726.jpeg?cs=srgb&dl=pexels-camerongawn-14676726.jpg&fm=jpg",
-    ],
-  },
-  {
-    id: "p60",
-    slug: "risaa-flannel-6-seater-blanket",
-    name: "Flannel Blanket – 6 Seater (S/6)",
-    category: "Flannel Blankets",
-    price: 2499,
-    mrp: 2999,
-    shortDescription: "Large 6-seater sofa flannel throw. Machine washable. India.",
-    description:
-      "Oversized flannel throw sized for a 6-seater sofa. Large coverage, the same soft brushed flannel finish.",
-    fabric: "Flannel (polyester)",
-    weave: "Brushed flannel",
-    origin: "India",
-    care: ["Machine wash cold", "Tumble dry low"],
-    sizes: ["S/6 (Sofa)"],
-    colors: [IVORY, SLATE, GRAPHITE, TEAL],
-    images: [
-      "https://images.pexels.com/photos/30380666/pexels-photo-30380666.jpeg?cs=srgb&dl=pexels-slipcoverkas-30380666.jpg&fm=jpg",
     ],
   },
 
@@ -510,7 +377,7 @@ export const products: Product[] = [
     slug: "risaa-sukoon-6-pcs-set",
     name: "Sukoon 6 Pcs Set",
     category: "Summer Sets",
-    price: 2100,
+    price: 2200,
     mrp: 8999,
     tag: "Hot Selling",
     shortDescription:
@@ -564,49 +431,36 @@ export const products: Product[] = [
     ],
   },
 
-  // ── SUMMER COMFORTERS ─────────────────────────────────────────────────────
+  // ── BED SHEETS & SETS ─────────────────────────────────────────────────────
 
   {
-    id: "p52",
-    slug: "risaa-flannel-ac-blanket",
-    name: "Risaa Flannel AC Blanket",
-    category: "Flannel Blankets",
-    price: 2499,
+    id: "p106",
+    slug: "risaa-majestic-5-pcs-bedding-set",
+    name: "Majestic 5 Pcs Bedding Set",
+    category: "Bed Sheets & Sets",
+    price: 4999,
+    priceType: "MRP",
     tag: "New",
-    shortDescription: "Printed flannel quilt for AC rooms. 190–240 GSM, 230×250 cm. Available in 15 designs.",
+    shortDescription:
+      "Designer quilted bedcover set with 2 pillow covers and 2 cushion covers.",
     description:
-      "Soft flannel quilt engineered for air-conditioned rooms. Medium weight, warm without being heavy. Rich printed designs on both sides — made for the AC chill without the winter bulk.",
-    fabric: "100% Flannel (Polyester)",
-    weave: "Printed Quilt",
+      "Majestic is a coordinated 5-piece bedding set with one quilted bedcover, two pillow covers and two cushion covers. Its clean stitched finish gives the bed a composed, tailored look.",
+    fabric: "Quilted textile blend",
+    weave: "Designer quilted bedcover",
     origin: "India",
-    care: ["Cold machine wash", "Tumble dry low", "Do not iron"],
-    sizes: ["230 × 250 cm"],
-    colors: [
-      { name: "Navy Floral", hex: "#1a2a5e" },
-      { name: "Slate Blue",  hex: "#3a4a78" },
-      { name: "Midnight",    hex: "#060a2b" },
+    care: ["Machine wash cold", "Do not bleach", "Line dry"],
+    sizes: [
+      "Bedcover: 230 × 245 cm",
+      "Pillow covers (2): 45 × 70 cm",
+      "Cushion covers (2): 33 × 48 cm",
     ],
+    colors: [{ name: "Ivory", hex: "#dedbd2" }],
     imageAspect: "landscape",
     imageFit: "contain",
-    imagePadding: "8%",
-    images: [
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0001.jpg",
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0002.jpg",
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0003.jpg",
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0004.jpg",
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0006.jpg",
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0007.jpg",
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0008.jpg",
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0009.jpg",
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0010.jpg",
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0011.jpg",
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0012.jpg",
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0014.jpg",
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0015.jpg",
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0016.jpg",
-      "/FLANNEL%20AC%20BLANKET/FLANNEL%20AC%20BLANKET_page-0017.jpg",
-    ],
+    images: ["/majestic-inhouse.png"],
   },
+
+  // ── SUMMER COMFORTERS ─────────────────────────────────────────────────────
   {
     id: "p103",
     slug: "risaa-desire-premium-satin-comforter",
@@ -692,64 +546,6 @@ export const products: Product[] = [
     ],
   },
 
-  // ── PILLOWS ───────────────────────────────────────────────────────────────
-
-  {
-    id: "p67",
-    slug: "risaa-pillow-standard",
-    name: "Pillow – Standard",
-    category: "Pillows",
-    price: 499,
-    shortDescription: "Standard sleeping pillow. India.",
-    description:
-      "Everyday sleeping pillow with a soft cotton shell and supportive poly-fill.",
-    fabric: "Cotton Shell, Poly-Fill",
-    weave: "Plain weave shell",
-    origin: "India",
-    care: ["Machine wash cold", "Tumble dry low"],
-    sizes: ["Standard (43 × 69 cm)"],
-    colors: [PEARL, IVORY],
-    images: [IMG.pillow1],
-  },
-  {
-    id: "p68",
-    slug: "risaa-pillow-premium",
-    name: "Pillow – Premium",
-    category: "Pillows",
-    price: 699,
-    mrp: 899,
-    tag: "Bestseller",
-    shortDescription: "Premium sleeping pillow, higher loft. India.",
-    description:
-      "Higher-loft premium pillow for back and side sleepers. Firm support, soft cotton shell.",
-    fabric: "Cotton Shell, High-Loft Poly-Fill",
-    weave: "Plain weave shell",
-    origin: "India",
-    care: ["Machine wash cold", "Tumble dry low"],
-    sizes: ["Standard (43 × 69 cm)"],
-    colors: [PEARL, IVORY],
-    images: [IMG.pillow1],
-  },
-  {
-    id: "p69",
-    slug: "risaa-pillow-microfibre",
-    name: "Pillow – Microfibre",
-    category: "Pillows",
-    price: 899,
-    mrp: 1199,
-    tag: "New",
-    shortDescription: "Microfibre fill pillow. Hypoallergenic. India.",
-    description:
-      "Hypoallergenic microfibre fill in a breathable cotton shell — ideal for sensitive sleepers.",
-    fabric: "Cotton Shell, Microfibre Fill",
-    weave: "Plain weave shell",
-    origin: "India",
-    care: ["Machine wash cold", "Tumble dry low"],
-    sizes: ["Standard (43 × 69 cm)"],
-    colors: [PEARL, IVORY],
-    images: [IMG.pillow1],
-  },
-
   // ── MATTRESS COVERS ───────────────────────────────────────────────────────
 
   {
@@ -781,24 +577,24 @@ export const products: Product[] = [
     images: ["/image.png"],
   },
 
-  // ── WINTER COMFORTERS ─────────────────────────────────────────────────────
+  // ── CARPETS ───────────────────────────────────────────────────────────────
 
   {
     id: "p45",
-    slug: "risaa-heavy-winter-comforter-1",
-    name: "Heavy Winter Comforter – Solid",
-    category: "Winter Comforters",
+    slug: "risaa-solid-shaggy-carpet",
+    name: "Fur Carpet – 5′ × 7′",
+    category: "Carpets",
     price: 800,
     mrp: 1999,
     tag: "Bestseller",
     shortDescription:
-      "Heavy 5′ × 7′ winter comforter with a deep plush finish in rich solid colours.",
+      "Soft 5′ × 7′ fur carpet with a deep pile in seven solid colourways.",
     description:
-      "A heavy winter comforter sized at 5′ × 7′, finished in a soft, high-pile plush surface for warm and cosy winter layering. Available in an assortment of soft neutrals, greys, pinks and lilacs.",
-    fabric: "Plush Polyester",
-    weave: "High-pile plush",
+      "A soft shaggy carpet sized at 5′ × 7′, finished with a dense high pile that adds colour and texture to bedrooms and living spaces. Available in an assortment of neutrals, greys, pinks and lilacs.",
+    fabric: "Polyester pile",
+    weave: "High-pile shag",
     origin: "India",
-    care: ["Dry clean"],
+    care: ["Vacuum regularly", "Spot clean or dry clean"],
     sizes: ["5′ × 7′"],
     colors: [
       { name: "Taupe", hex: "#9d8174" },
@@ -811,12 +607,33 @@ export const products: Product[] = [
     ],
     images: ["/realcomforter.png"],
   },
+  {
+    id: "p46",
+    slug: "risaa-fur-carpet-2x4",
+    name: "Fur Carpet – 2′ × 4′",
+    category: "Carpets",
+    price: 325,
+    priceType: "WSP",
+    shortDescription:
+      "Compact 2′ × 4′ fur carpet for bedsides, entryways and small spaces. Product photography coming soon.",
+    description:
+      "A compact fur carpet sized at 2′ × 4′ for adding a soft touch beside the bed, at an entryway or in smaller living spaces. Product photography will be added when supplied.",
+    fabric: "Soft synthetic fur",
+    weave: "High-pile fur",
+    origin: "India",
+    care: ["Vacuum regularly", "Spot clean or dry clean"],
+    sizes: ["2′ × 4′"],
+    colors: [{ name: "Assorted", hex: "#b8afa3" }],
+    imageAspect: "landscape",
+    imageFit: "contain",
+    images: ["/product-photo-coming-soon.svg"],
+  },
 ];
 
 export const featuredBeddingProductIds = [
   "p102", // Goldmine 6 Pcs Set
   "p105", // Sukoon 6 Pcs Set
-  "p52",  // Risaa Flannel AC Blanket
+  "p106", // Majestic 5 Pcs Bedding Set
   "p103", // Desire Premium Satin Comforter
   "p104", // Temptation Luxury Comforter
   "p100", // Shagun 5 Pc Set

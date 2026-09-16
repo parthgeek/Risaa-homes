@@ -8,7 +8,8 @@ export default function ProductPrice({
   variant?: "card" | "detail";
 }) {
   const hasWholesalePrice = product.mrp !== undefined;
-  const primaryLabel = hasWholesalePrice ? "WSP" : "MRP";
+  const primaryLabel =
+    product.priceType ?? (hasWholesalePrice ? "WSP" : "MRP");
 
   if (variant === "detail") {
     return (

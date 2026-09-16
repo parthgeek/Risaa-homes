@@ -80,14 +80,31 @@ export default function ContactPage() {
                 <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mb-6">
                   Reach the House
                 </p>
-                <ul className="space-y-5">
+                <p className="font-display text-3xl text-[var(--color-royal-900)]">
+                  B. S. Chahal
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--color-ink)]/60">
+                  General Manager, Home Textile Division · Gursam International Pvt. Ltd.
+                </p>
+                <ul className="mt-7 space-y-5 border-t border-[var(--color-royal-900)]/15 pt-6">
                   <li className="flex items-start gap-4">
                     <Phone className="w-4 h-4 mt-1 text-[var(--color-royal-900)]" strokeWidth={1.5} />
-                    <span className="text-sm">+91 98765 43210</span>
+                    <a href="tel:+918360194506" className="luxe-link text-sm">
+                      +91 83601 94506
+                    </a>
                   </li>
                   <li className="flex items-start gap-4">
                     <Mail className="w-4 h-4 mt-1 text-[var(--color-royal-900)]" strokeWidth={1.5} />
-                    <span className="text-sm">concierge@risaahomes.com</span>
+                    <a href="mailto:Chahal@gursam.com" className="luxe-link text-sm">
+                      Chahal@gursam.com
+                    </a>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <MapPin className="w-4 h-4 mt-1 text-[var(--color-royal-900)]" strokeWidth={1.5} />
+                    <span className="text-sm text-[var(--color-ink)]/70 leading-relaxed">
+                      New Sunder Nagar, Threekay Road, Opp. Mediways Hospital,
+                      Ferozpur Road, Ludhiana-142021 (Pb.) India
+                    </span>
                   </li>
                   <li className="flex items-start gap-4">
                     <MapPin className="w-4 h-4 mt-1 text-[var(--color-royal-900)]" strokeWidth={1.5} />

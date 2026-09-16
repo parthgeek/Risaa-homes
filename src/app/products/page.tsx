@@ -4,7 +4,6 @@ import { Suspense, useMemo } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
-import CarpetShowcase from "@/components/CarpetShowcase";
 import Reveal from "@/components/Reveal";
 import {
   products,
@@ -33,7 +32,7 @@ function ProductsInner() {
 
   const filtered = useMemo(() => {
     if (active === "All") return prioritizedProducts;
-    if (active === "Bed Sheets") return featuredBeddingProducts;
+    if (active === "Bed Sheets & Sets") return featuredBeddingProducts;
     return products.filter((p) => p.category === active);
   }, [active]);
 
@@ -89,9 +88,7 @@ function ProductsInner() {
 
       <section className="bg-[var(--color-ivory)]">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-10">
-          {active === "Carpets" ? (
-            <CarpetShowcase />
-          ) : filtered.length === 0 ? (
+          {filtered.length === 0 ? (
             <div className="py-28 text-center">
               <p className="font-display text-3xl md:text-4xl text-[var(--color-ink)]/80">
                 No pieces in this room yet.
