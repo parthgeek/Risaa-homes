@@ -19,7 +19,8 @@ export default function ProductDetail({
 
   // Clicking a colour swaps the main image whenever there's more than one image.
   // Colour index maps to image index (clamped to the last image).
-  const colourMapsToImage = product.images.length > 1;
+  const colourMapsToImage =
+    product.images.length > 1 && product.colorsLinkToImages !== false;
 
   const frameAspect =
     product.imageAspect === "landscape"

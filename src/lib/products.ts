@@ -25,6 +25,7 @@ export type Product = {
   sizes: string[];
   colors: { name: string; hex: string }[];
   images: string[];
+  colorsLinkToImages?: boolean;
   imageAspect?: "portrait" | "landscape" | "square";
   imageFit?: "cover" | "contain";
   imagePadding?: string;
@@ -62,7 +63,7 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
   {
     name: "Carpets",
     blurb: "Soft fur carpets in two practical sizes for bedrooms and living spaces.",
-    image: "/realcomforter.png",
+    image: "/carpets/fur-carpet-5x7-studio.png",
   },
 ];
 
@@ -585,7 +586,7 @@ export const products: Product[] = [
     name: "Fur Carpet – 5′ × 7′",
     category: "Carpets",
     price: 800,
-    mrp: 1999,
+    mrp: 2100,
     tag: "Bestseller",
     shortDescription:
       "Soft 5′ × 7′ fur carpet with a deep pile in seven solid colourways.",
@@ -605,28 +606,44 @@ export const products: Product[] = [
       { name: "Lilac", hex: "#a2689c" },
       { name: "Powder Blue", hex: "#9eabb8" },
     ],
-    images: ["/realcomforter.png"],
+    imageAspect: "landscape",
+    imageFit: "contain",
+    colorsLinkToImages: false,
+    images: [
+      "/carpets/fur-carpet-5x7-studio.png",
+      "/carpets/fur-carpet-5x7-original.png",
+    ],
   },
   {
     id: "p46",
     slug: "risaa-fur-carpet-2x4",
-    name: "Fur Carpet – 2′ × 4′",
+    name: "Carpet / Bed Runner – 2′ × 4′",
     category: "Carpets",
     price: 325,
-    priceType: "WSP",
+    mrp: 800,
     shortDescription:
-      "Compact 2′ × 4′ fur carpet for bedsides, entryways and small spaces. Product photography coming soon.",
+      "Compact 2′ × 4′ patterned carpet, also called a bed runner, for bedsides, entryways and small spaces.",
     description:
-      "A compact fur carpet sized at 2′ × 4′ for adding a soft touch beside the bed, at an entryway or in smaller living spaces. Product photography will be added when supplied.",
-    fabric: "Soft synthetic fur",
-    weave: "High-pile fur",
+      "A compact patterned carpet sized at 2′ × 4′, also called a bed runner. Its soft low pile, fringed ends and distressed Persian-inspired motifs add colour beside the bed, at an entryway or in smaller living spaces.",
+    fabric: "Soft polyester pile",
+    weave: "Low-pile woven carpet",
     origin: "India",
     care: ["Vacuum regularly", "Spot clean or dry clean"],
     sizes: ["2′ × 4′"],
-    colors: [{ name: "Assorted", hex: "#b8afa3" }],
+    colors: [
+      { name: "Navy", hex: "#15263f" },
+      { name: "Pale Aqua", hex: "#9bb9b5" },
+      { name: "Burgundy", hex: "#72202a" },
+      { name: "Cream", hex: "#d7b66f" },
+    ],
     imageAspect: "landscape",
     imageFit: "contain",
-    images: ["/product-photo-coming-soon.svg"],
+    colorsLinkToImages: false,
+    images: [
+      "/carpets/carpet-2x4-studio.png",
+      "/carpets/carpet-2x4-original-a.png",
+      "/carpets/carpet-2x4-original-b.png",
+    ],
   },
 ];
 
