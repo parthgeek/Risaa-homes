@@ -439,8 +439,8 @@ export const products: Product[] = [
     slug: "risaa-majestic-5-pcs-bedding-set",
     name: "Majestic 5 Pcs Bedding Set",
     category: "Bed Sheets & Sets",
-    price: 4999,
-    priceType: "MRP",
+    price: 2100,
+    mrp: 4999,
     tag: "New",
     shortDescription:
       "Designer quilted bedcover set with 2 pillow covers and 2 cushion covers.",
@@ -458,7 +458,13 @@ export const products: Product[] = [
     colors: [{ name: "Ivory", hex: "#dedbd2" }],
     imageAspect: "landscape",
     imageFit: "contain",
-    images: ["/majestic-inhouse.png"],
+    colorsLinkToImages: false,
+    images: [
+      "/majestic-set/majestic-5-piece-studio.png",
+      "/majestic-set/majestic-5-piece-original-package.png",
+      "/majestic-set/majestic-5-piece-original-cushions.png",
+      "/majestic-set/majestic-5-piece-original-insert.png",
+    ],
   },
 
   // ── SUMMER COMFORTERS ─────────────────────────────────────────────────────
