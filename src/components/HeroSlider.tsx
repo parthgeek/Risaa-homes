@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const slides = [
@@ -36,69 +36,89 @@ export default function HeroSlider() {
   const [i, setI] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => setI((p) => (p + 1) % slides.length), 5500);
-    return () => clearInterval(id);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let id: ReturnType<typeof setInterval> | undefined;
+
+    const stop = () => {
+      if (id) clearInterval(id);
+      id = undefined;
+    };
+    const start = () => {
+      if (!id) {
+        id = setInterval(
+          () => setI((current) => (current + 1) % slides.length),
+          5500,
+        );
+      }
+    };
+    const handleVisibilityChange = () => {
+      if (document.hidden) stop();
+      else start();
+    };
+
+    handleVisibilityChange();
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      stop();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, []);
 
   const cur = slides[i];
 
   return (
     <section className="relative h-[100svh] w-full overflow-hidden bg-[var(--color-royal-950)] text-[var(--color-ivory)]">
-      <AnimatePresence mode="sync">
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, scale: 1.06 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.6, ease: [0.2, 0.8, 0.2, 1] }}
-          className="absolute inset-0"
-        >
-          <Image
-            src={cur.src}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover animate-kenburns"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(6,10,43,0.55)] via-[rgba(6,10,43,0.25)] to-[rgba(6,10,43,0.85)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_30%_40%,rgba(15,26,102,0.35),transparent_70%)]" />
-        </motion.div>
-      </AnimatePresence>
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, scale: 1.035 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.2, ease: [0.2, 0.8, 0.2, 1] }}
+        className="absolute inset-0"
+      >
+        <Image
+          src={cur.src}
+          alt=""
+          fill
+          priority={i === 0}
+          sizes="100vw"
+          className="object-cover animate-kenburns"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(6,10,43,0.55)] via-[rgba(6,10,43,0.25)] to-[rgba(6,10,43,0.85)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_30%_40%,rgba(15,26,102,0.35),transparent_70%)]" />
+      </motion.div>
 
       {/* Top frame line */}
       <div className="absolute top-24 left-6 right-6 h-px bg-white/15 z-10 hidden md:block" />
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-end pb-10 md:pb-32 px-5 md:px-12 lg:px-20 max-w-[1600px] mx-auto">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={`txt-${i}`}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
-            className="max-w-4xl"
-          >
-            <div className="flex items-center gap-3 text-[11px] tracking-[0.32em] uppercase text-[var(--color-champagne)] mb-4 md:mb-6">
-              <span className="block w-10 h-px bg-[var(--color-champagne)]" />
-              {cur.eyebrow}
-            </div>
-            <h1 className="font-display text-[clamp(2rem,9vw,9rem)] leading-[0.95] font-light">
-              <span className="block overflow-hidden">
-                <span className="block animate-rise">{cur.titleA}</span>
+        <motion.div
+          key={`txt-${i}`}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
+          className="max-w-4xl"
+        >
+          <div className="flex items-center gap-3 text-[11px] tracking-[0.32em] uppercase text-[var(--color-champagne)] mb-4 md:mb-6">
+            <span className="block w-10 h-px bg-[var(--color-champagne)]" />
+            {cur.eyebrow}
+          </div>
+          <h1 className="font-display text-[clamp(2rem,9vw,9rem)] leading-[0.95] font-light">
+            <span className="block overflow-hidden">
+              <span className="block animate-rise">{cur.titleA}</span>
+            </span>
+            <span className="block overflow-hidden italic text-[var(--color-champagne)]">
+              <span
+                className="block animate-rise"
+                style={{ animationDelay: "0.15s" }}
+              >
+                {cur.titleB}
               </span>
-              <span className="block overflow-hidden italic text-[var(--color-champagne)]">
-                <span
-                  className="block animate-rise"
-                  style={{ animationDelay: "0.15s" }}
-                >
-                  {cur.titleB}
-                </span>
-              </span>
-            </h1>
-          </motion.div>
-        </AnimatePresence>
+            </span>
+          </h1>
+        </motion.div>
 
         <div className="flex items-center justify-between mt-6 md:mt-12 gap-4">
           <Link
