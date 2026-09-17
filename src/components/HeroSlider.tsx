@@ -89,7 +89,7 @@ export default function HeroSlider() {
           alt=""
           fill
           priority={i === 0}
-          sizes="100vw"
+          sizes="(max-width: 767px) 70vw, 100vw"
           className="object-cover animate-kenburns"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(6,10,43,0.55)] via-[rgba(6,10,43,0.25)] to-[rgba(6,10,43,0.85)]" />

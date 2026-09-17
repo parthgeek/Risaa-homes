@@ -17,6 +17,8 @@ export default function DiscountPopups() {
   const [copied, setCopied] = useState<string | null>(null);
 
   useEffect(() => {
+    if (window.matchMedia("(max-width: 767px)").matches) return;
+
     const newuserDone = localStorage.getItem(STORAGE.newuser);
     let t1: ReturnType<typeof setTimeout> | undefined;
 
@@ -51,7 +53,7 @@ export default function DiscountPopups() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center px-4"
+      className="fixed inset-0 z-[100] hidden items-center justify-center px-4 md:flex"
       role="dialog"
       aria-modal="true"
       aria-labelledby="risaa-popup-title"

@@ -35,7 +35,7 @@ export default function ProductCard({ product }: { product: Product }) {
           src={product.images[0]}
           alt={product.name}
           fill
-          sizes="(max-width: 768px) 100vw, 33vw"
+          sizes="(max-width: 768px) 70vw, 33vw"
           className={`${fitClass} ${hoverClass}`}
           style={imageStyle}
         />
