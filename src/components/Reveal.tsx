@@ -1,6 +1,7 @@
 "use client";
 
-import { CSSProperties, ReactNode, useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
@@ -17,49 +18,16 @@ export default function Reveal({
   className,
   once = true,
 }: Props) {
-  const elementRef = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const element = elementRef.current;
-    if (!element) return;
-
-    const skipAnimation = window.matchMedia(
-      "(max-width: 767px), (prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (skipAnimation) return;
-    if (!("IntersectionObserver" in window)) {
-      element.dataset.revealVisible = "true";
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setVisible(entry.isIntersecting);
-        if (entry.isIntersecting && once) observer.disconnect();
-      },
-      { threshold: 0.2 },
-    );
-
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, [once]);
-
+  const prefersReduce = useReducedMotion();
   return (
-    <div
-      ref={elementRef}
+    <motion.div
+      initial={prefersReduce ? false : { opacity: 0, y }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once, amount: 0.2 }}
+      transition={{ duration: 0.9, delay, ease: [0.2, 0.8, 0.2, 1] }}
       className={className}
-      data-reveal
-      data-reveal-visible={visible}
-      style={
-        {
-          "--reveal-delay": `${delay}s`,
-          "--reveal-y": `${y}px`,
-        } as CSSProperties
-      }
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

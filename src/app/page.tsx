@@ -35,8 +35,9 @@ export default function Home() {
                 src="/showroom%20and%20office/office1.jpeg"
                 alt="Risaa Home reception and office in Ludhiana"
                 fill
-                sizes="(max-width: 768px) 75vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
+                priority
               />
             </div>
           </div>
@@ -105,11 +106,7 @@ export default function Home() {
 
           <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none -mx-6 px-6 md:mx-0 md:px-0 pb-4 md:pb-0 gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6">
             {categories.map((c, i) => (
-              <Reveal
-                key={c.name}
-                delay={i * 0.05}
-                className={`${i >= 3 ? "hidden md:block" : ""} shrink-0 w-[75vw] max-w-xs snap-start md:w-auto md:shrink`}
-              >
+              <Reveal key={c.name} delay={i * 0.05} className="shrink-0 w-[75vw] max-w-xs snap-start md:w-auto md:shrink">
                 <Link
                   href={`/products?cat=${encodeURIComponent(c.name)}`}
                   className="tile group block relative aspect-[4/5] overflow-hidden bg-[var(--color-royal-950)]"
@@ -118,7 +115,7 @@ export default function Home() {
                     src={c.image}
                     alt={c.name}
                     fill
-                    sizes="(max-width: 768px) 60vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover tile-img opacity-90 group-hover:opacity-100"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[rgba(6,10,43,0.85)] via-[rgba(6,10,43,0.15)] to-transparent" />
@@ -156,7 +153,7 @@ export default function Home() {
                     src={furCarpet.images[0]}
                     alt="Fur carpets in pink, lilac, grey and neutral colourways"
                     fill
-                    sizes="(max-width: 768px) 75vw, 66vw"
+                    sizes="(max-width: 768px) 100vw, 66vw"
                     className="object-contain transition-transform duration-1000 ease-[cubic-bezier(.2,.8,.2,1)] group-hover:scale-[1.025]"
                   />
                   <span className="absolute bottom-6 left-6 bg-[var(--color-royal-950)] px-5 py-3 text-[10px] tracking-[0.3em] uppercase text-white md:bottom-8 md:left-8">
@@ -231,11 +228,7 @@ export default function Home() {
 
           <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none -mx-6 px-6 md:mx-0 md:px-0 pb-4 md:pb-0 gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-6 md:gap-y-14">
             {featured.map((p, i) => (
-              <Reveal
-                key={p.id}
-                delay={i * 0.06}
-                className={`${i >= 3 ? "hidden md:block" : ""} shrink-0 w-[75vw] max-w-xs snap-start md:w-auto md:shrink`}
-              >
+              <Reveal key={p.id} delay={i * 0.06} className="shrink-0 w-[75vw] max-w-xs snap-start md:w-auto md:shrink">
                 <ProductCard product={p} />
               </Reveal>
             ))}

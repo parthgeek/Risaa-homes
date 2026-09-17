@@ -31,9 +31,7 @@ function useTypewriter(words: string[], paused: boolean) {
   const [phase, setPhase] = useState<"typing" | "holding" | "deleting">("typing");
 
   useEffect(() => {
-    // The search control is hidden below the md breakpoint. Avoid keeping a
-    // fast React state loop alive on phones for UI that cannot be seen.
-    if (paused || !window.matchMedia("(min-width: 768px)").matches) return;
+    if (paused) return;
     const word = words[wordIdx];
     let delay = 55;
 
@@ -88,22 +86,10 @@ export default function Navbar() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    let frame: number | undefined;
-    const update = () => {
-      frame = undefined;
-      const next = window.scrollY > 24;
-      setScrolled((current) => (current === next ? current : next));
-    };
-    const onScroll = () => {
-      if (frame === undefined) frame = window.requestAnimationFrame(update);
-    };
-
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      if (frame !== undefined) window.cancelAnimationFrame(frame);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const solid = !isLanding || scrolled || openMega;
@@ -129,7 +115,7 @@ export default function Navbar() {
       data-solid={solid}
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         solid
-          ? "bg-[var(--color-ivory)]/95 md:backdrop-blur-md text-[var(--color-ink)]"
+          ? "bg-[var(--color-ivory)]/95 backdrop-blur-md text-[var(--color-ink)]"
           : "bg-transparent text-[var(--color-ivory)]"
       }`}
     >
@@ -268,8 +254,7 @@ export default function Navbar() {
             </div>
 
             <button
-              type="button"
-              className="lg:hidden p-2 touch-manipulation"
+              className="lg:hidden p-2"
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
             >

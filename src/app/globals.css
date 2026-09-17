@@ -39,6 +39,8 @@ html {
   scroll-behavior: smooth;
   width: 100%;
   max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 html,
@@ -54,23 +56,8 @@ body {
 body {
   width: 100%;
   max-width: 100%;
-}
-
-/* Reveal uses one stable DOM node on every viewport. Only desktop devices
-   opt into the transition, avoiding a mobile hydration-time element swap. */
-@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
-  [data-reveal] {
-    opacity: 0;
-    transform: translate3d(0, var(--reveal-y, 32px), 0);
-    transition:
-      opacity 0.9s cubic-bezier(.2, .8, .2, 1) var(--reveal-delay, 0s),
-      transform 0.9s cubic-bezier(.2, .8, .2, 1) var(--reveal-delay, 0s);
-  }
-
-  [data-reveal][data-reveal-visible="true"] {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 main,
@@ -169,12 +156,7 @@ footer {
   100% { transform: scale(1.18) translate(-1.5%, -1%); }
 }
 .animate-kenburns {
-  animation: none;
-}
-@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
-  .animate-kenburns {
-    animation: kenburns 12s ease-in-out infinite alternate;
-  }
+  animation: kenburns 12s ease-in-out infinite alternate;
 }
 
 /* Letter reveal */
@@ -278,34 +260,6 @@ footer {
 }
 .animate-wa-glow {
   animation: wa-glow 2.2s cubic-bezier(.4,0,.6,1) infinite;
-}
-
-/* Keep phone scrolling on the compositor. These decorative loops add
-   continuous style work even while their elements are off-screen, which can
-   make memory-constrained mobile browsers reload the page. */
-@media (max-width: 767px) {
-  html,
-  body {
-    scroll-behavior: auto;
-    overscroll-behavior-y: none;
-  }
-
-  [data-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-
-  .animate-marquee,
-  .animate-marquee-slow,
-  .footer-wordmark-shine,
-  .animate-caret,
-  .animate-search-pulse,
-  .animate-float-y,
-  .shine::after,
-  .animate-wa-glow {
-    animation: none;
-  }
 }
 
 /* Override global border-radius:0 reset — FAB must be circular */

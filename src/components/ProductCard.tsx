@@ -35,7 +35,7 @@ export default function ProductCard({ product }: { product: Product }) {
           src={product.images[0]}
           alt={product.name}
           fill
-          sizes="(max-width: 768px) 70vw, 33vw"
+          sizes="(max-width: 768px) 100vw, 33vw"
           className={`${fitClass} ${hoverClass}`}
           style={imageStyle}
         />
@@ -44,7 +44,7 @@ export default function ProductCard({ product }: { product: Product }) {
             {product.tag}
           </span>
         )}
-        <div className="absolute inset-x-0 bottom-0 hidden translate-y-full bg-[var(--color-royal-950)]/90 py-4 px-5 text-[var(--color-ivory)] transition-transform duration-700 ease-[cubic-bezier(.2,.8,.2,1)] group-hover:translate-y-0 md:flex md:items-center md:justify-between md:backdrop-blur-sm">
+        <div className="absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(.2,.8,.2,1)] bg-[var(--color-royal-950)]/90 backdrop-blur-sm text-[var(--color-ivory)] py-4 px-5 flex items-center justify-between">
           <span className="text-[10px] tracking-[0.3em] uppercase">View piece</span>
           <span className="block w-6 h-px bg-current" />
         </div>
