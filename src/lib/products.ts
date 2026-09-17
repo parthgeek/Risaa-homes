@@ -63,7 +63,7 @@ export const categories: { name: Category; blurb: string; image: string }[] = [
   {
     name: "Carpets",
     blurb: "Soft fur carpets in two practical sizes for bedrooms and living spaces.",
-    image: "/carpets/fur-carpet-5x7-studio.png",
+    image: "/carpets/fur-carpet-5x7-studio.webp",
   },
 ];
 
@@ -132,10 +132,10 @@ export const products: Product[] = [
     imageAspect: "portrait",
     imageFit: "cover",
     images: [
-      "/royal-feather-double-ply/honey-lattice.png",
-      "/royal-feather-double-ply/teal-lattice.png",
-      "/royal-feather-double-ply/burgundy-floral.png",
-      "/royal-feather-double-ply/cream-floral.png",
+      "/royal-feather-double-ply/honey-lattice.webp",
+      "/royal-feather-double-ply/teal-lattice.webp",
+      "/royal-feather-double-ply/burgundy-floral.webp",
+      "/royal-feather-double-ply/cream-floral.webp",
     ],
   },
   {
@@ -187,11 +187,11 @@ export const products: Product[] = [
     imageAspect: "portrait",
     imageFit: "cover",
     images: [
-      "/romance-single-bed/brown-bouquet-studio.png",
-      "/romance-single-bed/teal-geometric-studio.png",
-      "/romance-single-bed/crimson-daisies-studio.png",
-      "/romance-single-bed/rose-garden-studio.png",
-      "/romance-single-bed/camel-branch-studio.png",
+      "/romance-single-bed/brown-bouquet-studio.webp",
+      "/romance-single-bed/teal-geometric-studio.webp",
+      "/romance-single-bed/crimson-daisies-studio.webp",
+      "/romance-single-bed/rose-garden-studio.webp",
+      "/romance-single-bed/camel-branch-studio.webp",
     ],
   },
   {
@@ -469,10 +469,10 @@ export const products: Product[] = [
     imageFit: "contain",
     colorsLinkToImages: false,
     images: [
-      "/majestic-set/majestic-5-piece-studio.png",
-      "/majestic-set/majestic-5-piece-original-package.png",
-      "/majestic-set/majestic-5-piece-original-cushions.png",
-      "/majestic-set/majestic-5-piece-original-insert.png",
+      "/majestic-set/majestic-5-piece-studio.webp",
+      "/majestic-set/majestic-5-piece-original-package.webp",
+      "/majestic-set/majestic-5-piece-original-cushions.webp",
+      "/majestic-set/majestic-5-piece-original-insert.webp",
     ],
   },
 
@@ -625,8 +625,8 @@ export const products: Product[] = [
     imageFit: "contain",
     colorsLinkToImages: false,
     images: [
-      "/carpets/fur-carpet-5x7-studio.png",
-      "/carpets/fur-carpet-5x7-original.png",
+      "/carpets/fur-carpet-5x7-studio.webp",
+      "/carpets/fur-carpet-5x7-original.webp",
     ],
   },
   {
@@ -655,9 +655,9 @@ export const products: Product[] = [
     imageFit: "contain",
     colorsLinkToImages: false,
     images: [
-      "/carpets/carpet-2x4-studio.png",
-      "/carpets/carpet-2x4-original-a.png",
-      "/carpets/carpet-2x4-original-b.png",
+      "/carpets/carpet-2x4-studio.webp",
+      "/carpets/carpet-2x4-original-a.webp",
+      "/carpets/carpet-2x4-original-b.webp",
     ],
   },
 ];
