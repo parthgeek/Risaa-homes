@@ -59,7 +59,7 @@ export default function DiscountPopups() {
       <button
         aria-label="Close discount popup"
         onClick={() => dismiss(active)}
-        className="absolute inset-0 bg-[rgba(6,10,43,0.72)] backdrop-blur-sm"
+        className="absolute inset-0 bg-[rgba(6,10,43,0.72)] md:backdrop-blur-sm"
       />
 
       <div className="relative w-full max-w-[920px] grid md:grid-cols-2 bg-[var(--color-ivory)] shadow-2xl overflow-hidden border border-[var(--color-royal-900)]/10">

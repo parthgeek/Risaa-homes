@@ -36,7 +36,14 @@ export default function HeroSlider() {
   const [i, setI] = useState(0);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+    // A continuously changing full-viewport image is expensive on phones.
+    // Mobile users can still choose a slide with the numbered controls.
+    if (prefersReducedMotion || isMobile) return;
 
     let id: ReturnType<typeof setInterval> | undefined;
 

@@ -156,7 +156,12 @@ footer {
   100% { transform: scale(1.18) translate(-1.5%, -1%); }
 }
 .animate-kenburns {
-  animation: kenburns 12s ease-in-out infinite alternate;
+  animation: none;
+}
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .animate-kenburns {
+    animation: kenburns 12s ease-in-out infinite alternate;
+  }
 }
 
 /* Letter reveal */
@@ -260,6 +265,28 @@ footer {
 }
 .animate-wa-glow {
   animation: wa-glow 2.2s cubic-bezier(.4,0,.6,1) infinite;
+}
+
+/* Keep phone scrolling on the compositor. These decorative loops add
+   continuous style work even while their elements are off-screen, which can
+   make memory-constrained mobile browsers reload the page. */
+@media (max-width: 767px) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .animate-marquee,
+  .animate-marquee-slow,
+  .footer-wordmark-shine,
+  .animate-caret,
+  .animate-search-pulse,
+  .animate-float-y,
+  .shine::after,
+  .animate-wa-glow {
+    animation: none;
+  }
 }
 
 /* Override global border-radius:0 reset — FAB must be circular */

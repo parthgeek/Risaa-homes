@@ -31,7 +31,9 @@ function useTypewriter(words: string[], paused: boolean) {
   const [phase, setPhase] = useState<"typing" | "holding" | "deleting">("typing");
 
   useEffect(() => {
-    if (paused) return;
+    // The search control is hidden below the md breakpoint. Avoid keeping a
+    // fast React state loop alive on phones for UI that cannot be seen.
+    if (paused || !window.matchMedia("(min-width: 768px)").matches) return;
     const word = words[wordIdx];
     let delay = 55;
 
@@ -115,7 +117,7 @@ export default function Navbar() {
       data-solid={solid}
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         solid
-          ? "bg-[var(--color-ivory)]/95 backdrop-blur-md text-[var(--color-ink)]"
+          ? "bg-[var(--color-ivory)]/95 md:backdrop-blur-md text-[var(--color-ink)]"
           : "bg-transparent text-[var(--color-ivory)]"
       }`}
     >

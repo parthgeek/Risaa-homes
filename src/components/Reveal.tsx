@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 type Props = {
   children: ReactNode;
@@ -19,13 +19,33 @@ export default function Reveal({
   once = true,
 }: Props) {
   const prefersReduce = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 767px)");
+    const update = () => setIsMobile(media.matches);
+
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  if (prefersReduce || isMobile) {
+    return (
+      <div className={className} data-reveal>
+        {children}
+      </div>
+    );
+  }
+
   return (
     <motion.div
-      initial={prefersReduce ? false : { opacity: 0, y }}
+      initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once, amount: 0.2 }}
       transition={{ duration: 0.9, delay, ease: [0.2, 0.8, 0.2, 1] }}
       className={className}
+      data-reveal
     >
       {children}
     </motion.div>
