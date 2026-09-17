@@ -17,7 +17,7 @@ const links = [
 
 const placeholders = [
   "romance mink blanket",
-  "Egyptian sateen sheets",
+  "Egyptian satin sheets",
   "king-size comforter",
   "single-ply blanket",
   "heritage wool runner",
@@ -256,7 +256,8 @@ export default function Navbar() {
             </div>
 
             <button
-              className="lg:hidden p-2"
+              type="button"
+              className="lg:hidden p-2 touch-manipulation"
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
             >
