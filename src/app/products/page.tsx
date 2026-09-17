@@ -68,7 +68,7 @@ function ProductsInner() {
         </div>
       </section>
 
-      <section className="bg-[var(--color-ivory)] sticky top-20 z-30 border-b border-[var(--color-royal-900)]/10 backdrop-blur-md bg-white/85">
+      <section className="sticky top-20 z-30 border-b border-[var(--color-royal-900)]/10 bg-white/95 md:bg-white/85 md:backdrop-blur-md">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex items-center gap-2 overflow-x-auto py-4">
           {CATS.map((c) => (
             <button

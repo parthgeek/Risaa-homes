@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
-import { ReactNode, useEffect, useState } from "react";
+import { CSSProperties, ReactNode, useEffect, useRef, useState } from "react";
 
 type Props = {
   children: ReactNode;
@@ -18,36 +17,49 @@ export default function Reveal({
   className,
   once = true,
 }: Props) {
-  const prefersReduce = useReducedMotion();
-  const [isMobile, setIsMobile] = useState(false);
+  const elementRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const media = window.matchMedia("(max-width: 767px)");
-    const update = () => setIsMobile(media.matches);
+    const element = elementRef.current;
+    if (!element) return;
 
-    update();
-    media.addEventListener("change", update);
-    return () => media.removeEventListener("change", update);
-  }, []);
+    const skipAnimation = window.matchMedia(
+      "(max-width: 767px), (prefers-reduced-motion: reduce)",
+    ).matches;
 
-  if (prefersReduce || isMobile) {
-    return (
-      <div className={className} data-reveal>
-        {children}
-      </div>
+    if (skipAnimation) return;
+    if (!("IntersectionObserver" in window)) {
+      element.dataset.revealVisible = "true";
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setVisible(entry.isIntersecting);
+        if (entry.isIntersecting && once) observer.disconnect();
+      },
+      { threshold: 0.2 },
     );
-  }
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [once]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once, amount: 0.2 }}
-      transition={{ duration: 0.9, delay, ease: [0.2, 0.8, 0.2, 1] }}
+    <div
+      ref={elementRef}
       className={className}
       data-reveal
+      data-reveal-visible={visible}
+      style={
+        {
+          "--reveal-delay": `${delay}s`,
+          "--reveal-y": `${y}px`,
+        } as CSSProperties
+      }
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

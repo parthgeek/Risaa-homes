@@ -88,10 +88,22 @@ export default function Navbar() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let frame: number | undefined;
+    const update = () => {
+      frame = undefined;
+      const next = window.scrollY > 24;
+      setScrolled((current) => (current === next ? current : next));
+    };
+    const onScroll = () => {
+      if (frame === undefined) frame = window.requestAnimationFrame(update);
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame !== undefined) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   const solid = !isLanding || scrolled || openMega;
