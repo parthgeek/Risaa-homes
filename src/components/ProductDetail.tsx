@@ -196,7 +196,7 @@ export default function ProductDetail({
                   href="/contact"
                   className="inline-flex items-center justify-center gap-4 border border-[var(--color-royal-900)] px-8 py-5 text-[11px] tracking-[0.32em] uppercase hover:bg-[var(--color-royal-900)] hover:text-[var(--color-ivory)] transition-colors"
                 >
-                  Concierge
+                  Connect
                 </Link>
               </div>
             </Reveal>

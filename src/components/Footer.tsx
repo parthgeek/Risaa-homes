@@ -57,7 +57,7 @@ const cols = [
     links: [
       { href: "/care", label: "Care Instructions" },
       { href: "/care#guidelines", label: "Guidelines" },
-      { href: "/contact", label: "Concierge" },
+      { href: "/contact", label: "Connect" },
       { href: "/contact", label: "Trade Programme" },
     ],
   },

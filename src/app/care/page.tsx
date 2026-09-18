@@ -189,7 +189,7 @@ export default function CarePage() {
             <p className="font-display text-3xl md:text-4xl leading-snug max-w-2xl mx-auto text-[var(--color-ink)]/80">
               A spill, a snag, a question?{" "}
               <Link href="/contact" className="luxe-link italic text-[var(--color-royal-900)]">
-                Speak to our concierge.
+                Connect with us.
               </Link>
             </p>
           </Reveal>

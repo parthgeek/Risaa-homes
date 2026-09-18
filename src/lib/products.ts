@@ -225,9 +225,9 @@ export const products: Product[] = [
     mrp: 2399,
     tag: "New",
     shortDescription:
-      "Double-bed, single-ply mink blanket in 8 classic floral, bouquet and lattice designs.",
+      "Double-bed, single-ply mink blanket in 10 classic floral, bouquet and lattice designs.",
     description:
-      "Risaa Home Royal Feather is a double-bed, single-ply mink blanket in eight distinctive designs spanning floral line-art, striped bouquets and geometric lattice. A quality starter-range blanket with a soft brushed finish, now available from production.",
+      "Risaa Home Royal Feather is a double-bed, single-ply mink blanket in ten distinctive designs spanning floral line-art, striped bouquets and geometric lattice. A quality starter-range blanket with a soft brushed finish, now available from production.",
     fabric: "Mink (brushed polyester)",
     weave: "Single-ply soft brushed mink",
     origin: "India",
@@ -242,6 +242,8 @@ export const products: Product[] = [
       { name: "Sepia Blossom",    hex: "#6b4a2e" },
       { name: "Espresso Lattice", hex: "#4b3a28" },
       { name: "Caramel Lattice",  hex: "#a9794f" },
+      { name: "Ruby Floral",      hex: "#9f2634" },
+      { name: "Terra Floral",     hex: "#8c554a" },
     ],
     imageFit: "contain",
     images: [
@@ -253,6 +255,8 @@ export const products: Product[] = [
       "/royal-feather-classic/06.JPG",
       "/royal-feather-classic/07.JPG",
       "/royal-feather-classic/08.JPG",
+      "/royal-feather-classic/09-red-floral.png",
+      "/royal-feather-classic/10-colour-block-floral.png",
     ],
   },
 

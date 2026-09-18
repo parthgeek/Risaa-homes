@@ -17,7 +17,7 @@ export default function ContactPage() {
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
           <Reveal>
             <p className="text-[10px] tracking-[0.32em] uppercase text-[var(--color-royal-700)] mb-6">
-              The Concierge
+              Connect
             </p>
           </Reveal>
           <Reveal delay={0.1}>
