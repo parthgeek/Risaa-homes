@@ -225,11 +225,11 @@ export const products: Product[] = [
     mrp: 2399,
     tag: "New",
     shortDescription:
-      "Soft mink blanket in 8 classic designs — floral, bouquet & lattice. Currently in production.",
+      "Double-bed, single-ply mink blanket in 8 classic floral, bouquet and lattice designs.",
     description:
-      "The Royal Feather Classic is a soft mink blanket in eight heritage designs spanning floral line-art, striped bouquets and geometric lattice. Brushed to a velvet hand. This range is currently in production; actual stock arrives soon.",
+      "Risaa Home Royal Feather is a double-bed, single-ply mink blanket in eight distinctive designs spanning floral line-art, striped bouquets and geometric lattice. A quality starter-range blanket with a soft brushed finish, now available from production.",
     fabric: "Mink (brushed polyester)",
-    weave: "Soft brushed mink",
+    weave: "Single-ply soft brushed mink",
     origin: "India",
     care: ["Dry clean"],
     sizes: ["Double Bed"],
@@ -275,7 +275,7 @@ export const products: Product[] = [
     origin: "India",
     care: ["Cold wash", "Do not bleach", "Do not iron"],
     sizes: [
-      "Bedsheet: 220 × 240 cm",
+      "Bedsheet: 225 × 250 cm",
       "Pillowcases (2): 46 × 69 cm",
       "Filled cushion covers (2): 40 × 40 cm",
     ],
@@ -476,6 +476,38 @@ export const products: Product[] = [
     ],
   },
 
+  {
+    id: "p107",
+    slug: "risaa-velvet-touch-5-pcs-bedcover-set",
+    name: "Velvet Touch 5 Pcs Bedcover Set",
+    category: "Bed Sheets & Sets",
+    price: 2499,
+    mrp: 4999,
+    tag: "New",
+    shortDescription:
+      "Velvet-touch 5-piece bedcover set with distinctive white dotted stitching.",
+    description:
+      "Velvet Touch is a coordinated 5-piece bedcover set with one plush quilted bedcover, two matching pillow covers and two ivory cushion covers. Its warm camel colourway is finished with fine rows of white dotted stitching for a distinctive tailored effect.",
+    fabric: "Velvet-touch quilted textile",
+    weave: "Quilted bedcover with white dotted stitching",
+    origin: "India",
+    care: ["Machine wash cold", "Do not bleach", "Line dry"],
+    sizes: [
+      "Bedcover: 225 × 245 cm",
+      "Pillow covers (2): 45 × 70 cm",
+      "Cushion covers (2): 33 × 48 cm",
+    ],
+    colors: [{ name: "Warm Camel", hex: "#b77b48" }],
+    imageAspect: "landscape",
+    imageFit: "contain",
+    colorsLinkToImages: false,
+    images: [
+      "/velvet-touch-set/velvet-touch-5-piece-studio.png",
+      "/velvet-touch-set/velvet-touch-5-piece-detail.png",
+      "/velvet-touch-set/velvet-touch-5-piece-lifestyle.png",
+    ],
+  },
+
   // ── SUMMER COMFORTERS ─────────────────────────────────────────────────────
   {
     id: "p103",
@@ -666,6 +698,7 @@ export const featuredBeddingProductIds = [
   "p102", // Goldmine 6 Pcs Set
   "p105", // Sukoon 6 Pcs Set
   "p106", // Majestic 5 Pcs Bedding Set
+  "p107", // Velvet Touch 5 Pcs Bedcover Set
   "p103", // Desire Premium Satin Comforter
   "p104", // Temptation Luxury Comforter
   "p100", // Shagun 5 Pc Set
