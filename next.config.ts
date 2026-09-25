@@ -4,6 +4,15 @@ const nextConfig: NextConfig = {
   // Allow phones on the local network to use the dev server's HMR socket.
   // Without this, Next blocks the socket and the page force-reloads itself.
   allowedDevOrigins: ["127.0.0.1", "192.168.*.*", "10.*.*.*"],
+  async redirects() {
+    return [
+      {
+        source: "/products/risaa-royal-feather-classic-blanket",
+        destination: "/products/risaa-royal-feather-blanket",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },

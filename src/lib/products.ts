@@ -95,49 +95,15 @@ const temptationComforterImg = (n: number) =>
 
 const CHAMPAGNE  = { name: "Champagne",    hex: "#c8a96a" };
 const ROYAL      = { name: "Royal Indigo", hex: "#0f1a66" };
-const MIDNIGHT   = { name: "Midnight",     hex: "#060a2b" };
 const ROSE       = { name: "Heritage Rose",hex: "#9c4a5c" };
 const LILAC      = { name: "Lilac",        hex: "#b9a3c5" };
 const SKY        = { name: "Sky Blue",     hex: "#a9c5db" };
 const OLIVE      = { name: "Olive",        hex: "#a8a55c" };
-const BURGUNDY   = { name: "Burgundy",     hex: "#6e1423" };
 
 export const products: Product[] = [
 
   // ── MINK BLANKETS ─────────────────────────────────────────────────────────
 
-  {
-    id: "p53",
-    slug: "risaa-royal-feather-blanket",
-    name: "Royal Feather Blanket – Double Ply",
-    category: "Mink Blankets",
-    price: 1115,
-    mrp: 2399,
-    tag: "New",
-    shortDescription:
-      "Double-bed, double-ply mink blanket in four signature designs.",
-    description:
-      "Royal Feather is a double-bed, double-ply mink blanket with a rich velvet hand and generous winter warmth. Available in four distinctive designs: Honey Lattice, Teal Lattice, Burgundy Floral and Cream Floral.",
-    fabric: "Mink (brushed polyester)",
-    weave: "Double-ply brushed mink",
-    origin: "India",
-    care: ["Dry clean"],
-    sizes: ["Double Bed"],
-    colors: [
-      { name: "Honey Lattice",   hex: "#a9783e" },
-      { name: "Teal Lattice",    hex: "#1b5961" },
-      { name: "Burgundy Floral", hex: "#781d2d" },
-      { name: "Cream Floral",    hex: "#d3b276" },
-    ],
-    imageAspect: "portrait",
-    imageFit: "cover",
-    images: [
-      "/royal-feather-double-ply/honey-lattice.webp",
-      "/royal-feather-double-ply/teal-lattice.webp",
-      "/royal-feather-double-ply/burgundy-floral.webp",
-      "/royal-feather-double-ply/cream-floral.webp",
-    ],
-  },
   {
     id: "p54",
     slug: "risaa-romance-blanket",
@@ -202,24 +168,35 @@ export const products: Product[] = [
     price: 1900,
     mrp: 5199,
     shortDescription:
-      "Double-bed, double-ply mink blanket in assorted designs.",
+      "Double-bed, double-ply heavy-quality mink blanket in four signature designs.",
     description:
-      "The Royal Comfort is a double-bed, double-ply mink blanket. Its dense, soft pile offers generous warmth and coverage in assorted floral and geometric designs.",
+      "The Royal Comfort is a double-bed, double-ply heavy-quality mink blanket. Its dense, soft pile offers generous winter warmth and coverage. Available in four distinctive designs: Honey Lattice, Teal Lattice, Burgundy Floral and Cream Floral.",
     fabric: "Mink (brushed polyester)",
-    weave: "Double-ply",
+    weave: "Double-ply heavy brushed mink",
     origin: "India",
     care: ["Dry clean"],
     sizes: ["Double Bed"],
-    colors: [ROYAL, MIDNIGHT, BURGUNDY, CHAMPAGNE],
-    imageAspect: "square",
-    imageFit: "contain",
-    images: ["/royal-comfort-new.jpeg"],
+    colors: [
+      { name: "Honey Lattice",   hex: "#a9783e" },
+      { name: "Teal Lattice",    hex: "#1b5961" },
+      { name: "Burgundy Floral", hex: "#781d2d" },
+      { name: "Cream Floral",    hex: "#d3b276" },
+    ],
+    imageAspect: "portrait",
+    imageFit: "cover",
+    images: [
+      "/royal-comfort/honey-lattice.webp",
+      "/royal-comfort/teal-lattice.webp",
+      "/royal-comfort/burgundy-floral.webp",
+      "/royal-comfort/cream-floral.webp",
+      "/royal-comfort-new.jpeg",
+    ],
   },
 
   {
     id: "p73",
-    slug: "risaa-royal-feather-classic-blanket",
-    name: "Royal Feather Blanket – Classic",
+    slug: "risaa-royal-feather-blanket",
+    name: "Royal Feather Blanket – Single Ply",
     category: "Mink Blankets",
     price: 1115,
     mrp: 2399,
@@ -234,19 +211,21 @@ export const products: Product[] = [
     care: ["Dry clean"],
     sizes: ["Double Bed"],
     colors: [
+      { name: "Ruby Floral",      hex: "#9f2634" },
+      { name: "Terra Floral",     hex: "#8c554a" },
       { name: "Mocha Floral",     hex: "#5a2d1f" },
       { name: "Wine Floral",      hex: "#6e203a" },
       { name: "Plum Bouquet",     hex: "#6f5570" },
       { name: "Rosewood Bouquet", hex: "#9c5a4f" },
       { name: "Mauve Blossom",    hex: "#8d6f86" },
       { name: "Sepia Blossom",    hex: "#6b4a2e" },
-      { name: "Espresso Lattice", hex: "#4b3a28" },
+      { name: "Olive Lattice",    hex: "#5b5140" },
       { name: "Caramel Lattice",  hex: "#a9794f" },
-      { name: "Ruby Floral",      hex: "#9f2634" },
-      { name: "Terra Floral",     hex: "#8c554a" },
     ],
     imageFit: "contain",
     images: [
+      "/royal-feather-classic/09-red-floral-bed.webp",
+      "/royal-feather-classic/10-colour-block-floral-bed.webp",
       "/royal-feather-classic/01.JPG",
       "/royal-feather-classic/02.JPG",
       "/royal-feather-classic/03.JPG",
@@ -255,8 +234,6 @@ export const products: Product[] = [
       "/royal-feather-classic/06.JPG",
       "/royal-feather-classic/07.JPG",
       "/royal-feather-classic/08.JPG",
-      "/royal-feather-classic/09-red-floral.png",
-      "/royal-feather-classic/10-colour-block-floral.png",
     ],
   },
 
