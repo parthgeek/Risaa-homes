@@ -194,6 +194,10 @@ export const products: Product[] = [
       "/royal-comfort/mauve-rose-frame.webp",
       "/royal-comfort/brown-gold-lattice.webp",
       "/royal-comfort/brown-floral-medallion.webp",
+      "/royal-comfort/royal-comfort-floral-bedsheet.png",
+      "/royal-comfort/royal-comfort-geometric-bedsheet.png",
+      "/royal-comfort/royal-comfort-geometric-pillow-cover.png",
+      "/royal-comfort/royal-comfort-floral-pillow-cover.png",
     ],
   },
 
