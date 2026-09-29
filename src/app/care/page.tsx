@@ -14,9 +14,10 @@ const fabrics = [
   {
     name: "Mink Blankets",
     care: [
-      "Machine wash cold on a gentle cycle with mild liquid detergent.",
+      "Dry-cleaning is preferred for a longer life and a fluffy finish.",
+      "Alternatively, hand wash in lukewarm water with a mild detergent made for woollens.",
+      "Dry naturally in the sun.",
       "Do not iron — heat will scorch the embossed pile.",
-      "Tumble dry on low; brush gently to revive the nap.",
       "Store flat in a breathable cotton bag — never compressed.",
     ],
   },

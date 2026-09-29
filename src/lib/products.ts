@@ -100,6 +100,12 @@ const LILAC      = { name: "Lilac",        hex: "#b9a3c5" };
 const SKY        = { name: "Sky Blue",     hex: "#a9c5db" };
 const OLIVE      = { name: "Olive",        hex: "#a8a55c" };
 
+const MINK_BLANKET_CARE = [
+  "Dry-cleaning is preferred for a longer life and a fluffy finish",
+  "Alternatively, hand wash in lukewarm water with a mild detergent made for woollens",
+  "Dry naturally in the sun",
+];
+
 export const products: Product[] = [
 
   // ── MINK BLANKETS ─────────────────────────────────────────────────────────
@@ -111,14 +117,14 @@ export const products: Product[] = [
     category: "Mink Blankets",
     price: 833,
     mrp: 1999,
-    shortDescription: "Premium mink blanket in floral colourways. Best for gifting & weddings. Dry clean.",
+    shortDescription: "Premium mink blanket in floral colourways. Best for gifting & weddings. Dry-cleaning preferred.",
     description:
       "The Romance — a plush premium mink blanket in rich floral colourways, built for gifting and weddings. Super soft, extra warm and brushed to a velvet finish.",
     fabric: "Mink (brushed polyester)",
     weave: "Plain mink",
     origin: "India",
-    care: ["Dry clean"],
-    sizes: ["Double Bed"],
+    care: MINK_BLANKET_CARE,
+    sizes: ["Single Bed"],
     colors: [
       { name: "Blue Floral",  hex: "#274f78" },
       { name: "Red Floral",   hex: "#7e1f2c" },
@@ -135,13 +141,13 @@ export const products: Product[] = [
     price: 833,
     mrp: 1999,
     tag: "New",
-    shortDescription: "Single-bed premium mink blanket in five rich floral, geometric and patchwork designs. Dry clean.",
+    shortDescription: "Single-bed premium mink blanket in five rich floral, geometric and patchwork designs. Dry-cleaning preferred.",
     description:
       "The Romance in a single-bed size — a plush premium mink blanket, super soft, extra warm and brushed to a velvet finish. Available in five statement designs: Brown Bouquet, Teal Geometric, Crimson Daisies, Rose Garden and Camel Branch.",
     fabric: "Mink (brushed polyester)",
     weave: "Plain mink",
     origin: "India",
-    care: ["Dry clean"],
+    care: MINK_BLANKET_CARE,
     sizes: ["Single Bed"],
     colors: [
       { name: "Brown Bouquet",     hex: "#7b3f13" },
@@ -174,7 +180,7 @@ export const products: Product[] = [
     fabric: "Mink (brushed polyester)",
     weave: "Double-ply heavy brushed mink, one side embossed",
     origin: "India",
-    care: ["Dry clean"],
+    care: MINK_BLANKET_CARE,
     sizes: ["Double Bed"],
     colors: [
       { name: "Brown Floral Medallion", hex: "#6b4423" },
@@ -206,7 +212,7 @@ export const products: Product[] = [
     fabric: "Mink (brushed polyester)",
     weave: "Single-ply soft brushed mink",
     origin: "India",
-    care: ["Dry clean"],
+    care: MINK_BLANKET_CARE,
     sizes: ["Double Bed"],
     colors: [
       { name: "Ruby Floral",      hex: "#9f2634" },
