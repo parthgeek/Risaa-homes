@@ -200,10 +200,6 @@ export const products: Product[] = [
       "/royal-comfort/teal-olive-diamond.webp",
       "/royal-comfort/brown-camel-diamond.webp",
       "/royal-comfort-new.jpeg",
-      "/royal-comfort/royal-comfort-floral-bedsheet.png",
-      "/royal-comfort/royal-comfort-geometric-bedsheet.png",
-      "/royal-comfort/royal-comfort-geometric-pillow-cover.png",
-      "/royal-comfort/royal-comfort-floral-pillow-cover.png",
     ],
   },
 
