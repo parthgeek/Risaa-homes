@@ -503,6 +503,43 @@ export const products: Product[] = [
     ],
   },
 
+  {
+    id: "p108",
+    slug: "risaa-lazina-5-pcs-bedsheet-set",
+    name: "Lazina 5 Pcs Bedsheet Set",
+    category: "Bed Sheets & Sets",
+    price: 1500,
+    mrp: 3999,
+    tag: "New",
+    shortDescription:
+      "Luxury 5-piece bedsheet set with embroidered pillow covers and filled cushion covers.",
+    description:
+      "Lazina is a 5-piece luxury bedsheet collection in a soft dove-grey colourway. The double bedsheet pairs with two embroidered pillow covers and two embroidered cushion covers with fillers, all carrying the same fine geometric embroidery for a coordinated, tailored bed.",
+    fabric: "Premium microfibre blend",
+    weave: "Plain weave with geometric embroidery",
+    origin: "India",
+    care: [
+      "Hand or machine wash at 30\u00b0C",
+      "Do not bleach",
+      "Medium steam iron",
+      "Do not dry clean",
+      "Tumble dry low heat",
+    ],
+    sizes: [
+      "Bedsheet: 108 \u00d7 108 inches",
+      "Embroidered pillow covers (2): 20 \u00d7 30 inches",
+      "Embroidered cushion covers with fillers (2): 13 \u00d7 19 inches",
+    ],
+    colors: [{ name: "Dove Grey", hex: "#b4b6b8" }],
+    imageAspect: "landscape",
+    imageFit: "contain",
+    colorsLinkToImages: false,
+    images: [
+      "/lazina-set/lazina-5-piece-studio.png",
+      "/lazina-set/lazina-5-piece-package.png",
+    ],
+  },
+
   // ── SUMMER COMFORTERS ─────────────────────────────────────────────────────
   {
     id: "p103",
@@ -694,6 +731,7 @@ export const featuredBeddingProductIds = [
   "p105", // Sukoon 6 Pcs Set
   "p106", // Majestic 5 Pcs Bedding Set
   "p107", // Velvet Touch 5 Pcs Bedcover Set
+  "p108", // Lazina 5 Pcs Bedsheet Set
   "p103", // Desire Premium Satin Comforter
   "p104", // Temptation Luxury Comforter
   "p100", // Shagun 5 Pc Set
