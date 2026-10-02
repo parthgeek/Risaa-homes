@@ -61,9 +61,6 @@ function ProductsInner() {
               in India and abroad. Every piece is inspected twice before it is
               packed.
             </p>
-            <p className="mt-5 text-[10px] font-medium tracking-[0.25em] uppercase text-[var(--color-royal-700)]">
-              WSP shown first · MRP shown where available
-            </p>
           </Reveal>
         </div>
       </section>

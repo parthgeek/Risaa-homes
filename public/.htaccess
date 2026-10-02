@@ -1,0 +1,13 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+RewriteRule ^products/risaa-royal-feather-classic-blanket/?$ /products/risaa-royal-feather-blanket/ [R=301,L]
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 day"
+  ExpiresByType image/png "access plus 1 day"
+  ExpiresByType image/webp "access plus 1 day"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+</IfModule>
